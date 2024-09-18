@@ -1,0 +1,3955 @@
+//=============================================================================
+// MythTRConstants.txt created at Fri Sep  6 14:04:01 2024
+//
+// NOTE: All constants are subject to change with any database or code changes.
+//=============================================================================
+
+//==============================================================================
+// XS file name.
+//==============================================================================
+const string cFilename = "trigtemp";
+
+//==============================================================================
+// Math-related constants.
+//==============================================================================
+const float cPi = 3.141592741;
+const float cTwoPi = 6.283185482;
+const float cSqrtTwo = 1.414213538;
+const float cE = 2.718281746;
+const float cMinFloat = -340282346638528859811704183484516925440.000000000;
+const float cMaxFloat = 340282346638528859811704183484516925440.000000000;
+const float cFloatEpsilon = 0.000001000;
+const int cMinInt = -2147483648;
+const int cMaxInt = 2147483647;
+const vector cInvalidVector = vector(-1.000000000,-1.000000000,-1.000000000);
+const vector cOriginVector = vector(0.000000000,0.000000000,0.000000000);
+const vector cXAxisVector = vector(1.000000000,0.000000000,0.000000000);
+const vector cYAxisVector = vector(0.000000000,1.000000000,0.000000000);
+const vector cZAxisVector = vector(0.000000000,0.000000000,1.000000000);
+
+//==============================================================================
+// Game Type constants.
+//==============================================================================
+const int cGameTypeScenario = 0;
+const int cGameTypeSaved = 1;
+const int cGameTypeRandomMap = 2;
+const int cGameTypeCampaign = 3;
+const int cGameTypeRecordGame = 4;
+const int cGameTypeCurrent = 0;
+
+//==============================================================================
+// Game Mode constants.
+//==============================================================================
+const int cGameModeSupremacy = 0;
+const int cGameModeDeathmatch = 1;
+const int cGameModeLightning = 3;
+const int cGameModeCurrent = 0;
+
+//==============================================================================
+// Victory Condition constants.
+//==============================================================================
+const int cVictoryTypesCurrent = 0;
+const int cVictoryTypeConquest = 1;
+const int cVictoryTypeKingOfTheHill = 2;
+const int cVictoryTypeSuddenDeath = 4;
+const int cVictoryTypeRegicide = 8;
+
+//==============================================================================
+// Map Size constants.
+//==============================================================================
+const int cMapSizeStandard = 0;
+const int cMapSizeLarge = 1;
+const int cMapSizeGiant = 2;
+const int cMapSizeCurrent = 0;
+const int cMapSize = 0;
+
+//==============================================================================
+// Map Visibility constants.
+//==============================================================================
+const int cMapVisibilityNormal = 0;
+const int cMapVisibilityRevealed = 1;
+const int cMapVisibilityCurrent = 0;
+
+//==============================================================================
+// Difficulty constants.
+//==============================================================================
+const int cDifficultyEasy = 0;
+const int cDifficultyModerate = 1;
+const int cDifficultyHard = 2;
+const int cDifficultyTitan = 3;
+const int cDifficultyExtreme = 4;
+const int cDifficultyLegendary = 5;
+const int cDifficultyCurrent = 0;
+
+//==============================================================================
+// Starting Resources constants.
+//==============================================================================
+const int cStartingResourcesStandard = 0;
+const int cStartingResourcesMedium = 1;
+const int cStartingResourcesHigh = 2;
+const int cStartingResourcesUltra = 3;
+const int cStartingResourcesInfinite = 4;
+const int cStartingResourcesRandom = 5;
+const int cStartingResourcesCurrent = 0;
+
+//==============================================================================
+// Misc Settings constants.
+//==============================================================================
+const bool cGameAllowTitans = false;
+const bool cGameIsFFA = false;
+const bool cGameDoLockTeams = false;
+
+//==============================================================================
+// Player and team constants.
+//==============================================================================
+const int cNumberPlayers = 7;
+const int cNumberPlayersPlusNature = 8;
+const int cNumberTeams = 7;
+const int cNumberTeamsPlusNature = 8;
+const int cPlayerMotherNatureID = 0;
+
+//==============================================================================
+// Age constants.
+//==============================================================================
+const int cAge1 = 0;
+const int cAge2 = 1;
+const int cAge3 = 2;
+const int cAge4 = 3;
+const int cAge5 = 4;
+
+//==============================================================================
+// Culture constants.
+//==============================================================================
+const int cCultureGreek = 0;
+const int cCultureEgyptian = 1;
+const int cCultureNorse = 2;
+const int cCultureAtlantean = 3;
+
+//==============================================================================
+// Civilization constants.
+//==============================================================================
+const int cCivNature = 0;
+const int cCivZeus = 1;
+const int cCivHades = 2;
+const int cCivPoseidon = 3;
+const int cCivRa = 4;
+const int cCivIsis = 5;
+const int cCivSet = 6;
+const int cCivThor = 7;
+const int cCivOdin = 8;
+const int cCivLoki = 9;
+const int cCivKronos = 10;
+const int cCivOranos = 11;
+const int cCivGaia = 12;
+const int cCivFreyr = 13;
+
+//==============================================================================
+// Unit type constants.
+//==============================================================================
+const int cUnitTypeProjectileArrow = 0;
+const int cUnitTypeProjectileArrowNotFlaming = 1;
+const int cUnitTypeProjectileArrowFlaming = 2;
+const int cUnitTypeProjectileAxeFlaming = 3;
+const int cUnitTypeProjectileJavelin = 4;
+const int cUnitTypeProjectileJavelinFlaming = 5;
+const int cUnitTypeProjectileSlingStoneFlaming = 6;
+const int cUnitTypeProjectilePriestPharaoh = 7;
+const int cUnitTypeProjectilePetrobolosShot = 8;
+const int cUnitTypeProjectileCatapultShot = 9;
+const int cUnitTypeProjectileBallistaShot = 10;
+const int cUnitTypeProjectileFireSiphonFire = 11;
+const int cUnitTypeProjectileBoulder = 12;
+const int cUnitTypeProjectileBallOfFire = 13;
+const int cUnitTypeProjectileBallOfFirePrometheus = 14;
+const int cUnitTypeProjectileBallOfFireInvisible = 15;
+const int cUnitTypeProjectileFafnirFire = 16;
+const int cUnitTypeProjectileNidhoggInvisible = 17;
+const int cUnitTypeProjectileBallOfFireChimera = 18;
+const int cUnitTypeChimeraFireArea = 19;
+const int cUnitTypeProjectileAcidBlobInvisible = 20;
+const int cUnitTypeArgusAcidBlobDamage = 21;
+const int cUnitTypeProjectileArrowCentaurAttack = 22;
+const int cUnitTypeCentaurAreaDamage = 23;
+const int cUnitTypeProjectileFireGiantSpecialAttack = 24;
+const int cUnitTypeProjectileWadjetSpit = 25;
+const int cUnitTypeProjectilePetsuchosLazer = 26;
+const int cUnitTypeProjectileUFOLazer = 27;
+const int cUnitTypeProjectileMirrorTowerLazer = 28;
+const int cUnitTypeProjectileManticoreBarb = 29;
+const int cUnitTypeProjectileMummyFlies = 30;
+const int cUnitTypeProjectileLampadesBolt = 31;
+const int cUnitTypeProjectileStymphalianBirdFeathers = 32;
+const int cUnitTypeProjectileTrollStone = 33;
+const int cUnitTypeProjectileRainbowHeart = 34;
+const int cUnitTypeProjectileSatyrSpear = 35;
+const int cUnitTypeProjectileSatyrSpearSpecialAttack = 36;
+const int cUnitTypeProjectileDraugrArrow = 37;
+const int cUnitTypeSunRayRevealer = 38;
+const int cUnitTypeSunRayGroundRevealer = 39;
+const int cUnitTypeOranosRevealer = 40;
+const int cUnitTypeProjectileChainLightning = 41;
+const int cUnitTypeProjectileOsirisLightning = 42;
+const int cUnitTypeWaypointFlag = 43;
+const int cUnitTypeWaypointFlagNaval = 44;
+const int cUnitTypeGarrisonFlag = 45;
+const int cUnitTypeGatherFlagEconomy = 46;
+const int cUnitTypeGatherFlagMilitary = 47;
+const int cUnitTypeGatherFlagEconomyNaval = 48;
+const int cUnitTypeGatherFlagMilitaryNaval = 49;
+const int cUnitTypeMoveTo = 50;
+const int cUnitTypeVillagerGreek = 51;
+const int cUnitTypeCaravanGreek = 52;
+const int cUnitTypeKataskopos = 53;
+const int cUnitTypeMilitia = 54;
+const int cUnitTypeHoplite = 55;
+const int cUnitTypeToxotes = 56;
+const int cUnitTypeHippeus = 57;
+const int cUnitTypeHypaspist = 58;
+const int cUnitTypeProdromos = 59;
+const int cUnitTypePeltast = 60;
+const int cUnitTypeMyrmidon = 61;
+const int cUnitTypeGastraphetoros = 62;
+const int cUnitTypeHetairos = 63;
+const int cUnitTypePetrobolos = 64;
+const int cUnitTypeHelepolis = 65;
+const int cUnitTypeJason = 66;
+const int cUnitTypeAjax = 67;
+const int cUnitTypeTheseus = 68;
+const int cUnitTypeHeracles = 69;
+const int cUnitTypeAchilles = 70;
+const int cUnitTypeAtalanta = 71;
+const int cUnitTypeOdysseus = 72;
+const int cUnitTypeChiron = 73;
+const int cUnitTypeHippolyta = 74;
+const int cUnitTypeBellerophon = 75;
+const int cUnitTypePerseus = 76;
+const int cUnitTypePolyphemus = 77;
+const int cUnitTypeSentinel = 78;
+const int cUnitTypePegasus = 79;
+const int cUnitTypePegasusWingedMessenger = 80;
+const int cUnitTypePegasusBridleOfPegasus = 81;
+const int cUnitTypeHippocampus = 82;
+const int cUnitTypeHadesShade = 83;
+const int cUnitTypeMinotaur = 84;
+const int cUnitTypeCentaur = 85;
+const int cUnitTypeCyclops = 86;
+const int cUnitTypeHydra = 87;
+const int cUnitTypeScylla = 88;
+const int cUnitTypeManticore = 89;
+const int cUnitTypeNemeanLion = 90;
+const int cUnitTypeColossus = 91;
+const int cUnitTypeChimera = 92;
+const int cUnitTypeMedusa = 93;
+const int cUnitTypeCarcinos = 94;
+const int cUnitTypeTitanCerberus = 95;
+const int cUnitTypeFishingShipGreek = 96;
+const int cUnitTypeTransportShipGreek = 97;
+const int cUnitTypeTrireme = 98;
+const int cUnitTypePentekonter = 99;
+const int cUnitTypeJuggernaut = 100;
+const int cUnitTypeTheArgo = 101;
+const int cUnitTypeBoltStrike = 102;
+const int cUnitTypeEarthquake = 103;
+const int cUnitTypeLightningStrike = 104;
+const int cUnitTypeVillagerEgyptian = 105;
+const int cUnitTypeCaravanEgyptian = 106;
+const int cUnitTypeMercenary = 107;
+const int cUnitTypeSpearman = 108;
+const int cUnitTypeAxeman = 109;
+const int cUnitTypeSlinger = 110;
+const int cUnitTypeMercenaryCavalry = 111;
+const int cUnitTypeChariotArcher = 112;
+const int cUnitTypeCamelRider = 113;
+const int cUnitTypeWarElephant = 114;
+const int cUnitTypeArcticWolfOfSet = 115;
+const int cUnitTypeAurochsOfSet = 116;
+const int cUnitTypeBaboonOfSet = 117;
+const int cUnitTypeBearOfSet = 118;
+const int cUnitTypeBoarOfSet = 119;
+const int cUnitTypeCaribouOfSet = 120;
+const int cUnitTypeChickenOfSet = 121;
+const int cUnitTypeCrocodileOfSet = 122;
+const int cUnitTypeCrownedCraneOfSet = 123;
+const int cUnitTypeDeerOfSet = 124;
+const int cUnitTypeElephantOfSet = 125;
+const int cUnitTypeElkOfSet = 126;
+const int cUnitTypeGazelleOfSet = 127;
+const int cUnitTypeGiraffeOfSet = 128;
+const int cUnitTypeHippopotamusOfSet = 129;
+const int cUnitTypeHyenaOfSet = 130;
+const int cUnitTypeLionOfSet = 131;
+const int cUnitTypeMonkeyOfSet = 132;
+const int cUnitTypePolarBearOfSet = 133;
+const int cUnitTypeRhinocerosOfSet = 134;
+const int cUnitTypeWalrusOfSet = 135;
+const int cUnitTypeWaterBuffaloOfSet = 136;
+const int cUnitTypeWolfOfSet = 137;
+const int cUnitTypeZebraOfSet = 138;
+const int cUnitTypeSiegeTower = 139;
+const int cUnitTypeCatapult = 140;
+const int cUnitTypePriest = 141;
+const int cUnitTypePharaoh = 142;
+const int cUnitTypePharaohNewKingdom = 143;
+const int cUnitTypeSonOfOsiris = 144;
+const int cUnitTypeSphinx = 145;
+const int cUnitTypeWadjet = 146;
+const int cUnitTypeAnubite = 147;
+const int cUnitTypeSerpent = 148;
+const int cUnitTypeSeaSnake = 149;
+const int cUnitTypePetsuchos = 150;
+const int cUnitTypeRoc = 151;
+const int cUnitTypeRocLanded = 152;
+const int cUnitTypeScarab = 153;
+const int cUnitTypeScorpionMan = 154;
+const int cUnitTypeMinion = 155;
+const int cUnitTypeMinionReincarnated = 156;
+const int cUnitTypeLeviathan = 157;
+const int cUnitTypeMummy = 158;
+const int cUnitTypePhoenix = 159;
+const int cUnitTypePhoenixEgg = 160;
+const int cUnitTypePhoenixFromEgg = 161;
+const int cUnitTypeAvenger = 162;
+const int cUnitTypeWarTurtle = 163;
+const int cUnitTypeTitanBird = 164;
+const int cUnitTypeFishingShipEgyptian = 165;
+const int cUnitTypeTransportShipEgyptian = 166;
+const int cUnitTypeKebenit = 167;
+const int cUnitTypeRammingGalley = 168;
+const int cUnitTypeWarBarge = 169;
+const int cUnitTypeLostShip = 170;
+const int cUnitTypeMeteor = 171;
+const int cUnitTypeMeteorSPC = 172;
+const int cUnitTypeTornado = 173;
+const int cUnitTypeLocustSwarm = 174;
+const int cUnitTypeVillagerNorse = 175;
+const int cUnitTypeVillagerDwarf = 176;
+const int cUnitTypeOxCart = 177;
+const int cUnitTypeOxCartBuilding = 178;
+const int cUnitTypeCaravanNorse = 179;
+const int cUnitTypeBerserk = 180;
+const int cUnitTypeThrowingAxeman = 181;
+const int cUnitTypeRaidingCavalry = 182;
+const int cUnitTypeHirdman = 183;
+const int cUnitTypeHuskarl = 184;
+const int cUnitTypeJarl = 185;
+const int cUnitTypePortableRam = 186;
+const int cUnitTypeBallista = 187;
+const int cUnitTypeHersir = 188;
+const int cUnitTypeGodi = 189;
+const int cUnitTypeHeroOfRagnarok = 190;
+const int cUnitTypeHeroOfRagnarokDwarf = 191;
+const int cUnitTypeGullinburstiArchaic = 192;
+const int cUnitTypeGullinburstiClassical = 193;
+const int cUnitTypeGullinburstiHeroic = 194;
+const int cUnitTypeGullinburstiMythic = 195;
+const int cUnitTypeGullinburstiPreview = 196;
+const int cUnitTypeRaven = 197;
+const int cUnitTypeTroll = 198;
+const int cUnitTypeEinheri = 199;
+const int cUnitTypeValkyrie = 200;
+const int cUnitTypeDraugr = 201;
+const int cUnitTypeBattleBoar = 202;
+const int cUnitTypeMountainGiant = 203;
+const int cUnitTypeWalkingWoodsCypress = 204;
+const int cUnitTypeWalkingWoodsCypressSnow = 205;
+const int cUnitTypeWalkingWoodsHades = 206;
+const int cUnitTypeWalkingWoodsGaia = 207;
+const int cUnitTypeWalkingWoodsMarsh = 208;
+const int cUnitTypeWalkingWoodsOak = 209;
+const int cUnitTypeWalkingWoodsOakAutumn = 210;
+const int cUnitTypeWalkingWoodsOakRound = 211;
+const int cUnitTypeWalkingWoodsOlive = 212;
+const int cUnitTypeWalkingWoodsPalm = 213;
+const int cUnitTypeWalkingWoodsPine = 214;
+const int cUnitTypeWalkingWoodsPineSnow = 215;
+const int cUnitTypeWalkingWoodsPineDead = 216;
+const int cUnitTypeWalkingWoodsSavannah = 217;
+const int cUnitTypeWalkingWoodsSavannahOld = 218;
+const int cUnitTypeWalkingWoodsTundra = 219;
+const int cUnitTypeWalkingWoodsTundraSnow = 220;
+const int cUnitTypeKraken = 221;
+const int cUnitTypeRockGiant = 222;
+const int cUnitTypeFrostGiant = 223;
+const int cUnitTypeFireGiant = 224;
+const int cUnitTypeNidhogg = 225;
+const int cUnitTypeFenrisWolfBrood = 226;
+const int cUnitTypeFafnir = 227;
+const int cUnitTypeJormunElver = 228;
+const int cUnitTypeFimbulwinterWolf = 229;
+const int cUnitTypeTitanYmir = 230;
+const int cUnitTypeResourceSightContainer = 231;
+const int cUnitTypeEyesOnForestRevealer = 232;
+const int cUnitTypeFishingShipNorse = 233;
+const int cUnitTypeTransportShipNorse = 234;
+const int cUnitTypeLongboat = 235;
+const int cUnitTypeDreki = 236;
+const int cUnitTypeDragonShip = 237;
+const int cUnitTypeSpyEye = 238;
+const int cUnitTypeUndermineDamage = 239;
+const int cUnitTypeForestFire = 240;
+const int cUnitTypeVFXForestFire = 241;
+const int cUnitTypeForestFireEmbers = 242;
+const int cUnitTypeIceBlock = 243;
+const int cUnitTypeIceBlockLarge = 244;
+const int cUnitTypeIceSheet = 245;
+const int cUnitTypeTempestStrike = 246;
+const int cUnitTypeFenrir = 247;
+const int cUnitTypeVillagerAtlantean = 248;
+const int cUnitTypeVillagerAtlanteanHero = 249;
+const int cUnitTypeCaravanAtlantean = 250;
+const int cUnitTypeOracle = 251;
+const int cUnitTypeOracleHero = 252;
+const int cUnitTypeKatapeltes = 253;
+const int cUnitTypeKatapeltesHero = 254;
+const int cUnitTypeTurma = 255;
+const int cUnitTypeTurmaHero = 256;
+const int cUnitTypeMurmillo = 257;
+const int cUnitTypeMurmilloHero = 258;
+const int cUnitTypeCheiroballista = 259;
+const int cUnitTypeCheiroballistaHero = 260;
+const int cUnitTypeContarius = 261;
+const int cUnitTypeContariusHero = 262;
+const int cUnitTypeArcus = 263;
+const int cUnitTypeArcusHero = 264;
+const int cUnitTypeDestroyer = 265;
+const int cUnitTypeDestroyerHero = 266;
+const int cUnitTypeFanatic = 267;
+const int cUnitTypeFanaticHero = 268;
+const int cUnitTypeFireSiphon = 269;
+const int cUnitTypeCarnivora = 270;
+const int cUnitTypeWaterCarnivora = 271;
+const int cUnitTypeCarnivoraArm = 272;
+const int cUnitTypeCarnivoraWaterArm = 273;
+const int cUnitTypePromethean = 274;
+const int cUnitTypePrometheanOffspring = 275;
+const int cUnitTypeAutomaton = 276;
+const int cUnitTypeCaladria = 277;
+const int cUnitTypeServant = 278;
+const int cUnitTypeSatyr = 279;
+const int cUnitTypeBehemoth = 280;
+const int cUnitTypeDryad = 281;
+const int cUnitTypeNereid = 282;
+const int cUnitTypeStymphalianBird = 283;
+const int cUnitTypeLampades = 284;
+const int cUnitTypeTartarianSpawn = 285;
+const int cUnitTypeCentimanus = 286;
+const int cUnitTypeManOWar = 287;
+const int cUnitTypeArgus = 288;
+const int cUnitTypeTitanAtlantean = 289;
+const int cUnitTypeFishingShipAtlantean = 290;
+const int cUnitTypeTransportShipAtlantean = 291;
+const int cUnitTypeBireme = 292;
+const int cUnitTypeFireShip = 293;
+const int cUnitTypeSiegeBireme = 294;
+const int cUnitTypeCarnivoraBase = 295;
+const int cUnitTypeWaterCarnivoraBase = 296;
+const int cUnitTypeCarnivoraPreview = 297;
+const int cUnitTypeSpider = 298;
+const int cUnitTypeSpiderWarn = 299;
+const int cUnitTypeSpiderDoor = 300;
+const int cUnitTypeSpiderEgg = 301;
+const int cUnitTypeVFXVortexLanding = 302;
+const int cUnitTypeImplodeSphere = 303;
+const int cUnitTypeImplodeShockwave = 304;
+const int cUnitTypeTownCenter = 305;
+const int cUnitTypeVillageCenter = 306;
+const int cUnitTypeSettlement = 307;
+const int cUnitTypeWallShort = 308;
+const int cUnitTypeWallMedium = 309;
+const int cUnitTypeWallLong = 310;
+const int cUnitTypeWallConnector = 311;
+const int cUnitTypeWallGate = 312;
+const int cUnitTypeHouse = 313;
+const int cUnitTypeFarm = 314;
+const int cUnitTypeDock = 315;
+const int cUnitTypeGranary = 316;
+const int cUnitTypeTemple = 317;
+const int cUnitTypeSentryTower = 318;
+const int cUnitTypeArmory = 319;
+const int cUnitTypeMarket = 320;
+const int cUnitTypeTitanGate = 321;
+const int cUnitTypeWonder = 322;
+const int cUnitTypeTent = 323;
+const int cUnitTypeStorehouse = 324;
+const int cUnitTypeMilitaryAcademy = 325;
+const int cUnitTypeStable = 326;
+const int cUnitTypeArcheryRange = 327;
+const int cUnitTypeFortress = 328;
+const int cUnitTypeObelisk = 329;
+const int cUnitTypeMonumentToVillagers = 330;
+const int cUnitTypeMonumentToSoldiers = 331;
+const int cUnitTypeMonumentToPriests = 332;
+const int cUnitTypeMonumentToPharaohs = 333;
+const int cUnitTypeMonumentToGods = 334;
+const int cUnitTypeMiningCamp = 335;
+const int cUnitTypeLumberCamp = 336;
+const int cUnitTypeBarracks = 337;
+const int cUnitTypeMigdolStronghold = 338;
+const int cUnitTypeSiegeWorks = 339;
+const int cUnitTypeLighthouse = 340;
+const int cUnitTypeDwarvenArmory = 341;
+const int cUnitTypeGreatHall = 342;
+const int cUnitTypeLonghouse = 343;
+const int cUnitTypeHillFort = 344;
+const int cUnitTypeManor = 345;
+const int cUnitTypeEconomicGuild = 346;
+const int cUnitTypeSkyPassage = 347;
+const int cUnitTypeMilitaryBarracks = 348;
+const int cUnitTypeCounterBarracks = 349;
+const int cUnitTypePalace = 350;
+const int cUnitTypeMirrorTower = 351;
+const int cUnitTypeSentinelBase = 352;
+const int cUnitTypeLure = 353;
+const int cUnitTypeUnderworldPassage = 354;
+const int cUnitTypePlentyVault = 355;
+const int cUnitTypePlentyVaultKOTH = 356;
+const int cUnitTypeCitadelCenter = 357;
+const int cUnitTypeHealingSpring = 358;
+const int cUnitTypeAsgardianHillFort = 359;
+const int cUnitTypeHesperidesTree = 360;
+const int cUnitTypeTartarianGate = 361;
+const int cUnitTypeTartarianGateBirth = 362;
+const int cUnitTypeTartarianGateFlame = 363;
+const int cUnitTypeTartarianGatePlacement = 364;
+const int cUnitTypeGaiaLushEffect = 365;
+const int cUnitTypeOdysseusSPC = 366;
+const int cUnitTypeAjaxSPC = 367;
+const int cUnitTypeAjaxOlder = 368;
+const int cUnitTypeChironSPC = 369;
+const int cUnitTypeAgamemnon = 370;
+const int cUnitTypeArkantos = 371;
+const int cUnitTypeArkantosUber = 372;
+const int cUnitTypeArkantosGod = 373;
+const int cUnitTypeCirce = 374;
+const int cUnitTypeGargarensis = 375;
+const int cUnitTypeKamos = 376;
+const int cUnitTypeKastor = 377;
+const int cUnitTypeKastorYoung = 378;
+const int cUnitTypeKastorWithStaff = 379;
+const int cUnitTypeOldMan = 380;
+const int cUnitTypeTheocrat = 381;
+const int cUnitTypeKrios = 382;
+const int cUnitTypeServantOfKronos = 383;
+const int cUnitTypeServantOfKronosFlying = 384;
+const int cUnitTypeLivingPoseidonStatue = 385;
+const int cUnitTypeTheris = 386;
+const int cUnitTypePolaris = 387;
+const int cUnitTypeOrnlu = 388;
+const int cUnitTypeAthena = 389;
+const int cUnitTypeGeneralMelagius = 390;
+const int cUnitTypeAmanra = 391;
+const int cUnitTypeAmanraOlder = 392;
+const int cUnitTypeKemsyt = 393;
+const int cUnitTypeOsiris = 394;
+const int cUnitTypeGuardian = 395;
+const int cUnitTypeGuardianSleeping = 396;
+const int cUnitTypeGuardianTNA = 397;
+const int cUnitTypeGuardianSleepingTNA = 398;
+const int cUnitTypeSetna = 399;
+const int cUnitTypeSwordBearers = 400;
+const int cUnitTypeBrokk = 401;
+const int cUnitTypeEitri = 402;
+const int cUnitTypeReginleif = 403;
+const int cUnitTypeHallgerdForkbeard = 404;
+const int cUnitTypeSkult = 405;
+const int cUnitTypeSkultRavens = 406;
+const int cUnitTypeKingFolstag = 407;
+const int cUnitTypeFolstagFlagBearer = 408;
+const int cUnitTypeTitanKronos = 409;
+const int cUnitTypeTitanGaia = 410;
+const int cUnitTypeTitanPrometheus = 411;
+const int cUnitTypeShadeSPC = 412;
+const int cUnitTypePrisoner = 413;
+const int cUnitTypePirateShipEgyptian = 414;
+const int cUnitTypePirateShipNorse = 415;
+const int cUnitTypeCharonFerry = 416;
+const int cUnitTypeThorHammerShaft = 417;
+const int cUnitTypeThorHammerHead = 418;
+const int cUnitTypeOsirisPieceCart = 419;
+const int cUnitTypePigSPC = 420;
+const int cUnitTypeArkantosBoar = 421;
+const int cUnitTypeAjaxBoar = 422;
+const int cUnitTypeAutomatonSPC = 423;
+const int cUnitTypeTriremeWrecked = 424;
+const int cUnitTypeArcticWolfSPC = 425;
+const int cUnitTypeCrownedCraneSPC = 426;
+const int cUnitTypeDeerSPC = 427;
+const int cUnitTypeHippeusHorse = 428;
+const int cUnitTypeHippeusCinematic = 429;
+const int cUnitTypeHopliteSPC = 430;
+const int cUnitTypeValkyrieHorse = 431;
+const int cUnitTypeFireKing = 432;
+const int cUnitTypeNavalShipyard = 433;
+const int cUnitTypeDwarvenForge = 434;
+const int cUnitTypeExcavation = 435;
+const int cUnitTypeOsirisPyramid = 436;
+const int cUnitTypeOsirisPyramidDead = 437;
+const int cUnitTypeWallOfTroyShort = 438;
+const int cUnitTypeWallOfTroyLong = 439;
+const int cUnitTypeWallOfTroyConnector = 440;
+const int cUnitTypeWallOfTroyGate = 441;
+const int cUnitTypeWallOfTroyGateDead = 442;
+const int cUnitTypeWallOfAtlantisLong = 443;
+const int cUnitTypeWallOfAtlantisConnector = 444;
+const int cUnitTypeGiantGateRam = 445;
+const int cUnitTypeGiantGateRamBroken = 446;
+const int cUnitTypeHadesGate = 447;
+const int cUnitTypeHadesDoor = 448;
+const int cUnitTypeShrine = 449;
+const int cUnitTypePoseidonStatue = 450;
+const int cUnitTypePoseidonStatueStand = 451;
+const int cUnitTypeTentSPC = 452;
+const int cUnitTypeTentSPCDestroyed = 453;
+const int cUnitTypeTempleOvergrown = 454;
+const int cUnitTypeTempleOfKronos = 455;
+const int cUnitTypeTempleOfTheGods = 456;
+const int cUnitTypeWellOfUrd = 457;
+const int cUnitTypeUnderworldPassageSPC = 458;
+const int cUnitTypeWallJail = 459;
+const int cUnitTypePyramid = 460;
+const int cUnitTypeWoodenPlatform = 461;
+const int cUnitTypeObeliskProp = 462;
+const int cUnitTypeStatuePharaoh = 463;
+const int cUnitTypeStatueMajorGod = 464;
+const int cUnitTypeStatueLion = 465;
+const int cUnitTypeStatueAutomaton = 466;
+const int cUnitTypeStatueAutomatonBase = 467;
+const int cUnitTypeStatueChimera = 468;
+const int cUnitTypeStatueCyclops = 469;
+const int cUnitTypeStatueHydra = 470;
+const int cUnitTypeStatueManticore = 471;
+const int cUnitTypeStatueNemeanLion = 472;
+const int cUnitTypeStatueValkyrie = 473;
+const int cUnitTypeStatueMelagius = 474;
+const int cUnitTypeStatueOfLightning = 475;
+const int cUnitTypeSkyPassageSPC = 476;
+const int cUnitTypeTownCenterAbandoned = 477;
+const int cUnitTypeOdinsTower = 478;
+const int cUnitTypeOdinsRavens = 479;
+const int cUnitTypeAtlantisTile = 480;
+const int cUnitTypeAtlantisTileDead = 481;
+const int cUnitTypeTrojanHorse = 482;
+const int cUnitTypeTrojanHorseBuilding = 483;
+const int cUnitTypeGaiaPool = 484;
+const int cUnitTypeMiniAtlantis = 485;
+const int cUnitTypeMiscStairs = 486;
+const int cUnitTypeAvalanche = 487;
+const int cUnitTypeEarth = 488;
+const int cUnitTypeTunnelOpening = 489;
+const int cUnitTypeCaveWall = 490;
+const int cUnitTypeRocTent = 491;
+const int cUnitTypeThorHammer = 492;
+const int cUnitTypeTaproot = 493;
+const int cUnitTypeTaprootLarge = 494;
+const int cUnitTypeTaprootMedium = 495;
+const int cUnitTypeTaprootSmall = 496;
+const int cUnitTypeFolstagFlag = 497;
+const int cUnitTypeOsirisPieceBox = 498;
+const int cUnitTypeSpearArkantos = 499;
+const int cUnitTypeTrident = 500;
+const int cUnitTypeDeadBodies = 501;
+const int cUnitTypeBrokenSiege = 502;
+const int cUnitTypeSnowDriftArchery = 503;
+const int cUnitTypeSnowDriftBarracks = 504;
+const int cUnitTypeSnowDriftStable = 505;
+const int cUnitTypeSnowDriftSettlement = 506;
+const int cUnitTypeSnowDriftTower = 507;
+const int cUnitTypeSnowDriftSiegeWorks = 508;
+const int cUnitTypeSnowDriftTemple = 509;
+const int cUnitTypeDwarvenWheelbarrow = 510;
+const int cUnitTypeDwarvenTrough = 511;
+const int cUnitTypeGaiaBaseFlower = 512;
+const int cUnitTypeSummoningTreeProp = 513;
+const int cUnitTypeSummoningTree = 514;
+const int cUnitTypeTamariskTree = 515;
+const int cUnitTypeTamariskTreeDead = 516;
+const int cUnitTypeMineGoldLarge = 517;
+const int cUnitTypeMineGoldMedium = 518;
+const int cUnitTypeMineGoldSmall = 519;
+const int cUnitTypeMineDwarvenLarge = 520;
+const int cUnitTypeMineDwarvenMedium = 521;
+const int cUnitTypeMineDwarvenSmall = 522;
+const int cUnitTypeBerryBush = 523;
+const int cUnitTypeArcticWolf = 524;
+const int cUnitTypeAurochs = 525;
+const int cUnitTypeBaboon = 526;
+const int cUnitTypeBear = 527;
+const int cUnitTypeBoar = 528;
+const int cUnitTypeCaribou = 529;
+const int cUnitTypeChicken = 530;
+const int cUnitTypeChickenEvil = 531;
+const int cUnitTypeCrocodile = 532;
+const int cUnitTypeCrownedCrane = 533;
+const int cUnitTypeDeer = 534;
+const int cUnitTypeElephant = 535;
+const int cUnitTypeElk = 536;
+const int cUnitTypeGazelle = 537;
+const int cUnitTypeGiraffe = 538;
+const int cUnitTypeHippopotamus = 539;
+const int cUnitTypeHyena = 540;
+const int cUnitTypeLion = 541;
+const int cUnitTypeMonkey = 542;
+const int cUnitTypePolarBear = 543;
+const int cUnitTypeRhinoceros = 544;
+const int cUnitTypeWalrus = 545;
+const int cUnitTypeWaterBuffalo = 546;
+const int cUnitTypeWolf = 547;
+const int cUnitTypeZebra = 548;
+const int cUnitTypeRelicMonkey = 549;
+const int cUnitTypeRelicGoldenLion = 550;
+const int cUnitTypeCow = 551;
+const int cUnitTypeGoat = 552;
+const int cUnitTypePig = 553;
+const int cUnitTypeSalmon = 554;
+const int cUnitTypePerch = 555;
+const int cUnitTypeMahi = 556;
+const int cUnitTypeHerring = 557;
+const int cUnitTypeShadePredator = 558;
+const int cUnitTypeSerpentPredator = 559;
+const int cUnitTypeTreeCypress = 560;
+const int cUnitTypeTreeCypressSnow = 561;
+const int cUnitTypeTreeHades = 562;
+const int cUnitTypeTreeGaia = 563;
+const int cUnitTypeTreeMarsh = 564;
+const int cUnitTypeTreeOak = 565;
+const int cUnitTypeTreeOakAutumn = 566;
+const int cUnitTypeTreeOakRound = 567;
+const int cUnitTypeTreeOlive = 568;
+const int cUnitTypeTreePalm = 569;
+const int cUnitTypeTreePine = 570;
+const int cUnitTypeTreePineDead = 571;
+const int cUnitTypeTreePineSnow = 572;
+const int cUnitTypeTreePineSnowBurning = 573;
+const int cUnitTypeTreeSavannah = 574;
+const int cUnitTypeTreeSavannahOld = 575;
+const int cUnitTypeTreeTundra = 576;
+const int cUnitTypeTreeTundraSnow = 577;
+const int cUnitTypeTitanGateDead = 578;
+const int cUnitTypeTitanGatePreview = 579;
+const int cUnitTypeBridge = 580;
+const int cUnitTypeRuins = 581;
+const int cUnitTypeFenceIron = 582;
+const int cUnitTypeFenceStone = 583;
+const int cUnitTypeFenceWood = 584;
+const int cUnitTypeWoodPileSmall = 585;
+const int cUnitTypeWoodPileMedium = 586;
+const int cUnitTypeWoodPileLarge = 587;
+const int cUnitTypeBarrel = 588;
+const int cUnitTypeFishBarrel = 589;
+const int cUnitTypeFishPile = 590;
+const int cUnitTypeCampfire = 591;
+const int cUnitTypeCrate = 592;
+const int cUnitTypeCrateSmall = 593;
+const int cUnitTypeDigPile = 594;
+const int cUnitTypeFireWood = 595;
+const int cUnitTypeFountainGeneric = 596;
+const int cUnitTypeMarketStall = 597;
+const int cUnitTypeRelic = 598;
+const int cUnitTypeSign = 599;
+const int cUnitTypeTanningRack = 600;
+const int cUnitTypeLavaSheet = 601;
+const int cUnitTypeFlagNumbered = 602;
+const int cUnitTypeSnowman = 603;
+const int cUnitTypeCanopicJars = 604;
+const int cUnitTypeRugs = 605;
+const int cUnitTypeBrick = 606;
+const int cUnitTypeColumns = 607;
+const int cUnitTypeColumnsBroken = 608;
+const int cUnitTypeColumnsFallen = 609;
+const int cUnitTypeFlag = 610;
+const int cUnitTypeFlagFE = 611;
+const int cUnitTypeFountain = 612;
+const int cUnitTypeMilestone = 613;
+const int cUnitTypePots = 614;
+const int cUnitTypeShield = 615;
+const int cUnitTypeArmor = 616;
+const int cUnitTypeShipwreck = 617;
+const int cUnitTypeTorch = 618;
+const int cUnitTypeWeapons = 619;
+const int cUnitTypeDestroyedSmall = 620;
+const int cUnitTypeDestroyedMed = 621;
+const int cUnitTypeDestroyedLarge = 622;
+const int cUnitTypeWaterTilePool = 623;
+const int cUnitTypeWaterTileCanal = 624;
+const int cUnitTypeWaterTileClosed = 625;
+const int cUnitTypeBuildingRubble1x1 = 626;
+const int cUnitTypeBuildingRubble2x2 = 627;
+const int cUnitTypeBuildingRubble3x3 = 628;
+const int cUnitTypeBuildingRubble4x4 = 629;
+const int cUnitTypeBuildingRubble5x5 = 630;
+const int cUnitTypeBuildingRubble8x8 = 631;
+const int cUnitTypeCypress = 632;
+const int cUnitTypeRottingLog = 633;
+const int cUnitTypeDeadTreeTrunk = 634;
+const int cUnitTypeTreePalmBurning = 635;
+const int cUnitTypeBush = 636;
+const int cUnitTypeMeadowFlower = 637;
+const int cUnitTypeFlowers = 638;
+const int cUnitTypeGaiaLushFlower = 639;
+const int cUnitTypePlantGreekBush = 640;
+const int cUnitTypePlantGreekShrub = 641;
+const int cUnitTypePlantGreekGrass = 642;
+const int cUnitTypePlantGreekWeeds = 643;
+const int cUnitTypePlantGreekFern = 644;
+const int cUnitTypePlantEgyptianBush = 645;
+const int cUnitTypePlantEgyptianShrub = 646;
+const int cUnitTypePlantEgyptianGrass = 647;
+const int cUnitTypePlantEgyptianWeeds = 648;
+const int cUnitTypePlantEgyptianFern = 649;
+const int cUnitTypePlantNorseBush = 650;
+const int cUnitTypePlantNorseShrub = 651;
+const int cUnitTypePlantNorseGrass = 652;
+const int cUnitTypePlantNorseWeeds = 653;
+const int cUnitTypePlantNorseFern = 654;
+const int cUnitTypePlantSnowBush = 655;
+const int cUnitTypePlantSnowShrub = 656;
+const int cUnitTypePlantSnowGrass = 657;
+const int cUnitTypePlantSnowWeeds = 658;
+const int cUnitTypePlantSnowFern = 659;
+const int cUnitTypePlantDeadBush = 660;
+const int cUnitTypePlantDeadShrub = 661;
+const int cUnitTypePlantDeadGrass = 662;
+const int cUnitTypePlantDeadWeeds = 663;
+const int cUnitTypePlantDeadFern = 664;
+const int cUnitTypePlantTundraBush = 665;
+const int cUnitTypePlantTundraShrub = 666;
+const int cUnitTypePlantTundraGrass = 667;
+const int cUnitTypePlantTundraWeeds = 668;
+const int cUnitTypePlantTundraFern = 669;
+const int cUnitTypePlantMarshBush = 670;
+const int cUnitTypePlantMarshShrub = 671;
+const int cUnitTypePlantMarshGrass = 672;
+const int cUnitTypePlantMarshWeeds = 673;
+const int cUnitTypePlantMarshFern = 674;
+const int cUnitTypePlantAtlanteanBush = 675;
+const int cUnitTypePlantAtlanteanShrub = 676;
+const int cUnitTypePlantAtlanteanGrass = 677;
+const int cUnitTypePlantAtlanteanWeeds = 678;
+const int cUnitTypePlantAtlanteanFern = 679;
+const int cUnitTypeSeaweed = 680;
+const int cUnitTypeWaterLily = 681;
+const int cUnitTypeWaterReeds = 682;
+const int cUnitTypePapyrus = 683;
+const int cUnitTypeWaterPlant = 684;
+const int cUnitTypeStumpGaiaTree = 685;
+const int cUnitTypeStumpMarsh = 686;
+const int cUnitTypeStumpOak = 687;
+const int cUnitTypeStumpOakAutumn = 688;
+const int cUnitTypeStumpOlive = 689;
+const int cUnitTypeStumpPalm = 690;
+const int cUnitTypeStumpPine = 691;
+const int cUnitTypeStumpPineSnow = 692;
+const int cUnitTypeStumpSavannah = 693;
+const int cUnitTypeStumpSavannahOld = 694;
+const int cUnitTypeStumpTundra = 695;
+const int cUnitTypeStumpTundraSnow = 696;
+const int cUnitTypeStumpCypress = 697;
+const int cUnitTypeStumpCypressSnow = 698;
+const int cUnitTypeRockGreekLarge = 699;
+const int cUnitTypeRockGreekMedium = 700;
+const int cUnitTypeRockGreekSmall = 701;
+const int cUnitTypeRockGreekTiny = 702;
+const int cUnitTypeRockHadesLarge = 703;
+const int cUnitTypeRockHadesMedium = 704;
+const int cUnitTypeRockHadesSmall = 705;
+const int cUnitTypeRockHadesTiny = 706;
+const int cUnitTypeRockEgyptLarge = 707;
+const int cUnitTypeRockEgyptMedium = 708;
+const int cUnitTypeRockEgyptSmall = 709;
+const int cUnitTypeRockEgyptTiny = 710;
+const int cUnitTypeRockNorseLarge = 711;
+const int cUnitTypeRockNorseMedium = 712;
+const int cUnitTypeRockNorseSmall = 713;
+const int cUnitTypeRockNorseTiny = 714;
+const int cUnitTypeRockNorseSnowLarge = 715;
+const int cUnitTypeRockNorseSnowMedium = 716;
+const int cUnitTypeRockNorseSnowSmall = 717;
+const int cUnitTypeRockNorseSnowTiny = 718;
+const int cUnitTypeRockAtlanteanLarge = 719;
+const int cUnitTypeRockAtlanteanMedium = 720;
+const int cUnitTypeRockAtlanteanSmall = 721;
+const int cUnitTypeRockAtlanteanTiny = 722;
+const int cUnitTypeRockMarshLarge = 723;
+const int cUnitTypeRockMarshMedium = 724;
+const int cUnitTypeRockMarshSmall = 725;
+const int cUnitTypeRockMarshTiny = 726;
+const int cUnitTypeRockTundraLarge = 727;
+const int cUnitTypeRockTundraMedium = 728;
+const int cUnitTypeRockTundraSmall = 729;
+const int cUnitTypeRockTundraTiny = 730;
+const int cUnitTypeRockGoldSmall = 731;
+const int cUnitTypeRockGoldTiny = 732;
+const int cUnitTypeGoldPile = 733;
+const int cUnitTypeRockSymbols = 734;
+const int cUnitTypeRockSymbolsSnow = 735;
+const int cUnitTypeRunestone = 736;
+const int cUnitTypeStalagmite = 737;
+const int cUnitTypeLavaBubbling = 738;
+const int cUnitTypeLavaPool = 739;
+const int cUnitTypeBoulderRolling = 740;
+const int cUnitTypeBoulderRollingDestroyed = 741;
+const int cUnitTypeBoulderRollingSmall = 742;
+const int cUnitTypeBoulderWall = 743;
+const int cUnitTypeHadesBoulder = 744;
+const int cUnitTypeWaterfall = 745;
+const int cUnitTypeDove = 746;
+const int cUnitTypeHarpy = 747;
+const int cUnitTypeHawk = 748;
+const int cUnitTypeSeagull = 749;
+const int cUnitTypeVulture = 750;
+const int cUnitTypeOrca = 751;
+const int cUnitTypeSeaTurtle = 752;
+const int cUnitTypeWhale = 753;
+const int cUnitTypeSharks = 754;
+const int cUnitTypeMonkeyRaft = 755;
+const int cUnitTypeVFXUIRangeIndicatorGreek = 756;
+const int cUnitTypeVFXLightningSparks = 757;
+const int cUnitTypeVFXBoltScorch = 758;
+const int cUnitTypeVFXLure = 759;
+const int cUnitTypeVFXHealing = 760;
+const int cUnitTypeVFXHealingArea = 761;
+const int cUnitTypeVFXDoves = 762;
+const int cUnitTypeVFXArmorGlowSmall = 763;
+const int cUnitTypeVFXCurse = 764;
+const int cUnitTypeVFXPestilenceSmall = 765;
+const int cUnitTypeVFXPestilenceLarge = 766;
+const int cUnitTypeVFXLightningRain = 767;
+const int cUnitTypeVFXLightningCloud = 768;
+const int cUnitTypeVFXLightningScorch = 769;
+const int cUnitTypeVFXLightningSparksGround = 770;
+const int cUnitTypeVFXDustSmall = 771;
+const int cUnitTypeVFXDustMedium = 772;
+const int cUnitTypeVFXDustLarge = 773;
+const int cUnitTypeVFXUIRangeIndicatorEgyptian = 774;
+const int cUnitTypeVFXVision = 775;
+const int cUnitTypeVisionRevealer = 776;
+const int cUnitTypeVFXOsiris = 777;
+const int cUnitTypeVFXRain = 778;
+const int cUnitTypeVFXRainSmall = 779;
+const int cUnitTypeVFXProsperityLarge = 780;
+const int cUnitTypeVFXProsperitySmall = 781;
+const int cUnitTypeVFXMeteorImpactWater = 782;
+const int cUnitTypeVFXMeteorImpactGround = 783;
+const int cUnitTypeVFXLocustSwarm = 784;
+const int cUnitTypeVFXShiftingSandsIn = 785;
+const int cUnitTypeVFXShiftingSandsOut = 786;
+const int cUnitTypeVFXGreatHunt = 787;
+const int cUnitTypeVFXFimbulwinter = 788;
+const int cUnitTypeVFXIceSheet = 789;
+const int cUnitTypeVFXAsgardianHillFortBirth = 790;
+const int cUnitTypeVFXTempestFloor = 791;
+const int cUnitTypeVFXTempestHailImpact = 792;
+const int cUnitTypeVFXSnowDrift = 793;
+const int cUnitTypeVFXRagnarok = 794;
+const int cUnitTypeVFXFenirTreeFire = 795;
+const int cUnitTypeVFXTreeGaia = 796;
+const int cUnitTypeVFXTraitor = 797;
+const int cUnitTypeVFXImplodePullEffect = 798;
+const int cUnitTypeVFXVortexStart = 799;
+const int cUnitTypeVFXVortexFinish = 800;
+const int cUnitTypeVFXShockwave = 801;
+const int cUnitTypeVFXLinearShockwave = 802;
+const int cUnitTypeTimeshiftOut = 803;
+const int cUnitTypeTimeshiftIn = 804;
+const int cUnitTypeDeconstructBuilding = 805;
+const int cUnitTypeDeconstructWonder = 806;
+const int cUnitTypeVFXBlessingOfZeus = 807;
+const int cUnitTypeVFXSmoke = 808;
+const int cUnitTypeVFXCloud = 809;
+const int cUnitTypeVFXChaos = 810;
+const int cUnitTypeVFXUnPetrify = 811;
+const int cUnitTypeVFXMist = 812;
+const int cUnitTypeVFXSnow = 813;
+const int cUnitTypeVFXHeavenLight = 814;
+const int cUnitTypeVFXHeavenLightLoop = 815;
+const int cUnitTypeVFXHeroBirth = 816;
+const int cUnitTypeVFXHeroDeath = 817;
+const int cUnitTypeVFXArkantosGodIn = 818;
+const int cUnitTypeVFXArkantosGodOut = 819;
+const int cUnitTypeVFXBoostArkantos = 820;
+const int cUnitTypeVFXOsirisBirth = 821;
+const int cUnitTypeVFXOsirisAnkh = 822;
+const int cUnitTypeVFXBleed = 823;
+const int cUnitTypeVFXPoison = 824;
+const int cUnitTypeVFXCold = 825;
+const int cUnitTypeVFXStun = 826;
+const int cUnitTypeVFXArrowSignal = 827;
+const int cUnitTypeVFXOlympusTemple = 828;
+const int cUnitTypeVFXConversion = 829;
+const int cUnitTypeVFXNidhoggScorchArea = 830;
+const int cUnitTypeFireTiny = 831;
+const int cUnitTypeFireSmall = 832;
+const int cUnitTypeFireMedium = 833;
+const int cUnitTypeFireLarge = 834;
+const int cUnitTypeFireGigantic = 835;
+const int cUnitTypeVFXServantOfKronosBirth = 836;
+const int cUnitTypeVFXUnderworldExplosion = 837;
+const int cUnitTypeVFXLavaSpurt = 838;
+const int cUnitTypeAcidPool = 839;
+const int cUnitTypeVFXSandDriftDune = 840;
+const int cUnitTypeVFXSandDriftPatch = 841;
+const int cUnitTypeVFXSandDriftPlain = 842;
+const int cUnitTypeVFXSnowDriftDune = 843;
+const int cUnitTypeVFXSnowDriftPatch = 844;
+const int cUnitTypeVFXSnowDriftPlain = 845;
+const int cUnitTypeVFXDustDevil = 846;
+const int cUnitTypeVFXTransformGlow = 847;
+const int cUnitTypeVFXInsects = 848;
+const int cUnitTypeVFXCaladriaPacify = 849;
+const int cUnitTypeVFXCaladriaBurstHeal = 850;
+const int cUnitTypeVFXExplosion = 851;
+const int cUnitTypeVFXWeatherRain = 852;
+const int cUnitTypeRegent = 853;
+const int cUnitTypeFlyingPurpleHippo = 854;
+const int cUnitTypeForkboy = 855;
+const int cUnitTypeBella = 856;
+const int cUnitTypeLazerBear = 857;
+const int cUnitTypeWalkingBerryBush = 858;
+const int cUnitTypeChickenExploding = 859;
+const int cUnitTypeChickenBlood = 860;
+const int cUnitTypeFootball = 861;
+const int cUnitTypeUFO = 862;
+const int cUnitTypeInvisibleGate = 863;
+const int cUnitTypeInvisibleWall = 864;
+const int cUnitTypeInvisibleTarget = 865;
+const int cUnitTypeAttackRevealer = 866;
+const int cUnitTypeRevealer = 867;
+const int cUnitTypeRevealerToAllLifespan = 868;
+const int cUnitTypeRevealerToAll = 869;
+const int cUnitTypeUnitRevealer = 870;
+const int cUnitTypeCinematicBlockStartPoint = 871;
+const int cUnitTypeCinematicBlockEndPoint = 872;
+const int cUnitTypeCinematicBlockWaypoint = 873;
+const int cUnitTypeCinematicBlockSpawnPoint = 874;
+const int cUnitTypeCinematicBlockArea = 875;
+const int cUnitTypePathBlock1 = 876;
+const int cUnitTypePathBlock2 = 877;
+const int cUnitTypePathBlock3 = 878;
+const int cUnitTypeMapObjective = 879;
+const int cUnitTypeGodPowerBlocker = 880;
+const int cUnitTypeTestingDummyObject = 881;
+const int cUnitTypeLightsYellow = 882;
+const int cUnitTypeSkydome = 883;
+const int cUnitTypeCavalrySpeedCharge = 884;
+const int cUnitTypeMythUnitSelfDestructContainer = 885;
+const int cUnitTypeIdleSpeedBonus = 886;
+const int cUnitTypeBerserkDamageBoost = 887;
+const int cUnitTypeParticleLightTest = 888;
+const int cUnitTypeUnit = 889;
+const int cUnitTypeShip = 890;
+const int cUnitTypeBuilding = 891;
+const int cUnitTypeMilitaryBuilding = 892;
+const int cUnitTypeEconomicBuilding = 893;
+const int cUnitTypeDropsite = 894;
+const int cUnitTypeResource = 895;
+const int cUnitTypeHuntedResource = 896;
+const int cUnitTypeProjectile = 897;
+const int cUnitTypeNature = 898;
+const int cUnitTypeUnattackable = 899;
+const int cUnitTypeAbstractTemple = 900;
+const int cUnitTypeMilitaryUnit = 901;
+const int cUnitTypeHero = 902;
+const int cUnitTypeTree = 903;
+const int cUnitTypeAbstractInfantry = 904;
+const int cUnitTypeAbstractCavalry = 905;
+const int cUnitTypeAbstractArcher = 906;
+const int cUnitTypeAbstractVillager = 907;
+const int cUnitTypeAbstractFarm = 908;
+const int cUnitTypeAbstractDock = 909;
+const int cUnitTypeTradeableTo = 910;
+const int cUnitTypeTradeableFrom = 911;
+const int cUnitTypeAbstractSiegeWeapon = 912;
+const int cUnitTypeAbstractFlyingUnit = 913;
+const int cUnitTypeMythUnit = 914;
+const int cUnitTypeMythUnitMelee = 915;
+const int cUnitTypeMythUnitCavalry = 916;
+const int cUnitTypeMythUnitRanged = 917;
+const int cUnitTypeMythUnitSiege = 918;
+const int cUnitTypeEconomicUnit = 919;
+const int cUnitTypeRanged = 920;
+const int cUnitTypeUnitClass = 921;
+const int cUnitTypeBuildingClass = 922;
+const int cUnitTypeNatureClass = 923;
+const int cUnitTypeEmbellishmentClass = 924;
+const int cUnitTypeAll = 925;
+const int cUnitTypeFishResource = 926;
+const int cUnitTypeTransport = 927;
+const int cUnitTypeAbstractWall = 928;
+const int cUnitTypeHerdable = 929;
+const int cUnitTypeAbstractSettlement = 930;
+const int cUnitTypeLogicalTypeBuildingsThatShoot = 931;
+const int cUnitTypeLogicalTypeParticipatesInBattlecries = 932;
+const int cUnitTypeAffectedByTownBell = 933;
+const int cUnitTypeTradeUnit = 934;
+const int cUnitTypeLogicalTypeHealable = 935;
+const int cUnitTypeFavoriteUnit = 936;
+const int cUnitTypeLogicalTypeConvertsHerds = 937;
+const int cUnitTypeSocket = 938;
+const int cUnitTypeHuntable = 939;
+const int cUnitTypeLogicalTypeCanSeeStealth = 940;
+const int cUnitTypeAbstractWarship = 941;
+const int cUnitTypeAbstractWonder = 942;
+const int cUnitTypeAbstractTypeHuntableMagnet = 943;
+const int cUnitTypeHerdableMagnet = 944;
+const int cUnitTypeLogicalTypeCannotConvertHill = 945;
+const int cUnitTypeAbstractTitan = 946;
+const int cUnitTypeLokiHero = 947;
+const int cUnitTypeGoldResource = 948;
+const int cUnitTypeFoodResource = 949;
+const int cUnitTypeWoodResource = 950;
+const int cUnitTypeLogicalTypeNeededForVictory = 951;
+const int cUnitTypeLogicalTypeEasySelectAvoid = 952;
+const int cUnitTypeLogicalTypeLandMilitary = 953;
+const int cUnitTypeLogicalTypeNavalMilitary = 954;
+const int cUnitTypeLifespanUnit = 955;
+const int cUnitTypeHasBountyValue = 956;
+const int cUnitTypeLogicalTypeBuildingsNotWalls = 957;
+const int cUnitTypeLogicalTypeValidSPCUnitsDeadCondition = 958;
+const int cUnitTypeAbstractTownCenter = 959;
+const int cUnitTypeLogicalTypeTCBuildLimit = 960;
+const int cUnitTypeCountsTowardEconomicScore = 961;
+const int cUnitTypeCountsTowardMilitaryScore = 962;
+const int cUnitTypeWildCrops = 963;
+const int cUnitTypeLogicalTypeMinimapFilterEconomic = 964;
+const int cUnitTypeLogicalTypeMinimapFilterMilitary = 965;
+const int cUnitTypeAbstractHealer = 966;
+const int cUnitTypeAbstractMarket = 967;
+const int cUnitTypeLogicalTypeVillagerBuildLimit = 968;
+const int cUnitTypeAbstractEmpowerer = 969;
+const int cUnitTypeDrawsGatherers = 970;
+const int cUnitTypeNone = 971;
+const int cUnitTypeLogicalTypeAgeUpBuilding = 972;
+const int cUnitTypeCapturableSocket = 973;
+const int cUnitTypeDisplayAbilitiesOnHUD = 974;
+const int cUnitTypeFoodDropsite = 975;
+const int cUnitTypeWoodDropsite = 976;
+const int cUnitTypeGoldDropsite = 977;
+const int cUnitTypeLogicalTypeCanBeThrown = 978;
+const int cUnitTypeDisplayQueue = 979;
+const int cUnitTypeCanBuild = 980;
+const int cUnitTypeNonConvertableHerdable = 981;
+const int cUnitTypeAbstractFortress = 982;
+const int cUnitTypeNavalUnit = 983;
+const int cUnitTypeAbstractFishingShip = 984;
+const int cUnitTypeAbstractPharaoh = 985;
+const int cUnitTypeAbstractMonument = 986;
+const int cUnitTypeAbstractOracle = 987;
+const int cUnitTypeAbstractScout = 988;
+const int cUnitTypeLogicalTypeAutoAttackFocusBuildings = 989;
+const int cUnitTypeAbstractInvisibleWall = 990;
+const int cUnitTypeValidIdleVillager = 991;
+const int cUnitTypeAnimalPrey = 992;
+const int cUnitTypeAnimalPredator = 993;
+const int cUnitTypeAnimalReactive = 994;
+const int cUnitTypeLogicalTypeTeleporterBuilding = 995;
+const int cUnitTypeLogicalTypeAgressiveNatureUnit = 996;
+const int cUnitTypeAbstractSocketedTownCenter = 997;
+const int cUnitTypeLogicalTypeVillagersRespondToAttack = 998;
+const int cUnitTypeLogicalTypeHandUnitsAutoAttack = 999;
+const int cUnitTypeLogicalTypeVillagersAttack = 1000;
+const int cUnitTypeLogicalTypeGarrisonInShips = 1001;
+const int cUnitTypeLogicalTypeRangedUnitsAttack = 1002;
+const int cUnitTypeLogicalTypeRangedUnitsAutoAttack = 1003;
+const int cUnitTypeLogicalTypeHandUnitsAttack = 1004;
+const int cUnitTypeLogicalTypeValidBoltTarget = 1005;
+const int cUnitTypeLogicalTypeValidSentinelTarget = 1006;
+const int cUnitTypeHumanSoldier = 1007;
+const int cUnitTypeLogicalTypeEarthquakeAttack = 1008;
+const int cUnitTypeLogicalTypeAffectedByRestoration = 1009;
+const int cUnitTypeLogicalTypeHealed = 1010;
+const int cUnitTypeFood = 1011;
+const int cUnitTypeWood = 1012;
+const int cUnitTypeGold = 1013;
+const int cUnitTypeFavor = 1014;
+const int cUnitTypeLogicalTypeAffectedByCeaseFireBuildingSlow = 1015;
+const int cUnitTypeAbstractCloseCombatShip = 1016;
+const int cUnitTypeAbstractArcherShip = 1017;
+const int cUnitTypeAbstractSiegeShip = 1018;
+const int cUnitTypeAbstractWarshipHero = 1019;
+const int cUnitTypeLogicalTypeValidMeteorTarget = 1020;
+const int cUnitTypeLogicalTypeValidTornadoAttack = 1021;
+const int cUnitTypeLogicalTypeArchaicMythUnit = 1022;
+const int cUnitTypeLogicalTypeClassicalMythUnit = 1023;
+const int cUnitTypeLogicalTypeHeroicMythUnit = 1024;
+const int cUnitTypeLogicalTypeMythicMythUnit = 1025;
+const int cUnitTypeInfantryLineUpgraded = 1026;
+const int cUnitTypeArcherLineUpgraded = 1027;
+const int cUnitTypeCavalryLineUpgraded = 1028;
+const int cUnitTypeHeroShadowUpgraded = 1029;
+const int cUnitTypeLogicalTypeValidSpyTarget = 1030;
+const int cUnitTypeLogicalTypeValidLocustSwarmTarget = 1031;
+const int cUnitTypeLogicalTypeValidShiftingSandsTarget = 1032;
+const int cUnitTypeLogicalTypeSharedHeroSelection = 1033;
+const int cUnitTypeLogicalTypeVillagerNotHero = 1034;
+const int cUnitTypeLogicalTypeMythUnitNotTitan = 1035;
+const int cUnitTypeLogicalTypeValidFrostTarget = 1036;
+const int cUnitTypeLogicalTypeFindFoodDropsite = 1037;
+const int cUnitTypeLogicalTypeFindWoodDropsite = 1038;
+const int cUnitTypeLogicalTypeFindGoldDropsite = 1039;
+const int cUnitTypeLogicalTypeFindBarracks = 1040;
+const int cUnitTypeLogicalTypeFindStable = 1041;
+const int cUnitTypeLogicalTypeRangedMythUnit = 1042;
+const int cUnitTypeBuildLimitSharedNorse = 1043;
+const int cUnitTypeBuildLimitSharedAtlantean = 1044;
+const int cUnitTypeAnimalOfSet = 1045;
+const int cUnitTypeLogicalTypeAffectedByValor = 1046;
+const int cUnitTypeLogicalTypeValidTraitorTarget = 1047;
+const int cUnitTypeLogicalTypeMilitaryProductionBuilding = 1048;
+const int cUnitTypeLogicalTypeTartarianGateValidOverlapPlacement = 1049;
+const int cUnitTypeLogicalTypeSunRayProjectile = 1050;
+const int cUnitTypeEconomicUpgraded = 1051;
+const int cUnitTypeAbstractHouseBuildLimit = 1052;
+const int cUnitTypeAbstractTransportShip = 1053;
+const int cUnitTypeLogicalTypeVillagersAttackResponse = 1054;
+const int cUnitTypeLogicalTypeSeidrTarget = 1055;
+const int cUnitTypeAbstractArmory = 1056;
+const int cUnitTypeLogicalTypeValidShockwaveTarget = 1057;
+const int cUnitTypeLogicalTypeShipNotHero = 1058;
+const int cUnitTypeLogicalTypePickable = 1059;
+const int cUnitTypeAbstractDwarf = 1060;
+const int cUnitTypeLogicalTypeNorseSoldierThatBuilds = 1061;
+const int cUnitTypeLogicalTypeBuildingThatCanBeEmpowered = 1062;
+const int cUnitTypeLogicalTypeUnitIsConstructed = 1063;
+const int cUnitTypeLogicalTypeBuildingEmpoweredForLOS = 1064;
+const int cUnitTypeLogicalTypeFreezableMythUnit = 1065;
+const int cUnitTypeLogicalTypeBuildingNotWonderOrTitan = 1066;
+const int cUnitTypeAbstractWalkingWoods = 1067;
+const int cUnitTypeAbstractTower = 1068;
+const int cUnitTypeLogicalTypeAffectedByValleyOfTheKings = 1069;
+const int cUnitTypeMajorHero = 1070;
+const int cUnitTypeMinorHero = 1071;
+const int cUnitTypeVillagerHero = 1072;
+const int cUnitTypeLogicalTypeMythUnitThatGeneratesFavor = 1073;
+const int cUnitTypeAbstractGullinbursti = 1074;
+const int cUnitTypeLogicalTypeMythUnitNotFlying = 1075;
+const int cNumberUnitTypes = 1076;
+const int cNumberProtoUnits = 889;
+
+//==============================================================================
+// Unit flag constants.
+//==============================================================================
+const int cUnitFlagHasGatherData = 0;
+const int cUnitFlagPlayerPlaceable = 1;
+const int cUnitFlagCollideable = 2;
+const int cUnitFlagTieToGround = 3;
+const int cUnitFlagImmoveable = 4;
+const int cUnitFlagDisplayHitpointsIfSelected = 5;
+const int cUnitFlagTieToWaterSurface = 6;
+const int cUnitFlagGenerateWaterSplashes = 7;
+const int cUnitFlagVisibleUnderFog = 8;
+const int cUnitFlagVisibleUnderFogIfNature = 9;
+const int cUnitFlagProjectile = 10;
+const int cUnitFlagHasLOS = 11;
+const int cUnitFlagSelectable = 12;
+const int cUnitFlagDieAtZeroHitpoints = 13;
+const int cUnitFlagDieAtZeroResources = 14;
+const int cUnitFlagValidateResourceInventory = 15;
+const int cUnitFlagHasGatherPoint = 16;
+const int cUnitFlagBloodOnDeath = 17;
+const int cUnitFlagNonSolid = 18;
+const int cUnitFlagObscuresUnits = 19;
+const int cUnitFlagObscuredByUnits = 20;
+const int cUnitFlagNotObscuredByUnitsAsFoundation = 21;
+const int cUnitFlagFlattenGround = 22;
+const int cUnitFlagUseProtoUnitMinimapColor = 23;
+const int cUnitFlagShowOnMinimap = 24;
+const int cUnitFlagAutoFormedUnit = 25;
+const int cUnitFlagRotateObstruction = 26;
+const int cUnitFlagCreateUnitGroupAutomatically = 27;
+const int cUnitFlagCollidesWithProjectiles = 28;
+const int cUnitFlagFadeInOnBuild = 29;
+const int cUnitFlagAlphaFadeLifespan = 30;
+const int cUnitFlagWanders = 31;
+const int cUnitFlagFlyingUnit = 32;
+const int cUnitFlagHeightBob = 33;
+const int cUnitFlagSearchable = 34;
+const int cUnitFlagUnlimitedSupply = 35;
+const int cUnitFlagFaceOutwards = 36;
+const int cUnitFlagSnapPlacement = 37;
+const int cUnitFlagStartEnabled = 38;
+const int cUnitFlagFadeOutDuringDeathAnimation = 39;
+const int cUnitFlagForceToNature = 40;
+const int cUnitFlagYawDuringMovement = 41;
+const int cUnitFlagGivesLOSToAll = 42;
+const int cUnitFlagDoppled = 43;
+const int cUnitFlagDeleteable = 44;
+const int cUnitFlagDestroyProjectile = 45;
+const int cUnitFlagOnlyInEditor = 46;
+const int cUnitFlagCanAttackDisabledUnits = 47;
+const int cUnitFlagOrientUnitWithGround = 48;
+const int cUnitFlagAlwaysFullColorAsCursor = 49;
+const int cUnitFlagConstrainOrientation = 50;
+const int cUnitFlagPaintTextureWhenPlacing = 51;
+const int cUnitFlagInitialGarrisonOnly = 52;
+const int cUnitFlagWallBuild = 53;
+const int cUnitFlagShowGarrisonButton = 54;
+const int cUnitFlagCommandable = 55;
+const int cUnitFlagKillOnAnimLoop = 56;
+const int cUnitFlagAreaDamageConstant = 57;
+const int cUnitFlagNoIdleActions = 58;
+const int cUnitFlagProjectileDamage = 59;
+const int cUnitFlagPlaceAnywhere = 60;
+const int cUnitFlagProjectileTerrainOnly = 61;
+const int cUnitFlagPlayerOwnsObstruction = 62;
+const int cUnitFlagPlaceSocketWhenPlacing = 63;
+const int cUnitFlagAlwaysShowAsSocket = 64;
+const int cUnitFlagStartOnAnimationUpdate = 65;
+const int cUnitFlagStartOnNoUpdate = 66;
+const int cUnitFlagDeadReplacementWhenDestroyed = 67;
+const int cUnitFlagAnnounceConversion = 68;
+const int cUnitFlagSelectWithObstruction = 69;
+const int cUnitFlagDestroyUnderBuilding = 70;
+const int cUnitFlagConvertOnStartBuild = 71;
+const int cUnitFlagPlaceAsFoundation = 72;
+const int cUnitFlagConvertToNatureAtZeroHitpoints = 73;
+const int cUnitFlagMakeUnbuiltAtZeroHitpoints = 74;
+const int cUnitFlagExcludeFromPlaytest = 75;
+const int cUnitFlagSolidFoundation = 76;
+const int cUnitFlagHideGarrisonFlag = 77;
+const int cUnitFlagDoppleOnlyWhenDead = 78;
+const int cUnitFlagDirectProjectile = 79;
+const int cUnitFlagForceBuildingData = 80;
+const int cUnitFlagDecalStickToWaterSurface = 81;
+const int cUnitFlagAllowAutoGarrison = 82;
+const int cUnitFlagOverrideInitialGarrison = 83;
+const int cUnitFlagMeteredGarrison = 84;
+const int cUnitFlagRevealFoundation = 85;
+const int cUnitFlagMinimapColorXfrmNonNature = 86;
+const int cUnitFlagKBTracked = 87;
+const int cUnitFlagVisibleOwnerOnly = 88;
+const int cUnitFlagHideFromDialogs = 89;
+const int cUnitFlagHideResourceInventory = 90;
+const int cUnitFlagRotateable = 91;
+const int cUnitFlagScalable = 92;
+const int cUnitFlagGodPowerExclusion = 93;
+const int cUnitFlagInvulnerable = 94;
+const int cUnitFlagDeadReplaceOnlyOnTimeout = 95;
+const int cUnitFlagSingleGatherer = 96;
+const int cUnitFlagInvulnerableIfNature = 97;
+const int cUnitFlagCorpseDecays = 98;
+const int cUnitFlagCantBeSlowed = 99;
+const int cUnitFlagHideHitpointsIfNature = 100;
+const int cUnitFlagFlareOnFullyBuilt = 101;
+const int cUnitFlagAnnounceFoundationStarted = 102;
+const int cUnitFlagVictoryBuilding = 103;
+const int cUnitFlagBurnable = 104;
+const int cUnitFlagMutateDopples = 105;
+const int cUnitFlagUseObstructionOnMinimap = 106;
+const int cUnitFlagUseAlignedObstructionOnMinimap = 107;
+const int cUnitFlagInvalidTownBellLocation = 108;
+const int cUnitFlagDontMarkExtraFog = 109;
+const int cUnitFlagVisibleUnderFogOnlyAfterSeen = 110;
+const int cUnitFlagRMCanRotate = 111;
+const int cUnitFlagKnockoutDeath = 112;
+const int cUnitFlagVariationLocked = 113;
+const int cUnitFlagExperienceUnit = 114;
+const int cUnitFlagFadeOutDecalOnDeath = 115;
+const int cUnitFlagAnnounceDestruction = 116;
+const int cUnitFlagBattleMusicTrigger = 117;
+const int cUnitFlagRotateInPlace = 118;
+const int cUnitFlagAdjustPositionOnTerrainCollision = 119;
+const int cUnitFlagHeroNameSimple = 120;
+const int cUnitFlagHeroNamePharaoh = 121;
+const int cUnitFlagHideCostFromDetailHelp = 122;
+const int cUnitFlagPreventsWallBuilding = 123;
+const int cUnitFlagCreateUniqueInstance = 124;
+const int cUnitFlagUniqueInstance = 125;
+const int cUnitFlagTileAlignPlacement = 126;
+const int cUnitFlagWorldToolTip = 127;
+const int cUnitFlagTCBuildLimit = 128;
+const int cUnitFlagBlocker = 129;
+const int cUnitFlagLockedSquad = 130;
+const int cUnitFlagSelectOnTrain = 131;
+const int cUnitFlagPlaceAnywhereRules = 132;
+const int cUnitFlagForcePopulationImpactWhenPlaced = 133;
+const int cUnitFlagCanAutoHeal = 134;
+const int cUnitFlagExcludeFromMoveAllMilitary = 135;
+const int cUnitFlagShowAutoGatherRate = 136;
+const int cUnitFlagCanTargetButTakesNoDamage = 137;
+const int cUnitFlagAllowOverPopCap = 138;
+const int cUnitFlagShowTactics = 139;
+const int cUnitFlagEnterHotkeyContext = 140;
+const int cUnitFlagCivSpecificText = 141;
+const int cUnitFlagAlwaysAllowOverPopCap = 142;
+const int cUnitFlagNeverCountDeathAsLoss = 143;
+const int cUnitFlagBuildingShowTactics = 144;
+const int cUnitFlagDisplayRange = 145;
+const int cUnitFlagInvulnerableToAreaDamage = 146;
+const int cUnitFlagDoNotDragSelectWithUnits = 147;
+const int cUnitFlagKillIfConverted = 148;
+const int cUnitFlagShowUnitResourceActionRates = 149;
+const int cUnitFlagSettlerBuildLimit = 150;
+const int cUnitFlagUseSharedBuildLimit = 151;
+const int cUnitFlagInflictsNoDamage = 152;
+const int cUnitFlagCanDodgeAttacks = 153;
+const int cUnitFlagNextResearchIsFree = 154;
+const int cUnitFlagUnitTransformFree = 155;
+const int cUnitFlagUseFarmingAnims = 156;
+const int cUnitFlagBuiltWithSeedingAnim = 157;
+const int cUnitFlagRangeDisplayedAsSquare = 158;
+const int cUnitFlagAllowSocketPlacement = 159;
+const int cUnitFlagOptionalSocketPlacement = 160;
+const int cUnitFlagAllowPlacementOnIce = 161;
+const int cUnitFlagGatherableWhenSocketed = 162;
+const int cUnitFlagDoNotQueue = 163;
+const int cUnitFlagMagnetDoesNotLockUnits = 164;
+const int cUnitFlagUseTacticArmorOverride = 165;
+const int cUnitFlagResourceReturnRateTotalCost = 166;
+const int cUnitFlagApplyResourceReturnIfDeleted = 167;
+const int cUnitFlagGatherableByAllies = 168;
+const int cUnitFlagShowAutoGatherAbsoluteInfo = 169;
+const int cUnitFlagDoTacticToSameUnitType = 170;
+const int cUnitFlagCannotSnare = 171;
+const int cUnitFlagBaseSpeedRunAnim = 172;
+const int cUnitFlagDeadTransformBuildLimit = 173;
+const int cUnitFlagForceGatherSiteResource = 174;
+const int cUnitFlagUseStaticFarmingAnims = 175;
+const int cUnitFlagGatherGarrisonToggle = 176;
+const int cUnitFlagHerdablesIgnoreGatherPoint = 177;
+const int cUnitFlagFreeRepair = 178;
+const int cUnitFlagCountHerdableAsGatherer = 179;
+const int cUnitFlagGatherersContributeToResourceRate = 180;
+const int cUnitFlagAllowGatheringWhenFull = 181;
+const int cUnitFlagShowAreaHealRate = 182;
+const int cUnitFlagChargeMoveAnim = 183;
+const int cUnitFlagSocketFreeBuilding = 184;
+const int cUnitFlagCannotAttackIfNature = 185;
+const int cUnitFlagFakeConversion = 186;
+const int cUnitFlagAllowRebuildInGrouping = 187;
+const int cUnitFlagForceUpdateVisualWhenCnverted = 188;
+const int cUnitFlagMinimapDisplayOnTop = 189;
+const int cUnitFlagRepairable = 190;
+const int cUnitFlagKillSocketWhenDestroyed = 191;
+const int cUnitFlagTeamBuildLimit = 192;
+const int cUnitFlagIgnoreDefaultEjectTimeout = 193;
+const int cUnitFlagQueueEjectActions = 194;
+const int cUnitFlagSharedGarrison = 195;
+const int cUnitFlagDisplayMinimumRange = 196;
+const int cUnitFlagAllowAlliedGarrison = 197;
+const int cUnitFlagForceNormalDeathAnim = 198;
+const int cUnitFlagDeploymentUngarrison = 199;
+const int cUnitFlagForceDisplaySquadModes = 200;
+const int cUnitFlagHideIfSocketedFoundationUntouched = 201;
+const int cUnitFlagPrayableTo = 202;
+const int cUnitFlagUpgradeSocket = 203;
+const int cUnitFlagRevertToSocketAtZeroHitpoints = 204;
+const int cUnitFlagRelic = 205;
+const int cUnitFlagKillsTargetAfterPickupAction = 206;
+const int cUnitFlagPlaySoundOnConversion = 207;
+const int cUnitFlagNoAllyRepair = 208;
+const int cUnitFlagDestroyWhenCompleted = 209;
+const int cUnitFlagCommonCommands = 210;
+const int cUnitFlagMilitaryCommands = 211;
+const int cUnitFlagDeleteConfirmation = 212;
+const int cUnitFlagAutoTrainable = 213;
+const int cUnitFlagExcludeFromIdleQuery = 214;
+const int cUnitFlagHideStances = 215;
+const int cUnitFlagRecoverableDeathHeal = 216;
+const int cUnitFlagRecoverableDeathProxy = 217;
+const int cUnitFlagNotAttackableByNature = 218;
+const int cUnitFlagNoLockedAnimationOnDeath = 219;
+const int cUnitFlagEjectable = 220;
+const int cUnitFlagHasContinuousParticles = 221;
+const int cUnitFlagEnabledOnce = 222;
+const int cUnitFlagHideGarrisonCapacity = 223;
+const int cUnitFlagOrientUnitWithGroundRoll = 224;
+const int cUnitFlagDisplayRangeOverride = 225;
+const int cUnitFlagAutoCommandStartDisabled = 226;
+const int cUnitFlagNatureRespawn = 227;
+const int cUnitFlagAutoScout = 228;
+const int cUnitFlagDependentAttack = 229;
+const int cUnitFlagPreQueueNotAllowed = 230;
+const int cUnitFlagPickable = 231;
+const int cUnitFlagShowUntouchedFoundation = 232;
+const int cUnitFlagSelfRespawn = 233;
+const int cUnitFlagDeleteableFoundation = 234;
+const int cUnitFlagRangeRingsForAbilityCasting = 235;
+const int cUnitFlagPushable = 236;
+const int cUnitFlagPushPlacement = 237;
+const int cUnitFlagHasDefaultAttack = 238;
+const int cUnitFlagSkipFlyingDeathAnim = 239;
+const int cUnitFlagDisplayOnMinimapIfContained = 240;
+const int cUnitFlagDeathTracked = 241;
+const int cUnitFlagContainedLOS = 242;
+const int cUnitFlagForceSecondPage = 243;
+const int cUnitFlagForceEmpowerable = 244;
+const int cUnitFlagKeepGarrisonTimeshift = 245;
+const int cUnitFlagGroupSelection = 246;
+const int cUnitFlagUnitTransformBuildLimit = 247;
+const int cUnitFlagManuallyPlaceable = 248;
+const int cUnitFlagConvertToTOB = 249;
+const int cUnitFlagMilitaryUIDefault = 250;
+const int cUnitFlagDynamicUpdate = 251;
+const int cUnitFlagDynamicUpdateAnimate = 252;
+const int cUnitFlagUseAltEmpowerCursor = 253;
+const int cUnitFlagBallisticTrackSource = 254;
+const int cUnitFlagDisplayBuildProgress = 255;
+const int cUnitFlagDisplayUpgradeProgress = 256;
+const int cUnitFlagSplitQueue = 257;
+const int cUnitFlagFadeInOnCreation = 258;
+const int cUnitFlagInvulnerableOnBirth = 259;
+const int cUnitFlagLifespanBirth = 260;
+const int cUnitFlagDependentKeepAlive = 261;
+const int cUnitFlagAbilitiesOnBothPages = 262;
+const int cUnitFlagForceSquareSelection = 263;
+const int cNumberUnitFlags = 264;
+
+//==============================================================================
+// Unit function constants.
+//==============================================================================
+const int cUnitFunctionBuilder = 0;
+const int cUnitFunctionGatherer = 1;
+const int cUnitFunctionEmpower = 2;
+const int cUnitFunctionFisher = 3;
+const int cUnitFunctionTransportNaval = 4;
+const int cUnitFunctionTrader = 5;
+const int cUnitFunctionScout = 6;
+const int cUnitFunctionScoutNaval = 7;
+const int cUnitFunctionHouse = 8;
+const int cUnitFunctionTitan = 9;
+const int cUnitFunctionArcherShip = 10;
+const int cUnitFunctionCloseCombatShip = 11;
+const int cUnitFunctionSiegeShip = 12;
+const int cUnitFunctionFortress = 13;
+
+const int cSharedUnitFunctionAttackRevealer = 0;
+const int cSharedUnitFunctionRevealer = 1;
+const int cSharedUnitFunctionBlood = 2;
+const int cSharedUnitFunctionBloodFlow = 3;
+const int cSharedUnitFunctionWaypointFlag = 4;
+const int cSharedUnitFunctionMoveToIndicator = 5;
+const int cSharedUnitFunctionSetLocationIndicator = 6;
+const int cSharedUnitFunctionShowLocationIndicator = 7;
+const int cSharedUnitFunctionGarrisonFlag = 8;
+const int cSharedUnitFunctionTownCenter = 9;
+const int cSharedUnitFunctionFlare = 10;
+const int cSharedUnitFunctionStunEffect = 11;
+const int cSharedUnitFunctionFarm = 12;
+const int cSharedUnitFunctionGate = 13;
+const int cSharedUnitFunctionMapObjective = 14;
+const int cSharedUnitFunctionAIBlock = 15;
+const int cSharedUnitFunctionSpyEye = 16;
+const int cSharedUnitFunctionKraken = 17;
+const int cSharedUnitFunctionSPCKraken = 18;
+const int cSharedUnitFunctionConversionSFX = 19;
+const int cSharedUnitFunctionOsirisLightning = 20;
+const int cSharedUnitFunctionAcidPool = 21;
+const int cSharedUnitFunctionIceBlock = 22;
+const int cSharedUnitFunctionShockwaveSFX = 23;
+const int cSharedUnitFunctionPlentyVaultKOTH = 24;
+const int cSharedUnitFunctionRegent = 25;
+const int cSharedUnitFunctionHouseDefault = 26;
+const int cSharedUnitFunctionWallConnector = 27;
+const int cSharedUnitFunctionWallShort = 28;
+const int cSharedUnitFunctionWallMedium = 29;
+const int cSharedUnitFunctionWallLong = 30;
+const int cSharedUnitFunctionUnPetrifyEffect = 31;
+const int cSharedUnitFunctionObjectiveMarker = 32;
+const int cSharedUnitFunctionHersir = 33;
+const int cSharedUnitFunctionUnitRevealer = 34;
+const int cSharedUnitFunctionSnowVFX = 35;
+const int cSharedUnitFunctionRelic = 36;
+const int cSharedUnitFunctionCitadelCenter = 37;
+const int cSharedUnitFunctionSkybox = 38;
+const int cSharedUnitFunctionWonder = 39;
+const int cSharedUnitFunctionTreeGaia = 40;
+const int cSharedUnitFunctionTitanGate = 41;
+
+//==============================================================================
+// Tech constants.
+//==============================================================================
+const int cTechArchaicAgeWeakenUnits = 0;
+const int cTechEnableRelicPickup = 1;
+const int cTechClassicalAgeGeneral = 2;
+const int cTechHeroicAgeGeneral = 3;
+const int cTechMythicAgeGeneral = 4;
+const int cTechWonderAgeGeneral = 5;
+const int cTechWonderAgeJotunScaleFix = 6;
+const int cTechWonderAgeTitan = 7;
+const int cTechSecretsOfTheTitans = 8;
+const int cTechTechTreeClassicalAge = 9;
+const int cTechTechTreeHeroicAge = 10;
+const int cTechTechTreeMythicalAge = 11;
+const int cTechDeathMatchGeneral = 12;
+const int cTechDeathMatchGreek = 13;
+const int cTechDeathMatchEgyptian = 14;
+const int cTechDeathMatchNorse = 15;
+const int cTechDeathMatchAtlantean = 16;
+const int cTechLightningGeneral = 17;
+const int cTechStoryModeGeneral = 18;
+const int cTechArchaicAgeGreek = 19;
+const int cTechClassicalAgeGreek = 20;
+const int cTechHeroicAgeGreek = 21;
+const int cTechMythicAgeGreek = 22;
+const int cTechArchaicAgeZeus = 23;
+const int cTechClassicalAgeZeus = 24;
+const int cTechHeroicAgeZeus = 25;
+const int cTechMythicAgeZeus = 26;
+const int cTechArchaicAgeHades = 27;
+const int cTechClassicalAgeHades = 28;
+const int cTechHeroicAgeHades = 29;
+const int cTechMythicAgeHades = 30;
+const int cTechArchaicAgePoseidon = 31;
+const int cTechClassicalAgePoseidon = 32;
+const int cTechHeroicAgePoseidon = 33;
+const int cTechMythicAgePoseidon = 34;
+const int cTechJasonEnable = 35;
+const int cTechOlympianParentage = 36;
+const int cTechAjaxEnable = 37;
+const int cTechVaultsOfErebus = 38;
+const int cTechTheseusEnable = 39;
+const int cTechHippocampusRespawn = 40;
+const int cTechLordOfHorses = 41;
+const int cTechClassicalAgeAthena = 42;
+const int cTechClassicalAgeHermes = 43;
+const int cTechClassicalAgeAres = 44;
+const int cTechHeroicAgeDionysus = 45;
+const int cTechHeroicAgeApollo = 46;
+const int cTechHeroicAgeAphrodite = 47;
+const int cTechMythicAgeHephaestus = 48;
+const int cTechMythicAgeHera = 49;
+const int cTechMythicAgeArtemis = 50;
+const int cTechLabyrinthOfMinos = 51;
+const int cTechAegisShield = 52;
+const int cTechSarissa = 53;
+const int cTechSylvanLore = 54;
+const int cTechWingedMessenger = 55;
+const int cTechWingedMessengerRespawn = 56;
+const int cTechSpiritedCharge = 57;
+const int cTechPhobosSpearOfPanic = 58;
+const int cTechDeimosSwordOfDread = 59;
+const int cTechEnyosBowOfHorror = 60;
+const int cTechWillOfKronos = 61;
+const int cTechOracle = 62;
+const int cTechTempleOfHealing = 63;
+const int cTechSunRay = 64;
+const int cTechAnastrophe = 65;
+const int cTechDionysia = 66;
+const int cTechThracianHorses = 67;
+const int cTechChthonicRites = 68;
+const int cTechDivineBlood = 69;
+const int cTechGoldenApples = 70;
+const int cTechRoarOfOrthus = 71;
+const int cTechArgonauts = 72;
+const int cTechFaceOfTheGorgon = 73;
+const int cTechMonstrousRage = 74;
+const int cTechArgivePatronage = 75;
+const int cTechShaftsOfPlague = 76;
+const int cTechFlamesOfTyphon = 77;
+const int cTechBeastSlayer = 78;
+const int cTechHandOfTalos = 79;
+const int cTechShoulderOfTalos = 80;
+const int cTechOlympianWeapons = 81;
+const int cTechForgeOfOlympus = 82;
+const int cTechLevyInfantry = 83;
+const int cTechConscriptInfantry = 84;
+const int cTechLevyRangedSoldiers = 85;
+const int cTechConscriptRangedSoldiers = 86;
+const int cTechLevyCavalry = 87;
+const int cTechConscriptCavalry = 88;
+const int cTechArchaicAgeEgyptian = 89;
+const int cTechClassicalAgeEgyptian = 90;
+const int cTechHeroicAgeEgyptian = 91;
+const int cTechMythicAgeEgyptian = 92;
+const int cTechMonumentToVillagersShadow = 93;
+const int cTechMonumentToSoldiersShadow = 94;
+const int cTechMonumentToPriestsShadow = 95;
+const int cTechMonumentToPharaohsShadow = 96;
+const int cTechMonumentToGodsShadow = 97;
+const int cTechArchaicAgeRa = 98;
+const int cTechClassicalAgeRa = 99;
+const int cTechHeroicAgeRa = 100;
+const int cTechMythicAgeRa = 101;
+const int cTechArchaicAgeIsis = 102;
+const int cTechClassicalAgeIsis = 103;
+const int cTechHeroicAgeIsis = 104;
+const int cTechMythicAgeIsis = 105;
+const int cTechArchaicAgeSet = 106;
+const int cTechClassicalAgeSet = 107;
+const int cTechHeroicAgeSet = 108;
+const int cTechMythicAgeSet = 109;
+const int cTechSkinOfTheRhino = 110;
+const int cTechFloodOfTheNile = 111;
+const int cTechClairvoyance = 112;
+const int cTechClassicalAgeAnubis = 113;
+const int cTechClassicalAgeBast = 114;
+const int cTechClassicalAgePtah = 115;
+const int cTechHeroicAgeSekhmet = 116;
+const int cTechHeroicAgeSobek = 117;
+const int cTechHeroicAgeNephthys = 118;
+const int cTechMythicAgeOsiris = 119;
+const int cTechMythicAgeHorus = 120;
+const int cTechMythicAgeThoth = 121;
+const int cTechFeetOfTheJackal = 122;
+const int cTechNecropolis = 123;
+const int cTechSerpentSpear = 124;
+const int cTechShaduf = 125;
+const int cTechScallopedAxe = 126;
+const int cTechLeatherFrameShield = 127;
+const int cTechElectrumBullets = 128;
+const int cTechAdzeOfWepwawet = 129;
+const int cTechSacredCats = 130;
+const int cTechCriosphinx = 131;
+const int cTechHieracosphinx = 132;
+const int cTechBoneBow = 133;
+const int cTechSlingsOfTheSun = 134;
+const int cTechForceOfTheWestWind = 135;
+const int cTechCrimsonLinen = 136;
+const int cTechSunDriedMudBrick = 137;
+const int cTechCrocodilopolis = 138;
+const int cTechDarkWater = 139;
+const int cTechSolarBarque = 140;
+const int cTechSpiritOfMaat = 141;
+const int cTechFuneralRites = 142;
+const int cTechNebty = 143;
+const int cTechFuneralBarge = 144;
+const int cTechAtefCrown = 145;
+const int cTechNewKingdom = 146;
+const int cTechNewKingdomPharaohRespawn = 147;
+const int cTechDesertWind = 148;
+const int cTechBookOfThoth = 149;
+const int cTechTusksOfApedemak = 150;
+const int cTechValleyOfTheKings = 151;
+const int cTechAxeOfVengeance = 152;
+const int cTechGreatestOfFifty = 153;
+const int cTechSpearOfHorus = 154;
+const int cTechMediumAxemen = 155;
+const int cTechHeavyAxemen = 156;
+const int cTechChampionAxemen = 157;
+const int cTechMediumSpearmen = 158;
+const int cTechHeavySpearmen = 159;
+const int cTechChampionSpearmen = 160;
+const int cTechMediumSlingers = 161;
+const int cTechHeavySlingers = 162;
+const int cTechChampionSlingers = 163;
+const int cTechLevyBarracksSoldiers = 164;
+const int cTechConscriptBarracksSoldiers = 165;
+const int cTechMediumChariotArchers = 166;
+const int cTechHeavyChariotArchers = 167;
+const int cTechChampionChariotArchers = 168;
+const int cTechMediumCamelRiders = 169;
+const int cTechHeavyCamelRiders = 170;
+const int cTechChampionCamelRiders = 171;
+const int cTechMediumWarElephants = 172;
+const int cTechHeavyWarElephants = 173;
+const int cTechChampionWarElephants = 174;
+const int cTechLevyMigdolSoldiers = 175;
+const int cTechConscriptMigdolSoldiers = 176;
+const int cTechPriestEnableReal = 177;
+const int cTechPharaohFirstSpawn = 178;
+const int cTechPharaohRespawn = 179;
+const int cTechHandsOfThePharaoh = 180;
+const int cTechCitadelWall = 181;
+const int cTechBallistaTower = 182;
+const int cTechArchaicAgeNorse = 183;
+const int cTechClassicalAgeNorse = 184;
+const int cTechHeroicAgeNorse = 185;
+const int cTechMythicAgeNorse = 186;
+const int cTechArchaicAgeThor = 187;
+const int cTechClassicalAgeThor = 188;
+const int cTechHeroicAgeThor = 189;
+const int cTechMythicAgeThor = 190;
+const int cTechArchaicAgeOdin = 191;
+const int cTechClassicalAgeOdin = 192;
+const int cTechHeroicAgeOdin = 193;
+const int cTechMythicAgeOdin = 194;
+const int cTechRavenRespawn = 195;
+const int cTechRavenFirstSpawn = 196;
+const int cTechArchaicAgeLoki = 197;
+const int cTechClassicalAgeLoki = 198;
+const int cTechHeroicAgeLoki = 199;
+const int cTechMythicAgeLoki = 200;
+const int cTechArchaicAgeFreyr = 201;
+const int cTechFreyrTechCostBonus = 202;
+const int cTechClassicalAgeFreyr = 203;
+const int cTechHeroicAgeFreyr = 204;
+const int cTechMythicAgeFreyr = 205;
+const int cTechThorDwarfSpawn = 206;
+const int cTechHammerOfThunder = 207;
+const int cTechDwarvenWeapons = 208;
+const int cTechMeteoricIronArmor = 209;
+const int cTechDragonscaleShields = 210;
+const int cTechHamask = 211;
+const int cTechEyesInTheForest = 212;
+const int cTechFreyrsGift = 213;
+const int cTechClassicalAgeFreyja = 214;
+const int cTechClassicalAgeForseti = 215;
+const int cTechClassicalAgeHeimdall = 216;
+const int cTechClassicalAgeUllr = 217;
+const int cTechUllrHuskarlShadow = 218;
+const int cTechAsgardianBastionShadowHeroic = 219;
+const int cTechAsgardianBastionShadowMythic = 220;
+const int cTechHeroicAgeBragi = 221;
+const int cTechHeroicAgeSkadi = 222;
+const int cTechHeroicAgeNjord = 223;
+const int cTechHeroicAgeAegir = 224;
+const int cTechMythicAgeHel = 225;
+const int cTechMythicAgeBaldr = 226;
+const int cTechMythicAgeTyr = 227;
+const int cTechMythicAgeVidar = 228;
+const int cTechDisablot = 229;
+const int cTechThunderingHooves = 230;
+const int cTechSessrumnir = 231;
+const int cTechCaveTroll = 232;
+const int cTechHallOfThanes = 233;
+const int cTechDwarvenBreastplate = 234;
+const int cTechGjallarhorn = 235;
+const int cTechSafeguard = 236;
+const int cTechRigsthula = 237;
+const int cTechValgaldr = 238;
+const int cTechServantsOfGlory = 239;
+const int cTechRingOath = 240;
+const int cTechYdalir = 241;
+const int cTechCallOfValhalla = 242;
+const int cTechThurisazRune = 243;
+const int cTechSwineArray = 244;
+const int cTechLongSerpent = 245;
+const int cTechRime = 246;
+const int cTechHuntressAxe = 247;
+const int cTechWinterHarvest = 248;
+const int cTechArcticWinds = 249;
+const int cTechJotuns = 250;
+const int cTechRingGiver = 251;
+const int cTechVikings = 252;
+const int cTechWrathOfTheDeep = 253;
+const int cTechGraniteMaw = 254;
+const int cTechFeastsOfRenown = 255;
+const int cTechNineWaves = 256;
+const int cTechGraspOfRan = 257;
+const int cTechRampage = 258;
+const int cTechGraniteBlood = 259;
+const int cTechSonsOfSleipnir = 260;
+const int cTechDwarvenAuger = 261;
+const int cTechBerserkergang = 262;
+const int cTechBravery = 263;
+const int cTechTwilightOfTheGods = 264;
+const int cTechAvengingSpirit = 265;
+const int cTechSilentResolve = 266;
+const int cTechFuryOfTheFallen = 267;
+const int cTechLevyLonghouseSoldiers = 268;
+const int cTechConscriptLonghouseSoldiers = 269;
+const int cTechLevyGreatHallSoldiers = 270;
+const int cTechConscriptGreatHallSoldiers = 271;
+const int cTechLevyHillFortSoldiers = 272;
+const int cTechConscriptHillFortSoldiers = 273;
+const int cTechArchaicAgeAtlantean = 274;
+const int cTechClassicalAgeAtlantean = 275;
+const int cTechHeroicAgeAtlantean = 276;
+const int cTechMythicAgeAtlantean = 277;
+const int cTechArchaicAgeKronos = 278;
+const int cTechKronosExtraPromethean = 279;
+const int cTechKronosExtraAutomaton = 280;
+const int cTechClassicalAgeKronos = 281;
+const int cTechKronosExtraBehemoth = 282;
+const int cTechKronosExtraSatyr = 283;
+const int cTechHeroicAgeKronos = 284;
+const int cTechKronosExtraArgus = 285;
+const int cTechKronosExtraCentimanus = 286;
+const int cTechMythicAgeKronos = 287;
+const int cTechArchaicAgeOranos = 288;
+const int cTechClassicalAgeOranos = 289;
+const int cTechHeroicAgeOranos = 290;
+const int cTechMythicAgeOranos = 291;
+const int cTechArchaicAgeGaia = 292;
+const int cTechClassicalAgeGaia = 293;
+const int cTechHeroicAgeGaia = 294;
+const int cTechMythicAgeGaia = 295;
+const int cTechTemporalChaos = 296;
+const int cTechEmpyreanSpeed = 297;
+const int cTechChannels = 298;
+const int cTechClassicalAgePrometheus = 299;
+const int cTechClassicalAgeOceanus = 300;
+const int cTechClassicalAgeLeto = 301;
+const int cTechHeroicAgeHyperion = 302;
+const int cTechHeroicAgeTheia = 303;
+const int cTechHeroicAgeRheia = 304;
+const int cTechMythicAgeHekate = 305;
+const int cTechMythicAgeHelios = 306;
+const int cTechMythicAgeAtlas = 307;
+const int cTechAlluvialClay = 308;
+const int cTechHeartOfTheTitans = 309;
+const int cTechTheftOfFire = 310;
+const int cTechBiteOfTheShark = 311;
+const int cTechWeightlessMace = 312;
+const int cTechFrontlineHeroics = 313;
+const int cTechHephaestusRevenge = 314;
+const int cTechVolcanicForge = 315;
+const int cTechPerception = 316;
+const int cTechGemini = 317;
+const int cTechHeroicRenewal = 318;
+const int cTechSonsOfTheSun = 319;
+const int cTechPioneerOfTheSkies = 320;
+const int cTechPropheticSight = 321;
+const int cTechPoseidonsSecret = 322;
+const int cTechLanceOfStone = 323;
+const int cTechDaughtersOfTheSea = 324;
+const int cTechHornsOfConsecration = 325;
+const int cTechOrichalcumMail = 326;
+const int cTechRheiasGift = 327;
+const int cTechDaktyloi = 328;
+const int cTechAsperBlood = 329;
+const int cTechMythicRejuvenation = 330;
+const int cTechCelerity = 331;
+const int cTechHaloOfTheSun = 332;
+const int cTechPetrification = 333;
+const int cTechTitanomachy = 334;
+const int cTechGuardianOfIo = 335;
+const int cTechDevoteesOfAtlas = 336;
+const int cTechTitanShield = 337;
+const int cTechBronzeWall = 338;
+const int cTechIronWall = 339;
+const int cTechOrichalcumWall = 340;
+const int cTechLevyMainlineSoldiers = 341;
+const int cTechConscriptMainlineSoldiers = 342;
+const int cTechLevyCounterSoldiers = 343;
+const int cTechConscriptCounterSoldiers = 344;
+const int cTechLevyPalaceSoldiers = 345;
+const int cTechConscriptPalaceSoldiers = 346;
+const int cTechMasons = 347;
+const int cTechArchitects = 348;
+const int cTechFortifiedTownCenter = 349;
+const int cTechHusbandry = 350;
+const int cTechHuntingEquipment = 351;
+const int cTechPlow = 352;
+const int cTechIrrigation = 353;
+const int cTechFloodControl = 354;
+const int cTechHandAxe = 355;
+const int cTechBowSaw = 356;
+const int cTechCarpenters = 357;
+const int cTechPickaxe = 358;
+const int cTechShaftMine = 359;
+const int cTechQuarry = 360;
+const int cTechTaxCollectors = 361;
+const int cTechAmbassadors = 362;
+const int cTechCoinage = 363;
+const int cTechPurseSeine = 364;
+const int cTechSaltAmphora = 365;
+const int cTechEnclosedDeck = 366;
+const int cTechHeroicFleet = 367;
+const int cTechHeavyWarships = 368;
+const int cTechChampionWarships = 369;
+const int cTechConscriptSailors = 370;
+const int cTechStoneWall = 371;
+const int cTechFortifiedWall = 372;
+const int cTechWatchTower = 373;
+const int cTechGuardTower = 374;
+const int cTechSignalFires = 375;
+const int cTechCarrierPigeons = 376;
+const int cTechCrenellations = 377;
+const int cTechBoilingOil = 378;
+const int cTechOmniscience = 379;
+const int cTechCopperWeapons = 380;
+const int cTechBronzeWeapons = 381;
+const int cTechIronWeapons = 382;
+const int cTechCopperArmor = 383;
+const int cTechBronzeArmor = 384;
+const int cTechIronArmor = 385;
+const int cTechCopperShields = 386;
+const int cTechBronzeShields = 387;
+const int cTechIronShields = 388;
+const int cTechBurningPitch = 389;
+const int cTechBallistics = 390;
+const int cTechMediumInfantry = 391;
+const int cTechHeavyInfantry = 392;
+const int cTechChampionInfantry = 393;
+const int cTechMediumArchers = 394;
+const int cTechHeavyArchers = 395;
+const int cTechChampionArchers = 396;
+const int cTechMediumCavalry = 397;
+const int cTechHeavyCavalry = 398;
+const int cTechChampionCavalry = 399;
+const int cTechDraftHorses = 400;
+const int cTechEngineers = 401;
+const int cTechRelicAnkhofRa = 402;
+const int cTechRelicEyeOfHorus = 403;
+const int cTechRelicSistrumOfBast = 404;
+const int cTechRelicHeadOfOrpheus = 405;
+const int cTechRelicRingOfNibelung = 406;
+const int cTechRelicStaffOfDionysus = 407;
+const int cTechRelicFettersOfFenrir = 408;
+const int cTechRelicGungnirOdinsSpear = 409;
+const int cTechRelicKitharaOfApollo = 410;
+const int cTechRelicDwarvenHorseshoes = 411;
+const int cTechRelicBowOfArtemis = 412;
+const int cTechRelicScalesOfEchidna = 413;
+const int cTechRelicNoseOfTheSphinx = 414;
+const int cTechRelicArrowsOfAlfar = 415;
+const int cTechRelicArrowsOfHeracles = 416;
+const int cTechRelicGambanteinnOdinsWand = 417;
+const int cTechRelicBridleOfPegasus = 418;
+const int cTechBridleOfPegasusRespawn = 419;
+const int cTechRelicUllrsBow = 420;
+const int cTechRelicBlueCrystalShard = 421;
+const int cTechRelicArmorOfAchilles = 422;
+const int cTechRelicShipOfFingernails = 423;
+const int cTechRelicAdamantiteShingles = 424;
+const int cTechRelicEyeOfOrnlu = 425;
+const int cTechRelicTuskOfTheIronBoar = 426;
+const int cTechRelicPandorasBox = 427;
+const int cTechRelicThundercloudShawl = 428;
+const int cTechRelicHarmoniasNecklace = 429;
+const int cTechRelicDwarvenCalipers = 430;
+const int cTechRelicChariotOfCybele = 431;
+const int cTechGoldenLionsRespawn = 432;
+const int cTechRelicSkullsOfTheCercopes = 433;
+const int cTechRelicMonkeyRespawn = 434;
+const int cTechRelicCanopicJarOfImsety = 435;
+const int cTechRelicTowerOfSestus = 436;
+const int cTechRelicTrojanGateHinge = 437;
+const int cTechRelicGirdleOfHippolyta = 438;
+const int cTechRelicPygmalionsStatue = 439;
+const int cTechRelicBlackLotus = 440;
+const int cTechRelicHartersFolly = 441;
+const int cTechRelicScarabPendant = 442;
+const int cTechRelicHermesWingedSandals = 443;
+const int cTechRelicAnvilOfHephaestus = 444;
+const int cTechRelicPeltOfArgus = 445;
+const int cTechRelicOsebergWagon = 446;
+const int cTechRelicFlagstoneOfBuhen = 447;
+const int cTechRelicScalesOfCatoblepas = 448;
+const int cTechRelicTailOfCerberus = 449;
+const int cTechRelicBlanketOfEmpressZoe = 450;
+const int cTechRelicKhopeshOfHorus = 451;
+const int cTechRelicTitansTreasure = 452;
+const int cTechRelicGaiasBookOfKnowledge = 453;
+const int cTechRelicArchimedesLedger = 454;
+const int cTechRelicDemetersThrone = 455;
+const int cTechRelicHestiasHearth = 456;
+const int cTechRelicPtahsSceptre = 457;
+const int cTechRelicTyrfingAngantyrsSword = 458;
+const int cTechRelicSvadilfarisSledge = 459;
+const int cTechRelicRheiasCrown = 460;
+const int cTechRelicTextsOfImhotep = 461;
+const int cTechRelicCharonsObol = 462;
+const int cTechRelicHekatesTorches = 463;
+const int cTechRelicShenOfNekhbet = 464;
+const int cTechRelicCupOfDionysus = 465;
+const int cTechRelicShieldOfAthena = 466;
+const int cTechRelicCrownOfHera = 467;
+const int cTechRelicZeusThunderbolts = 468;
+const int cTechRelicRelicOfProsperity = 469;
+const int cTechRelicRelicOfBronze = 470;
+const int cTechRelicRelicOfEarthquake = 471;
+const int cTechRelicRelicOfAncestors = 472;
+const int cTechRelicRelicOfTornado = 473;
+const int cTechRelicGlaucusBookOfProphecies = 474;
+const int cTechRelicProwOfTheArgo = 475;
+const int cTechRelicGoldenCamelStatue = 476;
+const int cTechFlamingWeaponsActive = 477;
+const int cTechEclipseActive = 478;
+const int cTechVillagerDwarfToBerserk = 479;
+const int cTechVillagerNorseToBerserk = 480;
+const int cTechVillagerAtlanteanToHero = 481;
+const int cTechOracleToHero = 482;
+const int cTechKatapeltesToHero = 483;
+const int cTechTurmaToHero = 484;
+const int cTechMurmilloToHero = 485;
+const int cTechCheiroballistaToHero = 486;
+const int cTechContariusToHero = 487;
+const int cTechArcusToHero = 488;
+const int cTechDestroyerToHero = 489;
+const int cTechFanaticToHero = 490;
+const int cTechGiantSlayingBlades = 491;
+const int cTechOsmiumArmor = 492;
+const int cTechAsbestosShields = 493;
+const int cTechSuddenDeathStart = 494;
+const int cTechSuddenDeathCitadelNomad = 495;
+const int cTechUltraFastTraining = 496;
+const int cTechUltraHuntableResources = 497;
+const int cTechCheatFooty = 498;
+const int cTechCheatBigOsiris = 499;
+const int cTechCheatBigKronos = 500;
+const int cTechCheatBigPrometheus = 501;
+const int cTechCheatBigGaia = 502;
+const int cTechCheatIdleBolt = 503;
+const int cTechDummyAgeUpTech = 504;
+const int cNumberTechs = 505;
+
+//==============================================================================
+// Data effect constants.
+//==============================================================================
+const int cDataEffectHitpoints = 0;
+const int cDataEffectScale = 1;
+const int cDataEffectLOS = 2;
+const int cDataEffectWorkRate = 3;
+const int cDataEffectCost = 4;
+const int cDataEffectCarryCapacity = 5;
+const int cDataEffectMaximumVelocity = 6;
+const int cDataEffectMaximumRange = 7;
+const int cDataEffectTrainPoints = 8;
+const int cDataEffectResource = 9;
+const int cDataEffectInventoryAmount = 10;
+const int cDataEffectDamage = 11;
+const int cDataEffectMaxResource = 12;
+const int cDataEffectEnable = 13;
+const int cDataEffectAnimationRate = 14;
+const int cDataEffectPopulationCap = 15;
+const int cDataEffectSetCivilization = 16;
+const int cDataEffectMarket = 17;
+const int cDataEffectMaximumContained = 18;
+const int cDataEffectMinimumRange = 19;
+const int cDataEffectUpgradeLevel = 20;
+const int cDataEffectResourceTrickleRate = 21;
+const int cDataEffectMinimumResourceTrickleRate = 22;
+const int cDataEffectMaximumResourceTrickleRate = 23;
+const int cDataEffectDamageBonus = 24;
+const int cDataEffectTributePenalty = 25;
+const int cDataEffectPopulationCount = 26;
+const int cDataEffectPopulationCapAddition = 27;
+const int cDataEffectActionEnable = 28;
+const int cDataEffectLifespan = 29;
+const int cDataEffectRechargeTime = 30;
+const int cDataEffectAuxRechargeTime = 31;
+const int cDataEffectBuildLimit = 32;
+const int cDataEffectTrackRating = 33;
+const int cDataEffectBuildPoints = 34;
+const int cDataEffectUpdateVisual = 35;
+const int cDataEffectCostBuildingTechs = 36;
+const int cDataEffectCostBuildingUnits = 37;
+const int cDataEffectCostBuildingAll = 38;
+const int cDataEffectTacticEnable = 39;
+const int cDataEffectUnitRegenRate = 40;
+const int cDataEffectBlockTrainCount = 41;
+const int cDataEffectDamageArea = 42;
+const int cDataEffectSetAge = 43;
+const int cDataEffectGathererLimit = 44;
+const int cDataEffectAddTrain = 45;
+const int cDataEffectResearchPoints = 46;
+const int cDataEffectrevealLOS = 47;
+const int cDataEffectDamageCap = 48;
+const int cDataEffectWorkRateSpecific = 49;
+const int cDataEffectArmor = 50;
+const int cDataEffectBuildingWorkRate = 51;
+const int cDataEffectActionAdd = 52;
+const int cDataEffectDamageForAllHandLogicActions = 53;
+const int cDataEffectActionAddAttachingUnit = 54;
+const int cDataEffectSpeedModifier = 55;
+const int cDataEffectYield = 56;
+const int cDataEffectRateOfFire = 57;
+const int cDataEffectResourceReturn = 58;
+const int cDataEffectSnare = 59;
+const int cDataEffectAutoAttackType = 60;
+const int cDataEffectUnitRegenRateLimit = 61;
+const int cDataEffectEnableSharedBuildLimit = 62;
+const int cDataEffectSharedBuildLimitUnit = 63;
+const int cDataEffectAddSharedBuildLimitUnitType = 64;
+const int cDataEffectPartisanUnit = 65;
+const int cDataEffectGatherResourceOverride = 66;
+const int cDataEffectSetUnitType = 67;
+const int cDataEffectEnableDodge = 68;
+const int cDataEffectDodgeChance = 69;
+const int cDataEffectSetNextResearchFree = 70;
+const int cDataEffectSquareAura = 71;
+const int cDataEffectProtoActionAdd = 72;
+const int cDataEffectResourceReturnRate = 73;
+const int cDataEffectResourceReturnRateTotalCost = 74;
+const int cDataEffectEmpowerEnable = 75;
+const int cDataEffectEmpowerModify = 76;
+const int cDataEffectResourceByKBStat = 77;
+const int cDataEffectPlacementRulesOverride = 78;
+const int cDataEffectResourceByUnitCount = 79;
+const int cDataEffectEmpowerArea = 80;
+const int cDataEffectAddContainedType = 81;
+const int cDataEffectGarrisonBonusDamage = 82;
+const int cDataEffectDeadTransform = 83;
+const int cDataEffectDeadTransformBuildLimit = 84;
+const int cDataEffectDamageForAllRangedLogicActions = 85;
+const int cDataEffectPowerROF = 86;
+const int cDataEffectFreeRepair = 87;
+const int cDataEffectResourceByKBQuery = 88;
+const int cDataEffectForbidSpawnAction = 89;
+const int cDataEffectModifyRate = 90;
+const int cDataEffectFreeBuildRate = 91;
+const int cDataEffectFreeBuildPoints = 92;
+const int cDataEffectVeterancyEnable = 93;
+const int cDataEffectVeterancyBonus = 94;
+const int cDataEffectInvestmentAmount = 95;
+const int cDataEffectInvestmentCap = 96;
+const int cDataEffectInvestmentEnable = 97;
+const int cDataEffectAutoGatherBonus = 98;
+const int cDataEffectFakeConversion = 99;
+const int cDataEffectProtoUnitFlag = 100;
+const int cDataEffectPopulationLimit = 101;
+const int cDataEffectTradeRouteBonus = 102;
+const int cDataEffectTradeRouteBonusTeam = 103;
+const int cDataEffectResourceIfTechActive = 104;
+const int cDataEffectMarketReset = 105;
+const int cDataEffectTechCostAbsolute = 106;
+const int cDataEffectModifySpawn = 107;
+const int cDataEffectModifyReplacement = 108;
+const int cDataEffectGodPower = 109;
+const int cDataEffectCommandAdd = 110;
+const int cDataEffectCommandRemove = 111;
+const int cDataEffectRevealEnemyUI = 112;
+const int cDataEffectArmorSpecific = 113;
+const int cDataEffectArmorVulnerability = 114;
+const int cDataEffectRevealAllyUI = 115;
+const int cDataEffectPowerMaxUses = 116;
+const int cDataEffectMinWorkRate = 117;
+const int cDataEffectOnHitEffect = 118;
+const int cDataEffectOnDamageModify = 119;
+const int cDataEffectOnHitEffectDuration = 120;
+const int cDataEffectOnHitEffectActive = 121;
+const int cDataEffectBountyResourceEarningReward = 122;
+const int cDataEffectTimeShiftingConcurrentShifts = 123;
+const int cDataEffectTimeShiftingCost = 124;
+const int cDataEffectAccuracy = 125;
+const int cDataEffectNumberProjectiles = 126;
+const int cDataEffectFullCapacityMultiplier = 127;
+const int cDataEffectRechargeInit = 128;
+const int cDataEffectAuxRechargeInit = 129;
+const int cDataEffectRechargeType = 130;
+const int cDataEffectAuxRechargeType = 131;
+const int cDataEffectProjectile = 132;
+const int cDataEffectAdditionalScale = 133;
+const int cDataEffectObstructionRadiusX = 134;
+const int cDataEffectObstructionRadiusZ = 135;
+const int cDataEffectDoubleEffect = 136;
+const int cDataEffectWanderDistance = 137;
+const int cDataEffectGodPowerROF = 138;
+const int cDataEffectGodPowerCost = 139;
+const int cDataEffectPowerCost = 140;
+const int cDataEffectInitialPowerCost = 141;
+const int cDataEffectRepeatPowerCost = 142;
+const int cDataEffectTurnRate = 143;
+const int cDataEffectGodPowerCostFactor = 144;
+const int cDataEffectGodPowerROFFactor = 145;
+const int cDataEffectSelfDestructProtoAction = 146;
+const int cDataEffectDamageByCost = 147;
+const int cDataEffectDamageFlags = 148;
+const int cDataEffectAddDependentUnit = 149;
+const int cDataEffectOnHitEffectStatModify = 150;
+const int cDataEffectBoostRadius = 151;
+const int cDataEffectMovementType = 152;
+const int cDataEffectPerfectAccuracy = 153;
+const int cDataEffectInstantBallistics = 154;
+const int cDataEffectNumberBounces = 155;
+const int cDataEffectVolleyMode = 156;
+const int cDataEffectTrainingRate = 157;
+const int cDataEffectResearchRate = 158;
+const int cDataEffectDisplayNameID = 159;
+const int cDataEffectRolloverID = 160;
+const int cDataEffectNotificationOverride = 161;
+const int cDataEffectGlobalNotificationOverride = 162;
+const int cDataEffectIconOverrideTech = 163;
+const int cDataEffectTimeShiftingAdd = 164;
+const int cDataEffectDisplayedNumberProjectiles = 165;
+const int cDataEffectTechFlag = 166;
+const int cDataEffectOnHitEffectAttachBone = 167;
+const int cDataEffectHomingBallistics = 168;
+const int cDataEffectModifyRateCap = 169;
+const int cDataEffectAutoBuildRate = 170;
+const int cDataEffectPowerIconOverride = 171;
+const int cDataEffectOnHitEffectRate = 172;
+const int cDataEffectDisplayedRange = 173;
+const int cDataEffectGodPowerBlockRadius = 174;
+const int cNumberDataEffects = 175;
+
+//==============================================================================
+// God power constants.
+//==============================================================================
+const int cProtoPowerPassiveScourgeOfTheSkies = 0;
+const int cProtoPowerAbilityBellerophon = 1;
+const int cProtoPowerAbilityPerseus = 2;
+const int cProtoPowerAbilityPolyphemus = 3;
+const int cProtoPowerAbilityMinotaur = 4;
+const int cProtoPowerAbilityCentaur = 5;
+const int cProtoPowerAbilityCyclops = 6;
+const int cProtoPowerAbilityNemeanLion = 7;
+const int cProtoPowerAbilityManticore = 8;
+const int cProtoPowerAbilityHydra = 9;
+const int cProtoPowerAbilityScylla = 10;
+const int cProtoPowerAbilityMedusa = 11;
+const int cProtoPowerAbilityChimera = 12;
+const int cProtoPowerAbilityColossus = 13;
+const int cProtoPowerAbilityCarcinos = 14;
+const int cProtoPowerPassiveAnastrophe = 15;
+const int cProtoPowerPassiveSolarFlare = 16;
+const int cProtoPowerAbilityEmpower = 17;
+const int cProtoPowerAbilityConvertAnimal = 18;
+const int cProtoPowerAbilityEgyptianHeal = 19;
+const int cProtoPowerPassiveHeka = 20;
+const int cProtoPowerAbilitySphinx = 21;
+const int cProtoPowerAbilityAnubite = 22;
+const int cProtoPowerAbilityScarab = 23;
+const int cProtoPowerAbilityPetsuchos = 24;
+const int cProtoPowerRocLand = 25;
+const int cProtoPowerRocTakeoff = 26;
+const int cProtoPowerAbilityScorpionMan = 27;
+const int cProtoPowerAbilityMummy = 28;
+const int cProtoPowerAbilityAvenger = 29;
+const int cProtoPowerAbilityWarTurtle = 30;
+const int cProtoPowerAbilityPhoenix = 31;
+const int cProtoPowerAbilityPhoenixEgg = 32;
+const int cProtoPowerPassiveDivineShield = 33;
+const int cProtoPowerPassiveMandjet = 34;
+const int cProtoPowerPassiveDevotees = 35;
+const int cProtoPowerPassiveSolarBarque = 36;
+const int cProtoPowerPassiveFuneralBarge = 37;
+const int cProtoPowerPassiveSellSword = 38;
+const int cProtoPowerPassiveDeathlyDonative = 39;
+const int cProtoPowerPassiveHamask = 40;
+const int cProtoPowerPassiveValhallasChosen = 41;
+const int cProtoPowerPassiveNaturesEyes = 42;
+const int cProtoPowerPassiveViking = 43;
+const int cProtoPowerAbilityGullinbursti = 44;
+const int cProtoPowerAbilityTroll = 45;
+const int cProtoPowerAbilityEinheri = 46;
+const int cProtoPowerAbilityValkyrie = 47;
+const int cProtoPowerAbilityDraugr = 48;
+const int cProtoPowerAbilityBattleBoar = 49;
+const int cProtoPowerAbilityMountainGiantBludgeon = 50;
+const int cProtoPowerAbilityMountainGiantDwarvenPunt = 51;
+const int cProtoPowerAbilityMountainGiantPunt = 52;
+const int cProtoPowerAbilityMountainGiantFooty = 53;
+const int cProtoPowerAbilityFrostGiant = 54;
+const int cProtoPowerAbilityKrakenThrow = 55;
+const int cProtoPowerAbilityKrakenCapsize = 56;
+const int cProtoPowerAbilityRockGiantJotunmodr = 57;
+const int cProtoPowerAbilityRockGiantCavernousHunger = 58;
+const int cProtoPowerAbilityFireGiant = 59;
+const int cProtoPowerAbilityFenrisWolfBrood = 60;
+const int cProtoPowerAbilityJormunElver = 61;
+const int cProtoPowerAbilityNidhoggBlazingStrafe = 62;
+const int cProtoPowerAbilityNidhoggDivineProtection = 63;
+const int cProtoPowerAbilityFafnirAndvarisCurse = 64;
+const int cProtoPowerAbilityFafnirBillowingSmog = 65;
+const int cProtoPowerPassiveSkadisBreath = 66;
+const int cProtoPowerPassiveSkaldicInspiration = 67;
+const int cProtoPowerPassiveHealingSpring = 68;
+const int cProtoPowerPassiveRansNet = 69;
+const int cProtoPowerAbilityCarnivoraDevour = 70;
+const int cProtoPowerAbilityWaterCarnivoraSink = 71;
+const int cProtoPowerAbilityCarnivoraPull = 72;
+const int cProtoPowerAbilityCaladriaBurstHeal = 73;
+const int cProtoPowerAbilityCaladriaPacify = 74;
+const int cProtoPowerAbilityAutomaton = 75;
+const int cProtoPowerAbilityPromethean = 76;
+const int cProtoPowerAbilitySatyr = 77;
+const int cProtoPowerAbilityNereid = 78;
+const int cProtoPowerAbilityBehemoth = 79;
+const int cProtoPowerAbilityStymphalianBird = 80;
+const int cProtoPowerAbilityLampadesChaoticRealignment = 81;
+const int cProtoPowerAbilityLampadesTransfiguration = 82;
+const int cProtoPowerAbilityLampadesCausticity = 83;
+const int cProtoPowerAbilityCentimanus = 84;
+const int cProtoPowerAbilityArgus = 85;
+const int cProtoPowerAbilityTartarianSpawn = 86;
+const int cProtoPowerPassiveSolarFlame = 87;
+const int cProtoPowerPassiveTemporalScaffolding = 88;
+const int cProtoPowerPassiveLush = 89;
+const int cProtoPowerPassiveSerratedBlades = 90;
+const int cProtoPowerPassiveBattleFrenzy = 91;
+const int cProtoPowerPassivePetrifiedFrame = 92;
+const int cProtoPowerHeal = 93;
+const int cProtoPowerAbilityTitan = 94;
+const int cProtoPowerAbilityAutoScout = 95;
+const int cProtoPowerPassiveTitanicStature = 96;
+const int cProtoPowerPassiveTransportation = 97;
+const int cProtoPowerPassiveMannedEngine = 98;
+const int cProtoPowerPassiveWallBreaching = 99;
+const int cProtoPowerPassiveDivineImmunity = 100;
+const int cProtoPowerPassiveLifesteal = 101;
+const int cProtoPowerPassiveVenomous = 102;
+const int cProtoPowerPassiveSacredHands = 103;
+const int cProtoPowerPassiveWonderAge = 104;
+const int cProtoPowerAbilityOdysseusSPC = 105;
+const int cProtoPowerAbilityAjaxSPC = 106;
+const int cProtoPowerAbilityAjaxOlder = 107;
+const int cProtoPowerAbilityChironSPC = 108;
+const int cProtoPowerAbilityArkantos = 109;
+const int cProtoPowerAbilityArkantosUber = 110;
+const int cProtoPowerAbilityArkantosGod = 111;
+const int cProtoPowerAbilityShadeSPC = 112;
+const int cProtoPowerAbilityGargarensis = 113;
+const int cProtoPowerAbilityKamos = 114;
+const int cProtoPowerAbilityAmanra = 115;
+const int cProtoPowerAbilityAmanraOlder = 116;
+const int cProtoPowerAbilityKingFolstagFrigidBreath = 117;
+const int cProtoPowerAbilityKingFolstagFreezeTitan = 118;
+const int cProtoPowerAbilityGeneralMelagius = 119;
+const int cProtoPowerAbilityGuardian = 120;
+const int cProtoPowerAbilityGuardianBolt = 121;
+const int cProtoPowerAbilityBrokk = 122;
+const int cProtoPowerAbilityEitri = 123;
+const int cProtoPowerAbilityDwarven = 124;
+const int cProtoPowerAbilityFolstagFlagBearer = 125;
+const int cProtoPowerAbilityReginleifHeal = 126;
+const int cProtoPowerAbilityReginleifSeidr = 127;
+const int cProtoPowerAbilityKastorStun = 128;
+const int cProtoPowerAbilityKastorCharisma = 129;
+const int cProtoPowerAbilityTitanPrometheus = 130;
+const int cProtoPowerAbilityFireKing = 131;
+const int cProtoPowerBolt = 132;
+const int cProtoPowerSentinel = 133;
+const int cProtoPowerLure = 134;
+const int cProtoPowerRestoration = 135;
+const int cProtoPowerCeaseFire = 136;
+const int cProtoPowerPestilence = 137;
+const int cProtoPowerBronze = 138;
+const int cProtoPowerCurse = 139;
+const int cProtoPowerUnderworldPassage = 140;
+const int cProtoPowerPlentyVault = 141;
+const int cProtoPowerLightningStorm = 142;
+const int cProtoPowerEarthquake = 143;
+const int cProtoPowerRain = 144;
+const int cProtoPowerProsperity = 145;
+const int cProtoPowerVision = 146;
+const int cProtoPowerEclipse = 147;
+const int cProtoPowerShiftingSands = 148;
+const int cProtoPowerPlagueOfSerpents = 149;
+const int cProtoPowerLocustSwarm = 150;
+const int cProtoPowerAncestors = 151;
+const int cProtoPowerCitadel = 152;
+const int cProtoPowerSonOfOsiris = 153;
+const int cProtoPowerMeteor = 154;
+const int cProtoPowerTornado = 155;
+const int cProtoPowerDwarvenMine = 156;
+const int cProtoPowerSpy = 157;
+const int cProtoPowerGreatHunt = 158;
+const int cProtoPowerGullinbursti = 159;
+const int cProtoPowerForestFire = 160;
+const int cProtoPowerHealingSpring = 161;
+const int cProtoPowerUndermine = 162;
+const int cProtoPowerAsgardianBastion = 163;
+const int cProtoPowerFrost = 164;
+const int cProtoPowerFlamingWeapons = 165;
+const int cProtoPowerWalkingWoods = 166;
+const int cProtoPowerTempest = 167;
+const int cProtoPowerRagnarok = 168;
+const int cProtoPowerFimbulwinter = 169;
+const int cProtoPowerNidhogg = 170;
+const int cProtoPowerInferno = 171;
+const int cProtoPowerDeconstruction = 172;
+const int cProtoPowerShockwave = 173;
+const int cProtoPowerGaiaForest = 174;
+const int cProtoPowerCarnivora = 175;
+const int cProtoPowerValor = 176;
+const int cProtoPowerSpiderLair = 177;
+const int cProtoPowerTraitor = 178;
+const int cProtoPowerChaos = 179;
+const int cProtoPowerHesperidesTree = 180;
+const int cProtoPowerVortex = 181;
+const int cProtoPowerTartarianGate = 182;
+const int cProtoPowerImplode = 183;
+const int cProtoPowerTitanGate = 184;
+const int cProtoPowerChickenStorm = 185;
+const int cProtoPowerWalkingBerryBushes = 186;
+const int cProtoPowerGoatunheim = 187;
+const int cProtoPowerCeaseFire3Minutes = 188;
+const int cProtoPowerWalkingWoodsSingleTarget = 189;
+const int cProtoPowerBlessingOfZeus = 190;
+const int cProtoPowerWellOfUrd = 191;
+const int cProtoPowerMeteorSPC = 192;
+const int cProtoPowerChangeToValkyrie = 193;
+const int cProtoPowerChangeToChimera = 194;
+const int cProtoPowerChangeToCyclops = 195;
+const int cProtoPowerChangeToHydra = 196;
+const int cProtoPowerChangeToManticore = 197;
+const int cProtoPowerChangeToNemeanLion = 198;
+const int cProtoPowerLightningStormSPC = 199;
+const int cProtoPowerDeconstructWonder = 200;
+const int cProtoPowerSeedofGaia = 201;
+const int cProtoPowerTempestSPC = 202;
+const int cNumberProtoPowers = 203;
+
+//==============================================================================
+// Terrain type constants.
+//==============================================================================
+const int cTerrainDefault = 0;
+const int cTerrainDefaultError = 1;
+const int cTerrainDefaultBlack = 2;
+const int cTerrainGreekGrass1 = 3;
+const int cTerrainGreekGrass2 = 4;
+const int cTerrainGreekGrassRocks1 = 5;
+const int cTerrainGreekGrassRocks2 = 6;
+const int cTerrainGreekGrassDirt1 = 7;
+const int cTerrainGreekGrassDirt2 = 8;
+const int cTerrainGreekGrassDirt3 = 9;
+const int cTerrainGreekDirt1 = 10;
+const int cTerrainGreekDirt2 = 11;
+const int cTerrainGreekDirt3 = 12;
+const int cTerrainGreekDirtRocks1 = 13;
+const int cTerrainGreekDirtRocks2 = 14;
+const int cTerrainGreekRoad1 = 15;
+const int cTerrainGreekRoad2 = 16;
+const int cTerrainGreekRoadBurnt1 = 17;
+const int cTerrainGreekRoadBurnt2 = 18;
+const int cTerrainGreekForestDirt = 19;
+const int cTerrainGreekForestGrass = 20;
+const int cTerrainGreekForestPalmDirt = 21;
+const int cTerrainGreekForestPalmGrass = 22;
+const int cTerrainGreekRoadSnow = 23;
+const int cTerrainGreekSnowDirt1 = 24;
+const int cTerrainGreekSnowDirt2 = 25;
+const int cTerrainGreekSnowDirt3 = 26;
+const int cTerrainGreekSnow1 = 27;
+const int cTerrainGreekSnow2 = 28;
+const int cTerrainGreekSnowGrass1 = 29;
+const int cTerrainGreekSnowGrass2 = 30;
+const int cTerrainGreekSnowGrass3 = 31;
+const int cTerrainGreekSnowGrassRocks1 = 32;
+const int cTerrainGreekSnowGrassRocks2 = 33;
+const int cTerrainGreekSnowRocks1 = 34;
+const int cTerrainGreekSnowRocks2 = 35;
+const int cTerrainGreekForestSnow = 36;
+const int cTerrainHadesDirt1 = 37;
+const int cTerrainHadesDirt2 = 38;
+const int cTerrainHadesRoad1 = 39;
+const int cTerrainHadesRoad2 = 40;
+const int cTerrainHadesDirtRocks1 = 41;
+const int cTerrainHadesDirtRocks2 = 42;
+const int cTerrainHadesForestDirt = 43;
+const int cTerrainEgyptGrass1 = 44;
+const int cTerrainEgyptGrass2 = 45;
+const int cTerrainEgyptGrassRocks1 = 46;
+const int cTerrainEgyptGrassRocks2 = 47;
+const int cTerrainEgyptGrassDirt1 = 48;
+const int cTerrainEgyptGrassDirt2 = 49;
+const int cTerrainEgyptGrassDirt3 = 50;
+const int cTerrainEgyptSand1 = 51;
+const int cTerrainEgyptSand2 = 52;
+const int cTerrainEgyptSand3 = 53;
+const int cTerrainEgyptSavannah1 = 54;
+const int cTerrainEgyptSavannah2 = 55;
+const int cTerrainEgyptDirt1 = 56;
+const int cTerrainEgyptDirt2 = 57;
+const int cTerrainEgyptDirt3 = 58;
+const int cTerrainEgyptDirtRocks1 = 59;
+const int cTerrainEgyptDirtRocks2 = 60;
+const int cTerrainEgyptRoad1 = 61;
+const int cTerrainEgyptRoad2 = 62;
+const int cTerrainEgyptForestPalmDirt = 63;
+const int cTerrainEgyptForestPalmGrass = 64;
+const int cTerrainEgyptForestSavannah = 65;
+const int cTerrainNorseDirt1 = 66;
+const int cTerrainNorseDirtRocks1 = 67;
+const int cTerrainNorseDirtRocks2 = 68;
+const int cTerrainNorseGrass1 = 69;
+const int cTerrainNorseGrass2 = 70;
+const int cTerrainNorseGrassRocks1 = 71;
+const int cTerrainNorseGrassRocks2 = 72;
+const int cTerrainNorseGrassDirt1 = 73;
+const int cTerrainNorseGrassDirt2 = 74;
+const int cTerrainNorseGrassDirt3 = 75;
+const int cTerrainNorseSnowDirt1 = 76;
+const int cTerrainNorseSnowDirt2 = 77;
+const int cTerrainNorseSnowDirt3 = 78;
+const int cTerrainNorseSnow1 = 79;
+const int cTerrainNorseSnow2 = 80;
+const int cTerrainNorseSnowGrass1 = 81;
+const int cTerrainNorseSnowGrass2 = 82;
+const int cTerrainNorseSnowGrass3 = 83;
+const int cTerrainNorseSnowGrassRocks1 = 84;
+const int cTerrainNorseSnowGrassRocks2 = 85;
+const int cTerrainNorseSnowRocks1 = 86;
+const int cTerrainNorseSnowRocks2 = 87;
+const int cTerrainNorseRoadSnow1 = 88;
+const int cTerrainNorseRoadSnow2 = 89;
+const int cTerrainNorseRoad = 90;
+const int cTerrainNorseRoadDirt = 91;
+const int cTerrainNorseForestGrass1 = 92;
+const int cTerrainNorseForestSnow1 = 93;
+const int cTerrainMarshGrass1 = 94;
+const int cTerrainMarshGrass2 = 95;
+const int cTerrainMarshGrassRocks1 = 96;
+const int cTerrainMarshGrassRocks2 = 97;
+const int cTerrainMarshGrassDirt1 = 98;
+const int cTerrainMarshGrassDirt2 = 99;
+const int cTerrainMarshGrassDirt3 = 100;
+const int cTerrainMarshDirt1 = 101;
+const int cTerrainMarshDirtRocks1 = 102;
+const int cTerrainMarshDirtRocks2 = 103;
+const int cTerrainMarshRoad1 = 104;
+const int cTerrainMarshRoad2 = 105;
+const int cTerrainMarshForestGrass = 106;
+const int cTerrainMarshForestWet = 107;
+const int cTerrainMarshGrassWet1 = 108;
+const int cTerrainMarshGrassWet2 = 109;
+const int cTerrainMarshGrassWet3 = 110;
+const int cTerrainTundraDirt1 = 111;
+const int cTerrainTundraDirtRocks1 = 112;
+const int cTerrainTundraDirtRocks2 = 113;
+const int cTerrainTundraGrass1 = 114;
+const int cTerrainTundraGrass2 = 115;
+const int cTerrainTundraGrassRocks1 = 116;
+const int cTerrainTundraGrassRocks2 = 117;
+const int cTerrainTundraGrassDirt1 = 118;
+const int cTerrainTundraGrassDirt2 = 119;
+const int cTerrainTundraGrassDirt3 = 120;
+const int cTerrainTundraSnow1 = 121;
+const int cTerrainTundraSnow2 = 122;
+const int cTerrainTundraSnowDirt1 = 123;
+const int cTerrainTundraSnowDirt2 = 124;
+const int cTerrainTundraSnowDirt3 = 125;
+const int cTerrainTundraSnowGrass1 = 126;
+const int cTerrainTundraSnowGrass2 = 127;
+const int cTerrainTundraSnowGrass3 = 128;
+const int cTerrainTundraSnowGrassRocks1 = 129;
+const int cTerrainTundraSnowGrassRocks2 = 130;
+const int cTerrainTundraSnowRocks1 = 131;
+const int cTerrainTundraSnowRocks2 = 132;
+const int cTerrainTundraRoadSnow1 = 133;
+const int cTerrainTundraRoadSnow2 = 134;
+const int cTerrainTundraRoad1 = 135;
+const int cTerrainTundraRoad2 = 136;
+const int cTerrainTundraForestSnow1 = 137;
+const int cTerrainTundraForestGrass1 = 138;
+const int cTerrainCityTile1 = 139;
+const int cTerrainCityTileAtlantis1 = 140;
+const int cTerrainCityTileAtlantis2 = 141;
+const int cTerrainCityTileOlympus1 = 142;
+const int cTerrainCityTileWaterCorner1 = 143;
+const int cTerrainCityTileWaterCorner2 = 144;
+const int cTerrainCityTileWaterCorner3 = 145;
+const int cTerrainCityTileWaterCorner4 = 146;
+const int cTerrainCityTileWaterEdge1 = 147;
+const int cTerrainCityTileWaterEdge2 = 148;
+const int cTerrainCityTileWaterEnd1 = 149;
+const int cTerrainCityTileWaterEnd2 = 150;
+const int cTerrainCityTileWaterEnd3 = 151;
+const int cTerrainCityTileWaterEnd4 = 152;
+const int cTerrainCityTileWaterPool1 = 153;
+const int cTerrainGaiaCreep1 = 154;
+const int cTerrainGaiaCreep2 = 155;
+const int cTerrainGaiaForest1 = 156;
+const int cTerrainGaiaForest2 = 157;
+const int cTerrainGaiaRoad1 = 158;
+const int cTerrainGaiaRoad2 = 159;
+const int cTerrainGaiaSnow1 = 160;
+const int cTerrainGaiaSnow2 = 161;
+const int cTerrainAtlanteanGrass1 = 162;
+const int cTerrainAtlanteanGrass2 = 163;
+const int cTerrainAtlanteanGrassRocks1 = 164;
+const int cTerrainAtlanteanGrassRocks2 = 165;
+const int cTerrainAtlanteanGrassDirt1 = 166;
+const int cTerrainAtlanteanGrassDirt2 = 167;
+const int cTerrainAtlanteanGrassDirt3 = 168;
+const int cTerrainAtlanteanDirt1 = 169;
+const int cTerrainAtlanteanDirt2 = 170;
+const int cTerrainAtlanteanDirt3 = 171;
+const int cTerrainAtlanteanDirtRocks1 = 172;
+const int cTerrainAtlanteanDirtRocks2 = 173;
+const int cTerrainAtlanteanRoad1 = 174;
+const int cTerrainAtlanteanRoad2 = 175;
+const int cTerrainAtlanteanForestDirt = 176;
+const int cTerrainAtlanteanForestGrass = 177;
+const int cTerrainAtlanteanForestPalmDirt = 178;
+const int cTerrainAtlanteanForestPalmGrass = 179;
+const int cTerrain = 65536;
+const int cTerrainUnderwaterCoral1 = 131072;
+const int cTerrainUnderwaterCoral2 = 131073;
+const int cTerrainUnderwaterCoral3 = 131074;
+const int cTerrainUnderwaterCoral4 = 131075;
+const int cTerrainUnderwaterCoralDead1 = 131076;
+const int cTerrainUnderwaterCoralDead2 = 131077;
+const int cTerrainUnderwaterCoralDead3 = 131078;
+const int cTerrainUnderwaterIce1 = 131079;
+const int cTerrainUnderwaterIce2 = 131080;
+const int cTerrainUnderwaterIce3 = 131081;
+const int cTerrainUnderwaterRock1 = 131082;
+const int cTerrainUnderwaterRock2 = 131083;
+const int cTerrainUnderwaterRock3 = 131084;
+const int cTerrainUnderwaterRocksand1 = 131085;
+const int cTerrainUnderwaterRocksand2 = 131086;
+const int cTerrainUnderwaterRocksand3 = 131087;
+const int cTerrainDefaultBeachSnow1 = 196608;
+const int cTerrainGreekBeach1 = 196609;
+const int cTerrainGreekShore1 = 196610;
+const int cTerrainEgyptBeach1 = 196611;
+const int cTerrainEgyptShore1 = 196612;
+const int cTerrainNorseBeach1 = 196613;
+const int cTerrainNorseShore1 = 196614;
+const int cTerrainMarshShore1 = 196615;
+const int cTerrainMarshWet1 = 196616;
+const int cTerrainTundraBeach1 = 196617;
+const int cTerrainTundraShore1 = 196618;
+const int cTerrainHadesShore1 = 196619;
+const int cTerrainAtlanteanBeach1 = 196620;
+const int cTerrainAtlanteanShore1 = 196621;
+const int cTerrainDefaultBlackRock = 262144;
+const int cTerrainGreekCliff1 = 262145;
+const int cTerrainGreekCliff2 = 262146;
+const int cTerrainEgyptCliff1 = 262147;
+const int cTerrainEgyptCliff2 = 262148;
+const int cTerrainNorseCliff1 = 262149;
+const int cTerrainNorseCliff2 = 262150;
+const int cTerrainNorseCliffSnow1 = 262151;
+const int cTerrainNorseCliffSnow2 = 262152;
+const int cTerrainHadesCliff1 = 262153;
+const int cTerrainHadesCliff2 = 262154;
+const int cTerrainHadesLava1 = 262155;
+const int cTerrainHadesLava2 = 262156;
+const int cTerrainHadesLava3 = 262157;
+const int cTerrainHadesLava4 = 262158;
+const int cTerrainSPCMiningCliff1 = 262159;
+const int cTerrainSPCMiningCliff2 = 262160;
+const int cTerrainMarshCliff1 = 262161;
+const int cTerrainMarshCliff2 = 262162;
+const int cTerrainTundraCliff1 = 262163;
+const int cTerrainTundraCliff2 = 262164;
+const int cTerrainTundraCliffSnow1 = 262165;
+const int cTerrainTundraCliffSnow2 = 262166;
+const int cTerrainAtlanteanCliff1 = 262167;
+const int cTerrainAtlanteanCliff2 = 262168;
+const int cTerrainSPCHadesLava1 = 327680;
+const int cTerrainSPCHadesLava2 = 327681;
+const int cTerrainSPCHades1 = 327682;
+const int cTerrainSPCHades2 = 327683;
+const int cTerrainSPCHadesRoad1 = 327684;
+const int cTerrainSPCHadesRoad2 = 327685;
+const int cTerrainSPCHadesRocks1 = 327686;
+const int cTerrainSPCHadesRocks2 = 327687;
+const int cTerrainSPCMiningDirt1 = 327688;
+const int cTerrainSPCMiningDirtRocks1 = 327689;
+const int cTerrainSPCMiningDirtRocks2 = 327690;
+const int cTerrainDefaultIce1 = 327691;
+const int cTerrainDefaultIce2 = 327692;
+const int cTerrainDefaultIce3 = 327693;
+
+//==============================================================================
+// Water type constants.
+//==============================================================================
+const int cWaterGreekSeaAegean = 0;
+const int cWaterGreekSea = 1;
+const int cWaterGreekRiver = 2;
+const int cWaterGreekLake = 3;
+const int cWaterGreekHybrid = 4;
+const int cWaterGreekShallows = 5;
+const int cWaterHadesRiver = 6;
+const int cWaterEgyptSea = 7;
+const int cWaterEgyptRiver = 8;
+const int cWaterEgyptRiverNile = 9;
+const int cWaterEgyptWateringHole = 10;
+const int cWaterEgyptHybrid = 11;
+const int cWaterEgyptShallow = 12;
+const int cWaterEgyptRiverNileShallow = 13;
+const int cWaterNorseSea = 14;
+const int cWaterNorseSeaSnow = 15;
+const int cWaterNorseRiver = 16;
+const int cWaterNorseRiverDown = 17;
+const int cWaterNorseRiverSnow = 18;
+const int cWaterNorseLake = 19;
+const int cWaterNorseLakeSnow = 20;
+const int cWaterNorseHybrid = 21;
+const int cWaterNorseShallow = 22;
+const int cWaterMarshRiver = 23;
+const int cWaterMarshLake = 24;
+const int cWaterMarshHybrid = 25;
+const int cWaterMarshShallow = 26;
+const int cWaterTundraSea = 27;
+const int cWaterTundraSeaSnow = 28;
+const int cWaterTundraRiver = 29;
+const int cWaterTundraRiverSnow = 30;
+const int cWaterTundraLake = 31;
+const int cWaterTundraLakeSnow = 32;
+const int cWaterTundraHybrid = 33;
+const int cWaterTundraShallow = 34;
+const int cWaterAtlanteanSea = 35;
+const int cWaterAtlanteanRiver = 36;
+const int cWaterAtlanteanLake = 37;
+const int cWaterAtlanteanHybrid = 38;
+const int cWaterAtlanteanShallow = 39;
+const int cWaterGreekRiver90 = 40;
+const int cWaterEgyptLake = 41;
+
+//==============================================================================
+// Unit stance constants.
+//==============================================================================
+const int cUnitStanceAggressive = 0;
+const int cUnitStanceDefensive = 1;
+const int cUnitStancePassive = 2;
+const int cUnitStanceStandGround = 3;
+
+//==============================================================================
+// Player relation constants.
+//==============================================================================
+const int cPlayerRelationAny = 99999;
+const int cPlayerRelationSelf = 100000;
+const int cPlayerRelationAlly = 100001;
+const int cPlayerRelationEnemy = 100002;
+const int cPlayerRelationNeutral = 100003;
+const int cPlayerRelationEnemyNotGaia = 100004;
+const int cPlayerRelationAllyExcludingSelf = 100005;
+
+//==============================================================================
+// Resource sub-type constants.
+//==============================================================================
+const int cAIResourceSubTypeEasy = 0;
+const int cAIResourceSubTypeHerdable = 1;
+const int cAIResourceSubTypeHunt = 2;
+const int cAIResourceSubTypeHuntAggressive = 3;
+const int cAIResourceSubTypePredator = 4;
+const int cAIResourceSubTypeFarm = 5;
+const int cAIResourceSubTypeFish = 6;
+
+//==============================================================================
+// Target select factor constants.
+//==============================================================================
+const int cTSFactorDistance = 0;
+const int cTSFactorTotalResources = 1;
+const int cTSFactorTimeToDone = 2;
+const int cTSFactorDanger = 3;
+const int cTSFactorDistanceToEdge = 4;
+
+//==============================================================================
+// Escrow ID constants.
+//==============================================================================
+const int cRootEscrowID = 0;
+const int cEconomyEscrowID = 1;
+const int cMilitaryEscrowID = 2;
+const int cEmergencyEscrowID = -2;
+
+//==============================================================================
+// Micro flag constants.
+//==============================================================================
+const int cMicroNone = 0;
+const int cMicroPrioritizeTargets = 1;
+const int cMicroHuntMicro = 2;
+
+//==============================================================================
+// Micro level constants.
+//==============================================================================
+const int cMicroLevelNone = 0;
+const int cMicroLevelNormal = 2;
+const int cMicroLevelHigh = 3;
+
+//==============================================================================
+// Movement type constants.
+//==============================================================================
+const int cPassabilityNone = 0;
+const int cPassabilityLand = 1;
+const int cPassabilityWater = 2;
+const int cPassabilityAmphibious = 3;
+const int cPassabilityAir = 4;
+const int cPassabilityNonSolid = 8;
+const int cPassabilityAllowPlacementOnIce = 16;
+
+//==============================================================================
+// Unit state constants.
+//==============================================================================
+const int cUnitStateNone = 0;
+const int cUnitStateBuilding = 1;
+const int cUnitStateAlive = 2;
+const int cUnitStateDead = 4;
+const int cUnitStateQueued = 8;
+const int cUnitStateAny = 255;
+const int cUnitStateABQ = 11;
+
+//==============================================================================
+// Building placement orientation preference constants.
+//==============================================================================
+const int cBuildingPlacementOrientationPreferenceNone = -1;
+const int cBuildingPlacementOrientationPreferenceBack = 0;
+const int cBuildingPlacementOrientationPreferenceFront = 1;
+const int cBuildingPlacementOrientationPreferenceLeft = 2;
+const int cBuildingPlacementOrientationPreferenceRight = 3;
+
+//==============================================================================
+// Building placement type constants.
+//==============================================================================
+const int cBuildingPlacementPlacementTypeNone = -1;
+const int cBuildingPlacementPlacementTypeArea = 0;
+const int cBuildingPlacementPlacementTypeCenterPosition = 1;
+const int cBuildingPlacementPlacementTypeBase = 2;
+const int cBuildingPlacementPlacementTypeSocket = 3;
+
+//==============================================================================
+// Building placement state constants.
+//==============================================================================
+const int cBuildingPlacementPlacementStateNone = 0;
+const int cBuildingPlacementPlacementStateProgress = 1;
+const int cBuildingPlacementPlacementStateDone = 2;
+const int cBuildingPlacementPlacementStateFailed = 3;
+const int cBuildingPlacementPlacementStateStartFailed = 4;
+
+//==============================================================================
+// Building placement LOS constants.
+//==============================================================================
+const int cBuildingPlacementLOSNormal = 1;
+const int cBuildingPlacementFullVisible = 2;
+
+//==============================================================================
+// Building placement event constants.
+//==============================================================================
+const int cBuildingPlacementEventStateChanged = 0;
+
+//==============================================================================
+// Building placement influence constants.
+//==============================================================================
+const int cFalloffLinear = 0;
+const int cFalloffNone = 1;
+const int cFalloffLinearInverse = 2;
+
+//==============================================================================
+// Unit query constants.
+//==============================================================================
+const int cUnitQueryInvalidArmyID = -1002;
+const int cUnitQueryNoArmy = -1;
+const int cUnitQueryVisibleStateAllValid = -1;
+const int cUnitQueryVisibleStateVisible = 0;
+const int cUnitQueryVisibleStateUnderFog = 1;
+const int cUnitQueryVisibleStateNotVisible = 2;
+const int cUnitQueryVisibleStateSeeable = 3;
+const int cUnitQueryVisibleStateRecentPositionKnown = 4;
+const int cUnitQueryVisibleStateNoRecentPositionKnown = 5;
+
+//==============================================================================
+// Unit position constants.
+//==============================================================================
+const vector cNoRecentPositionKnown = vector(-10000.000000000,0.000000000,-10000.000000000);
+
+//==============================================================================
+// Resource constants.
+//==============================================================================
+const int cResourceGold = 0;
+const int cResourceWood = 1;
+const int cResourceFood = 2;
+const int cResourceFavor = 3;
+const int cAllResources = -1234;
+const int cNumberResources = 4;
+
+//==============================================================================
+// Tech status constants.
+//==============================================================================
+const int cTechStatusUnobtainable = 0;
+const int cTechStatusObtainable = 1;
+const int cTechStatusActive = 2;
+
+//==============================================================================
+// Attack route constants.
+//==============================================================================
+const int cAttackRouteFrontRight = 0;
+const int cAttackRouteRightFront = 1;
+const int cAttackRouteRightBack = 2;
+const int cAttackRouteBackRight = 3;
+const int cAttackRouteBackLeft = 4;
+const int cAttackRouteLeftBack = 5;
+const int cAttackRouteLeftFront = 6;
+const int cAttackRouteFrontLeft = 7;
+
+//==============================================================================
+// Area type constants.
+//==============================================================================
+const int cAreaTypeForest = 1;
+const int cAreaTypeWater = 2;
+const int cAreaTypeImpassableLand = 3;
+const int cAreaTypePassableLand = 6;
+const int cAreaTypeGold = 4;
+const int cAreaTypeSettlement = 5;
+
+//==============================================================================
+// Area group constants.
+//==============================================================================
+const int cAreaGroupTypeLand = 0;
+const int cAreaGroupTypeWater = 1;
+const int cAreaGroupTypeImpassableLand = 2;
+
+//==============================================================================
+// Tactic constants.
+//==============================================================================
+const int cTacticDefault = 0;
+const int cTacticUnpack = 1;
+const int cTacticPack = 2;
+const int cTacticNormal = 3;
+
+//==============================================================================
+// XS AI handler type constants.
+//==============================================================================
+const int cXSResignQuestionHandler = 0;
+const int cXSPlayerAgeHandler = 1;
+const int cXSGodPowerGrantedHandler = 2;
+const int cXSGodPowerCastedHandler = 3;
+const int cXSAbilityHandler = 4;
+const int cXSRelicPickedUpHandler = 5;
+const int cXSRelicGarrisonedHandler = 6;
+const int cXSResourceBuildPlanHandler = 7;
+const int cXSAutoCreatePlanHandler = 8;
+const int cXSBuildingPlacementStateHandler = 9;
+const int cXSKOTHStartHandler = 10;
+
+//==============================================================================
+// Action type constants.
+//==============================================================================
+const int cActionTypeBuild = 0;
+const int cActionTypeDeath = 1;
+const int cActionTypeDecay = 2;
+const int cActionTypeGather = 3;
+const int cActionTypeHandAttack = 4;
+const int cActionTypeHeal = 5;
+const int cActionTypeHunting = 6;
+const int cActionTypeIdle = 7;
+const int cActionTypeMove = 8;
+const int cActionTypeMoveByGroup = 9;
+const int cActionTypeRangedAttack = 10;
+const int cActionTypeRepair = 11;
+const int cActionTypeResearch = 12;
+const int cActionTypeTrain = 13;
+const int cActionTypeWork = 14;
+const int cActionTypeAttack = 15;
+const int cActionTypeGatherPoint = 16;
+const int cActionTypeDropoff = 17;
+const int cActionTypeGuard = 18;
+const int cActionTypeExplore = 19;
+const int cActionTypeCorpseDecay = 20;
+const int cActionTypeTrade = 21;
+const int cActionTypeEnter = 22;
+const int cActionTypePickup = 23;
+const int cActionTypeAutoConvert = 24;
+const int cActionTypeBirth = 25;
+const int cActionTypeEmpower = 26;
+const int cActionTypeAttach = 27;
+const int cActionTypeTownBell = 28;
+const int cActionTypeAutoGather = 29;
+const int cActionTypeDiscover = 30;
+const int cActionTypeEject = 31;
+const int cActionTypeSpawn = 32;
+const int cActionTypeMaintain = 33;
+const int cActionTypeTreeDeath = 34;
+const int cActionTypeDeath2 = 35;
+const int cActionTypeBoatManager = 36;
+const int cActionTypeOverrideAnimation = 37;
+const int cActionTypeBirdMove = 38;
+const int cActionTypeBombardAttack = 39;
+const int cActionTypeBroadsideAttack = 40;
+const int cActionTypeLimber = 41;
+const int cActionTypeKnockout = 42;
+const int cActionTypeModify = 43;
+const int cActionTypeFindNewWorld = 44;
+const int cActionTypePlantFlag = 45;
+const int cActionTypeGraze = 46;
+const int cActionTypeVolley = 47;
+const int cActionTypeAssault = 48;
+const int cActionTypeCharge = 49;
+const int cActionTypeDefend = 50;
+const int cActionTypeDefault = 51;
+const int cActionTypeAutoRepair = 52;
+const int cActionTypeAbility = 53;
+const int cActionTypeCover = 54;
+const int cActionTypeCommandResearch = 55;
+const int cActionTypeBombard = 56;
+const int cActionTypeSacrifice = 57;
+const int cActionTypeBlendMove = 58;
+const int cActionTypeStateAnim = 59;
+const int cActionTypeGroup = 60;
+const int cActionTypeAircraft = 61;
+const int cActionTypeAutoBuild = 62;
+const int cActionTypeGate = 63;
+const int cActionTypeTruckAttack = 64;
+const int cActionTypeAutoRangedModify = 65;
+const int cActionTypeLikeBonus = 66;
+const int cActionTypeStealth = 67;
+const int cActionTypeStunAttack = 68;
+const int cActionTypeModifyGather = 69;
+const int cActionTypeEscapeToTC = 70;
+const int cActionTypeNoWork = 71;
+const int cActionTypeConvert = 72;
+const int cActionTypeAttaching = 73;
+const int cActionTypeResourceProxy = 74;
+const int cActionTypeSocialise = 75;
+const int cActionTypeCastPower = 76;
+const int cActionTypeAutoStealth = 77;
+const int cActionTypeDelayedTransform = 78;
+const int cActionTypeRoundelAttack = 79;
+const int cActionTypeRoundelMultiAttack = 80;
+const int cActionTypeRoundelPierceAttack = 81;
+const int cActionTypeRoundelExplodeAttack = 82;
+const int cActionTypeRoundelCascadeAttack = 83;
+const int cActionTypeGore = 84;
+const int cActionTypeThrown = 85;
+const int cActionTypeThrow = 86;
+const int cActionTypeEat = 87;
+const int cActionTypeJumpAttack = 88;
+const int cActionTypeWhirlwindAttack = 89;
+const int cActionTypeBoost = 90;
+const int cActionTypeChainAttack = 91;
+const int cActionTypeFreeze = 92;
+const int cActionTypeIdleStatBonus = 93;
+const int cActionTypeLinearAreaAttack = 94;
+const int cActionTypeBuckAttack = 95;
+const int cActionTypeBurstHeal = 96;
+const int cActionTypeUnbuild = 97;
+const int cActionTypeRecoverableDeath = 98;
+const int cActionTypeSmartDropsite = 99;
+const int cActionTypeAutoRangedAttach = 100;
+const int cActionTypeSelfModify = 101;
+const int cActionTypeAutoBoost = 102;
+const int cActionTypeAoEAttack = 103;
+const int cActionTypeDistanceModify = 104;
+
+//==============================================================================
+// Trigger AI variable constants.
+//==============================================================================
+const int cNumberTriggerAIVariableInt = 0;
+
+const int cNumberTriggerAIVariableBool = 0;
+
+const int cNumberTriggerAIVariableString = 0;
+
+const int cNumberTriggerAIVariableVector = 0;
+
+const int cNumberTriggerAIVariableFloat = 0;
+
+
+//==============================================================================
+// Player communication constants.
+//==============================================================================
+const int cAICommPromptToAllyCompletedTownCenter = 0;
+const int cAICommPromptToEverybodyLostAllVillagers = 1;
+const int cAICommPromptToEnemyOutnumbered = 2;
+const int cAICommPromptToEnemyWhenGameStarts = 3;
+const int cAICommPromptToEverybodyGenericGodPower = 4;
+const int cAICommPromptToEnemyOffensiveGodPower = 5;
+const int cAICommPromptToEverybodyEconomicGodPower = 6;
+const int cAICommPromptToEnemyILostTownCenterButStillHaveOne = 7;
+const int cAICommPromptToEnemyILostMyLastTownCenter = 8;
+const int cAICommPromptToEnemyTheyLostTheirFinalTownCenter = 9;
+const int cAICommPromptToEnemyTheyAreBehindInAge = 10;
+const int cAICommPromptToEnemyIAmBehindInAge = 11;
+const int cAICommPromptToEnemyTheyLostTheirWonder = 12;
+const int cAICommPromptToEnemyTheyAreBuildingWalls = 13;
+const int cAICommPromptToEnemyIStartAnAttack = 14;
+const int cAICommPromptToAllyIAmAttackingHere = 15;
+const int cAICommPromptToEnemyIRetreat = 16;
+const int cAICommPromptToAllyINeedHelp = 17;
+const int cAICommPromptToEnemyITookARelic = 18;
+const int cAICommPromptToAllyITookARelic = 19;
+const int cAICommPromptToPlayerAskToResign = 20;
+
+//==============================================================================
+// AI plan types.
+//==============================================================================
+const int cPlanDefend = 0;
+const int cPlanGodPower = 1;
+const int cPlanBuild = 2;
+const int cPlanTrain = 3;
+const int cPlanResearch = 4;
+const int cPlanAttack = 5;
+const int cPlanGather = 6;
+const int cPlanExplore = 7;
+const int cPlanData = 8;
+const int cPlanGarrison = 9;
+const int cPlanFish = 10;
+const int cPlanTransport = 11;
+const int cPlanEmpower = 12;
+const int cPlanReserve = 13;
+const int cPlanTrade = 14;
+const int cPlanBuildWall = 15;
+const int cPlanRepair = 16;
+
+//==============================================================================
+// AI plan states.
+//==============================================================================
+const int cPlanStateNone = 0;
+const int cPlanStateDone = 1;
+const int cPlanStateFailed = 2;
+const int cPlanStateBuild = 3;
+const int cPlanStateGather = 4;
+const int cPlanStatePlace = 5;
+const int cPlanStateExplore = 6;
+const int cPlanStateTrain = 7;
+const int cPlanStateResearch = 8;
+const int cPlanStateAttack = 9;
+const int cPlanStateGoto = 10;
+const int cPlanStateEmpower = 11;
+const int cPlanStateEnter = 12;
+const int cPlanStateExit = 13;
+const int cPlanStateEvaluate = 14;
+const int cPlanStateRetreat = 15;
+const int cPlanStateWorking = 16;
+const int cPlanStateTransport = 17;
+const int cPlanStateDualPlace = 18;
+const int cPlanStateWait = 19;
+const int cPlanStateCast = 20;
+const int cPlanStateVillagerAttack = 21;
+const int cPlanStateGatherResources = 22;
+const int cPlanStateIdle = 23;
+
+//==============================================================================
+// AI base plan events.
+//==============================================================================
+const int cPlanEventStateChange = 0;
+
+//==============================================================================
+// Train plan event constants.
+//==============================================================================
+const int cTrainPlanEventUnitTrained = 1;
+
+//==============================================================================
+// Gather plan event constants.
+//==============================================================================
+const int cGatherPlanEventResourceUpdate = 1;
+const int cGatherPlanEventOnBuildPlanCreate = 2;
+
+//==============================================================================
+// Empower plan event constants.
+//==============================================================================
+const int cEmpowerPlanEventOnTargetSwitch = 1;
+
+//==============================================================================
+// Trade plan event constants.
+//==============================================================================
+const int cTradePlanEventCantPath = 1;
+
+//==============================================================================
+// AI Defend plan constants.
+//==============================================================================
+const int cDefendPlanTargetMode = 0; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanTargetPlayerID = 1; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanTargetBaseID = 2; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanTargetPoint = 3; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanTargetIDs = 4; // (RO = 1, AC = 1, Max = -1).
+const int cDefendPlanEngageRange = 5; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanTargetUnitTypes = 6; // (RO = 0, AC = 1, Max = -1).
+const int cDefendPlanGatherPoint = 7; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanGatherDistance = 8; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanGatherWaitForAllUnits = 9; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanDoneMode = 10; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanNoTargetStartTime = 11; // (RO = 1, AC = 1, Max = 1).
+const int cDefendPlanNoTargetTimeout = 12; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanGatherPercentage = 13; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanPatrol = 14; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanPatrolWaypoints = 15; // (RO = 0, AC = 1, Max = -1).
+const int cDefendPlanPatrolCurrentWaypoint = 16; // (RO = 0, AC = 1, Max = 1).
+const int cDefendPlanMovementIntervalTime = 17; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// AI GodPower plan constants.
+//==============================================================================
+const int cGodPowerPlanPowerProtoID = 0; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanEvaluationModel = 1; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanTargetingModel = 2; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanBPID = 3; // (RO = 0, AC = 1, Max = 2).
+const int cGodPowerPlanAutoCast = 4; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanTargetLocation = 5; // (RO = 0, AC = 1, Max = 2).
+const int cGodPowerPlanTargetUnit = 6; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanRequiresCombatPlan = 7; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanCombatPlanID = 8; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanQueryID = 9; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanQueryMinimumHitpoints = 10; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanQueryMinimumCombinedHitpoints = 11; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanQueryMinimumCount = 12; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanOwnArmyMinimumPercentHealth = 13; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanOwnArmyMaximumPercentHealth = 14; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanOwnArmyMinimumCombinedHitpoints = 15; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanOwnArmyMinimumCount = 16; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanCastAttempts = 17; // (RO = 1, AC = 1, Max = 1).
+const int cGodPowerPlanMaxCastAttempts = 18; // (RO = 0, AC = 1, Max = 1).
+const int cGodPowerPlanUnrecoverableFail = 19; // (RO = 1, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Build plan constants.
+//==============================================================================
+const int cBuildPlanBuildingPlacementID = 0; // (RO = 0, AC = 1, Max = 1).
+const int cBuildPlanBuildingTypeID = 1; // (RO = 0, AC = 1, Max = 1).
+const int cBuildPlanFoundationID = 2; // (RO = 1, AC = 1, Max = 1).
+const int cBuildPlanFailOnUnaffordable = 3; // (RO = 0, AC = 1, Max = 1).
+const int cBuildPlanRetries = 4; // (RO = 0, AC = 1, Max = 1).
+const int cBuildPlanMaxRetries = 5; // (RO = 0, AC = 1, Max = 1).
+const int cBuildPlanFailureCause = 6; // (RO = 1, AC = 1, Max = 1).
+const int cBuildPlanMaxCanPaths = 7; // (RO = 0, AC = 1, Max = 1).
+const int cBuildPlanCanPathStartIndex = 8; // (RO = 0, AC = 1, Max = 1).
+const int cBuildPlanDoneWhenFoundationPlaced = 9; // (RO = 0, AC = 1, Max = 1).
+const int cBuildPlanNoUnitTimer = 10; // (RO = 1, AC = 1, Max = 1).
+const int cBuildPlanNoUnitTimeout = 11; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Train plan constants.
+//==============================================================================
+const int cTrainPlanBuildingID = 0; // (RO = 0, AC = 1, Max = -1).
+const int cTrainPlanNumberToTrain = 1; // (RO = 0, AC = 1, Max = 1).
+const int cTrainPlanNumberToMaintain = 2; // (RO = 0, AC = 1, Max = 1).
+const int cTrainPlanNumberTrained = 3; // (RO = 1, AC = 1, Max = 1).
+const int cTrainPlanUnitType = 4; // (RO = 0, AC = 1, Max = 1).
+const int cTrainPlanBuildFromType = 5; // (RO = 0, AC = 1, Max = 1).
+const int cTrainPlanTrainedUnitID = 6; // (RO = 1, AC = 0, Max = -1).
+const int cTrainPlanFrequency = 7; // (RO = 0, AC = 1, Max = 1).
+const int cTrainPlanUseMultipleBuildings = 8; // (RO = 0, AC = 1, Max = 1).
+const int cTrainPlanGatherPoint = 9; // (RO = 0, AC = 1, Max = 1).
+const int cTrainPlanGatherTargetID = 10; // (RO = 0, AC = 1, Max = 1).
+const int cTrainPlanMaxQueueSize = 11; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Research plan constants.
+//==============================================================================
+const int cResearchPlanTechID = 0; // (RO = 0, AC = 1, Max = 1).
+const int cResearchPlanResearcherID = 1; // (RO = 0, AC = 1, Max = 1).
+const int cResearchPlanBuildingTypeID = 2; // (RO = 0, AC = 1, Max = 1).
+const int cResearchPlanDestroyWhenBuildingIsGone = 3; // (RO = 0, AC = 1, Max = 1).
+const int cResearchPlanIsProtoUnitCommand = 4; // (RO = 1, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Attack plan constants.
+//==============================================================================
+const int cAttackPlanAttackRouteID = 0; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanPersistentAttackRoute = 1; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanAttackRoutePattern = 2; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanAttackPathID = 3; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanTargetMode = 4; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanTargetPlayerID = 5; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanTargetBaseID = 6; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanTargetPoint = 7; // (RO = 0, AC = 1, Max = -1).
+const int cAttackPlanCurrentTargetPointIndex = 8; // (RO = 1, AC = 1, Max = 1).
+const int cAttackPlanTargetIDs = 9; // (RO = 1, AC = 1, Max = -1).
+const int cAttackPlanTargetUnitTypes = 10; // (RO = 0, AC = 1, Max = -1).
+const int cAttackPlanAttackModeEngageRange = 11; // (RO = 0, AC = 1, Max = -1).
+const int cAttackPlanAttackModeMaxChaseDistance = 12; // (RO = 0, AC = 1, Max = -1).
+const int cAttackPlanGatherPoint = 13; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanGatherDistance = 14; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanGatherStartTime = 15; // (RO = 1, AC = 1, Max = 1).
+const int cAttackPlanGatherWaitTime = 16; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanGatherWaitForAllUnits = 17; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanAllowMoreUnitsDuringAttack = 18; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanDoneMode = 19; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanNoTargetStartTime = 20; // (RO = 1, AC = 1, Max = 1).
+const int cAttackPlanNoTargetTimeout = 21; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanMovementIntervalTime = 22; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanMovementTypeFlags = 23; // (RO = 0, AC = 1, Max = 1).
+const int cAttackPlanAttackAnchorPoint = 24; // (RO = 1, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Gather plan constants.
+//==============================================================================
+const int cGatherPlanKBResourceID = 0; // (RO = 0, AC = 1, Max = 1).
+const int cGatherPlanResourceType = 1; // (RO = 0, AC = 1, Max = 1).
+const int cGatherPlanResourceSubType = 2; // (RO = 0, AC = 1, Max = 1).
+const int cGatherPlanBreakDownID = 3; // (RO = 0, AC = 1, Max = 1).
+const int cGatherPlanResourceUnitTypeFilter = 4; // (RO = 0, AC = 1, Max = 1).
+const int cGatherPlanFindNewResourceInterval = 5; // (RO = 0, AC = 1, Max = 1).
+const int cGatherPlanQuitWhenResourceIsInvalid = 6; // (RO = 0, AC = 1, Max = 1).
+const int cGatherPlanMaximumGatherDistance = 7; // (RO = 0, AC = 1, Max = 1).
+const int cGatherPlanAutoBuildDropsite = 8; // (RO = 0, AC = 1, Max = 1).
+const int cGatherPlanDropsitePUID = 9; // (RO = 1, AC = 1, Max = 1).
+const int cGatherPlanDropsiteID = 10; // (RO = 1, AC = 1, Max = 1).
+const int cGatherPlanFailsafeBuild = 11; // (RO = 1, AC = 1, Max = 1).
+const int cGatherPlanDangerTimer = 12; // (RO = 1, AC = 1, Max = 1).
+const int cGatherPlanDangerTimeout = 13; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Explore plan constants.
+//==============================================================================
+const int cExplorePlanLOSMultiplier = 0; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanLoopStartPoint = 1; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanDoLoops = 2; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanDoneLoops = 3; // (RO = 1, AC = 1, Max = 1).
+const int cExplorePlanNumberOfLoops = 4; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanPointsInLoop = 5; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanLoopStartingSize = 6; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanAvoidingAttackedAreas = 7; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanReExploreAreas = 8; // (RO = 1, AC = 1, Max = 1).
+const int cExplorePlanOutpostPUID = 9; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanBuildPosition = 10; // (RO = 1, AC = 1, Max = 1).
+const int cExplorePlanCanBuildOutpost = 11; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanHandleDamageTime = 12; // (RO = 1, AC = 1, Max = 1).
+const int cExplorePlanHandleDamageFrequency = 13; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanQuitWhenPointIsVisible = 14; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanQuitWhenPointIsVisiblePt = 15; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanMasterExploreAreasPlan = 16; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanStopLOSPercentage = 17; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanAggressiveScouts = 18; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanExploreAreaGroupIDs = 19; // (RO = 0, AC = 1, Max = -1).
+const int cExplorePlanAreaPathWaypoints = 20; // (RO = 1, AC = 1, Max = -1).
+const int cExplorePlanExploreAreaIDs = 21; // (RO = 0, AC = 1, Max = -1).
+const int cExplorePlanExploreAreaIDsCurrentIndex = 22; // (RO = 1, AC = 1, Max = 1).
+const int cExplorePlanTargetIDs = 23; // (RO = 1, AC = 1, Max = -1).
+const int cExplorePlanEngageRange = 24; // (RO = 0, AC = 1, Max = 1).
+const int cExplorePlanTargetUnitTypes = 25; // (RO = 0, AC = 1, Max = -1).
+
+//==============================================================================
+// AI Garrison plan constants.
+//==============================================================================
+const int cGarrisonPlanNeverUngarrison = 0; // (RO = 0, AC = 1, Max = 1).
+const int cGarrisonPlanSearchRadius = 1; // (RO = 0, AC = 1, Max = 1).
+const int cGarrisonPlanDangerScanRadius = 2; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Fish plan constants.
+//==============================================================================
+const int cFishPlanWaterGroupID = 0; // (RO = 0, AC = 1, Max = 1).
+const int cFishPlanDockID = 1; // (RO = 0, AC = 1, Max = 1).
+const int cFishPlanResourceType = 2; // (RO = 0, AC = 1, Max = 1).
+const int cFishPlanResourceSubType = 3; // (RO = 0, AC = 1, Max = 1).
+const int cFishPlanBreakDownID = 4; // (RO = 0, AC = 1, Max = 1).
+const int cFishPlanNoDamageTakenRetreatTimeout = 5; // (RO = 0, AC = 1, Max = 1).
+const int cFishPlanStartRetreatTime = 6; // (RO = 1, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Transport plan constants.
+//==============================================================================
+const int cTransportPlanTransportID = 0; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanTransportTypeID = 1; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanGatherPoint = 2; // (RO = 0, AC = 1, Max = -1).
+const int cTransportPlanTargetPoint = 3; // (RO = 0, AC = 1, Max = -1).
+const int cTransportPlanGatherAreaGroup = 4; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanTargetAreaGroup = 5; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanGatherArea = 6; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanTargetArea = 7; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanPathType = 8; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanPathPlanned = 9; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanReturnWhenDone = 10; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanMaximizeXportMovement = 11; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanUnitsMoved = 12; // (RO = 1, AC = 0, Max = -1).
+const int cTransportPlanIgnoreAreaIDs = 13; // (RO = 0, AC = 1, Max = -1).
+const int cTransportPlanBestDangerArea = 14; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanBestDangerValue = 15; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanDropOffPoint = 16; // (RO = 0, AC = 1, Max = -1).
+const int cTransportPlanPersistent = 17; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanMiddleAreaGroups = 18; // (RO = 0, AC = 1, Max = -1).
+const int cTransportPlanTakeMoreUnits = 19; // (RO = 0, AC = 1, Max = 1).
+const int cTransportPlanTransportPath = 20; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Empower plan constants.
+//==============================================================================
+const int cEmpowerPlanTargetID = 0; // (RO = 0, AC = 1, Max = 1).
+const int cEmpowerPlanTargetTypeID = 1; // (RO = 0, AC = 1, Max = 1).
+const int cEmpowerPlanRequiresTargetUsedByAnotherPlan = 2; // (RO = 0, AC = 1, Max = 1).
+const int cEmpowerPlanNoTargetUnitTimer = 3; // (RO = 1, AC = 1, Max = 1).
+const int cEmpowerPlanNoTargetUnitRemovalTimeout = 4; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Reserve plan constants.
+//==============================================================================
+const int cReservePlanHandleDamage = 0; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Trade plan constants.
+//==============================================================================
+const int cTradePlanTargetUnitTypeID = 0; // (RO = 0, AC = 1, Max = 1).
+const int cTradePlanTargetUnitID = 1; // (RO = 0, AC = 1, Max = 1).
+const int cTradePlanAreaGroupID = 2; // (RO = 0, AC = 1, Max = 1).
+const int cTradePlanMarketID = 3; // (RO = 0, AC = 1, Max = 1).
+const int cTradePlanUpdateTarget = 4; // (RO = 0, AC = 1, Max = 1).
+const int cTradePlanDeleteCantPathToTC = 5; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// AI BuildWall plan constants.
+//==============================================================================
+const int cBuildWallPlanWallType = 0; // (RO = 0, AC = 1, Max = 1).
+const int cBuildWallPlanWallStart = 1; // (RO = 0, AC = 1, Max = 1).
+const int cBuildWallPlanWallEnd = 2; // (RO = 0, AC = 1, Max = 1).
+const int cBuildWallPlanWallRingCenterPoint = 3; // (RO = 0, AC = 1, Max = 1).
+const int cBuildWallPlanWallRingRadius = 4; // (RO = 0, AC = 1, Max = 1).
+const int cBuildWallPlanNumberOfGates = 5; // (RO = 0, AC = 1, Max = 1).
+const int cBuildWallPlanAreaIDs = 6; // (RO = 0, AC = 1, Max = -1).
+const int cBuildWallPlanFoundationID = 7; // (RO = 0, AC = 1, Max = -1).
+const int cBuildWallPlanGateIndices = 8; // (RO = 0, AC = 0, Max = -1).
+const int cBuildWallPlanGateProtoIDs = 9; // (RO = 0, AC = 0, Max = -1).
+const int cBuildWallPlanEdgeOfMapBuffer = 10; // (RO = 0, AC = 1, Max = 1).
+const int cBuildWallPlanPieces = 11; // (RO = 1, AC = 1, Max = -1).
+const int cBuildWallPlanPiecePositions = 12; // (RO = 1, AC = 1, Max = -1).
+const int cBuildWallPlanPieceRotations = 13; // (RO = 1, AC = 1, Max = -1).
+const int cBuildWallPlanEnRoute = 14; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// AI Repair plan constants.
+//==============================================================================
+const int cRepairPlanTargetID = 0; // (RO = 0, AC = 1, Max = 1).
+
+//==============================================================================
+// Transport plan transport path type constants.
+//==============================================================================
+const int cTransportPathTypePoints = 0;
+const int cTransportPathTypeAreas = 1;
+
+//==============================================================================
+// Build wall plan wall type constants.
+//==============================================================================
+const int cBuildWallPlanWallTypeStraight = 0;
+const int cBuildWallPlanWallTypeRing = 1;
+const int cBuildWallPlanWallTypeArea = 2;
+
+//==============================================================================
+// Defend plan target mode constants.
+//==============================================================================
+const int cDefendPlanTargetModeBase = 0;
+const int cDefendPlanTargetModePoint = 1;
+
+//==============================================================================
+// Defend plan done mode constants.
+//==============================================================================
+const int cDefendPlanDoneModeNoTarget = 1;
+const int cDefendPlanDoneModeNoUnits = 2;
+const int cDefendPlanDoneModeBaseGone = 4;
+
+//==============================================================================
+// Attack plan target mode constants.
+//==============================================================================
+const int cAttackPlanTargetModeBase = 0;
+const int cAttackPlanTargetModeRaid = 1;
+const int cAttackPlanTargetModeRaidBase = 2;
+const int cAttackPlanTargetModePoint = 3;
+
+//==============================================================================
+// Attack plan attack route pattern constants.
+//==============================================================================
+const int cAttackPlanAttackRoutePatternLRU = 0;
+const int cAttackPlanAttackRoutePatternMRU = 1;
+const int cAttackPlanAttackRoutePatternRandom = 2;
+const int cAttackPlanAttackRoutePatternBest = 3;
+
+//==============================================================================
+// Attack plan done mode constants.
+//==============================================================================
+const int cAttackPlanDoneModeNoTarget = 1;
+const int cAttackPlanDoneModeNoUnits = 2;
+const int cAttackPlanDoneModeBaseGone = 4;
+const int cAttackPlanDoneModeCantFindMoreEnemyBases = 8;
+
+//==============================================================================
+// God Power Plan cGodPowerPlanEvaluationModel constants.
+//==============================================================================
+const int cGodPowerPlanEvaluationModelNone = 0;
+const int cGodPowerPlanEvaluationModelCombatPlanDistance = 1;
+const int cGodPowerPlanEvaluationModelQuery = 2;
+
+//==============================================================================
+// God Power Plan cGodPowerPlanTargetingModel constants.
+//==============================================================================
+const int cGodPowerPlanTargetingModelUnit = 0;
+const int cGodPowerPlanTargetingModelLocation = 1;
+const int cGodPowerPlanTargetingModelLocationDual = 2;
+const int cGodPowerPlanTargetingModelLocationManually = 3;
+const int cGodPowerPlanTargetingModelLocationNoLOSCheck = 4;
+const int cGodPowerPlanTargetingModelWorld = 5;
+const int cGodPowerPlanTargetingModelBuildingPlacement = 6;
+const int cGodPowerPlanTargetingModelAttachedCombatPlanLocation = 7;
+const int cGodPowerPlanTargetingModelDualPlace = 8;
+
+//==============================================================================
+// Build Plan cBuildPlanFailureCause constants.
+//==============================================================================
+const int cBuildPlanFailureCauseBadBPUnitType = 0;
+const int cBuildPlanFailureCauseBadBPDockParams = 1;
+const int cBuildPlanFailureCauseFailedBP = 2;
+const int cBuildPlanFailureCauseDidNotBuildFoundation = 3;
+const int cBuildPlanFailureCauseNoUnits = 4;
+const int cBuildPlanFailureCauseEntityEventFailure = 5;
+const int cBuildPlanFailureCauseCantAfford = 6;
+const int cBuildPlanFailureCauseCantPath = 7;
+
+//==============================================================================
+// Plan flags.
+//==============================================================================
+const int cPlanFlagFirstUpdate = 0;
+const int cPlanFlagDestroy = 1;
+const int cPlanFlagStateChanged = 2;
+const int cPlanFlagInitialized = 3;
+const int cPlanFlagGather = 4;
+const int cPlanFlagRequiresAllNeedUnits = 5;
+const int cPlanFlagReadyForUnits = 6;
+const int cPlanFlagNoMoreUnits = 7;
+const int cPlanFlagAllowUnderAttackResponse = 8;
+const int cPlanFlagStopUnitsOnRemove = 9;
+const int cPlanFlagDebugging = 10;
+const int cPlanFlagNoUnitNotification = 11;
+const int cPlanFlagPersistentChild = 12;
+const int cPlanFlagDestroyDelayed = 13;
+const int cPlanFlagCantBeStolenFrom = 14;
+
+//==============================================================================
+// Base flags.
+//==============================================================================
+const int cBaseFlagActive = 0;
+const int cBaseFlagEconomy = 1;
+const int cBaseFlagMilitary = 2;
+const int cBaseFlagMain = 3;
+const int cBaseFlagForward = 4;
+const int cBaseFlagUnderAttack = 5;
+const int cBaseFlagTownCenter = 6;
+const int cBaseFlagAutoCreated = 7;
+const int cBaseFlagVillageCenter = 8;
+const int cBaseFlagInTownBell = 9;
+const int cBaseFlagDebugRender = 10;
+const int cBaseFlagRemoteGatherBase = 11;
+const int cBaseFlagCampaignGatherBase = 12;
+const int cBaseFlagRemoteFoodGatherBase = 13;
+const int cBaseFlagRemoteWoodGatherBase = 14;
+const int cBaseFlagRemoteGoldGatherBase = 15;
+
+//==============================================================================
+// Trigger Data Effects Constants for XS.
+//==============================================================================
+
+//==============================================================================
+// Trigger ProtoUnit Data Effects Constants.
+//==============================================================================
+const int cXSProtoEffectHitpoints = 0;
+const int cXSProtoEffectSpeed = 1;
+const int cXSProtoEffectLOS = 2;
+const int cXSProtoEffectTrainPoints = 3;
+const int cXSProtoEffectBuildPoints = 4;
+const int cXSProtoEffectMaxContained = 5;
+const int cXSProtoEffectPopulationCount = 6;
+const int cXSProtoEffectPopCapAddition = 7;
+const int cXSProtoEffectLifespan = 8;
+const int cXSProtoEffectRechargeTime = 9;
+const int cXSProtoEffectRechargeTimeAux = 10;
+const int cXSProtoEffectBuildLimit = 11;
+const int cXSProtoEffectArmorHack = 12;
+const int cXSProtoEffectArmorPierce = 13;
+const int cXSProtoEffectArmorCrush = 14;
+const int cXSProtoEffectBuildingWorkRate = 15;
+const int cXSProtoEffectUnitRegenRate = 16;
+const int cXSProtoEffectUnitRegenLimit = 17;
+const int cXSProtoEffectTurnRate = 18;
+const int cXSProtoEffectBuildingTrainingRate = 19;
+const int cXSProtoEffectBuildingResearchRate = 20;
+
+//==============================================================================
+// Trigger Action Data Effects Constants.
+//==============================================================================
+const int cXSActionEffectRange = 0;
+const int cXSActionEffectMinRange = 1;
+const int cXSActionEffectDamageAll = 2;
+const int cXSActionEffectDamageArea = 3;
+const int cXSActionEffectROF = 4;
+const int cXSActionEffectActionEnable = 5;
+const int cXSActionEffectTrackRating = 6;
+const int cXSActionEffectAccuracy = 7;
+const int cXSActionEffectNumProjectiles = 8;
+const int cXSActionEffectNumBounces = 9;
+const int cXSActionEffectPerfectAccuracy = 10;
+const int cXSActionEffectInstantBallistics = 11;
+const int cXSActionEffectVolleyMode = 12;
+const int cXSActionEffectDamageHack = 13;
+const int cXSActionEffectDamagePierce = 14;
+const int cXSActionEffectDamageCrush = 15;
+const int cXSActionEffectDamageDivine = 16;
+const int cXSActionEffectModifyRate = 17;
+const int cXSActionEffectDisplayedNumProjectiles = 18;
+const int cXSActionEffectHomingBallistics = 19;
+const int cXSActionEffectModifyRateCap = 20;
+
+//==============================================================================
+// Trigger ProtoUnit Resource Data Effects Constants.
+//==============================================================================
+const int cXSPUResourceEffectCost = 0;
+const int cXSPUResourceEffectCarryCapacity = 1;
+const int cXSPUResourceEffectResourceAmount = 2;
+const int cXSPUResourceEffectResourceReturn = 3;
+
+//==============================================================================
+// Trigger Action ProtoUnit/UnitType Effects Constants.
+//==============================================================================
+const int cXSActionProtoEffectDamageBonus = 0;
+const int cXSActionProtoEffectWorkRate = 1;
+const int cXSActionProtoEffectResourceYield = 2;
+const int cXSActionProtoEffectMinWorkRate = 3;
+const int cXSActionProtoEffectBoostRadius = 4;
+const int cXSActionProtoEffectSetProjectile = 5;
+
+//==============================================================================
+// Trigger Player Data Effects Constants.
+//==============================================================================
+const int cXSPlayerDataEffectPopulationCap = 0;
+const int cXSPlayerDataEffectTributePenalty = 1;
+const int cXSPlayerDataEffectPopulationLimit = 2;
+
+//==============================================================================
+// Trigger Player Resource Data Effects Constants.
+//==============================================================================
+const int cXSPlayerResourceEffectResStockpile = 0;
+const int cXSPlayerResourceEffectResCap = 1;
+const int cXSPlayerResourceEffectResTrickle = 2;
+
+//==============================================================================
+// Trigger Tech String Effects Constants.
+//==============================================================================
+const int cXSTechEffectDisplayName = 0;
+const int cXSTechEffectRollover = 1;
+const int cXSTechEffectNotification = 2;
+const int cXSTechEffectGlobalNotification = 3;
+
+//==============================================================================
+// Trigger Relativity Constants.
+//==============================================================================
+const int cXSRelativityAbsolute = 0;
+const int cXSRelativityAssign = 1;
+const int cXSRelativityPercent = 2;
+const int cXSRelativityBasePercent = 3;
+
+//==============================================================================
+// Trigger Damage Type Constants.
+//==============================================================================
+const int cXSDamageTypeNone = -1;
+const int cXSDamageTypeHack = 0;
+const int cXSDamageTypePierce = 1;
+const int cXSDamageTypeCrush = 2;
+const int cXSDamageTypeDivine = 3;
+
+//==============================================================================
+// Trigger OnHitEffect Type Constants.
+//==============================================================================
+const int cOnHitEffectStun = 0;
+const int cOnHitEffectStatModify = 1;
+const int cOnHitEffectSnare = 2;
+const int cOnHitEffectDamageOverTime = 3;
+const int cOnHitEffectLifesteal = 4;
+const int cOnHitEffectReincarnation = 5;
+const int cOnHitEffectThrow = 6;
+const int cOnHitEffectBoost = 8;
+const int cOnHitEffectMutate = 10;
+const int cOnHitEffectMutateGaia = 11;
+const int cOnHitEffectAttach = 12;
+const int cOnHitEffectPull = 13;
+const int cOnHitEffectSpawn = 14;
+const int cOnHitEffectProgFreeze = 15;
+const int cOnHitEffectProgFreezeSpeed = 15;
+const int cOnHitEffectChaos = 16;
+const int cOnHitEffectProgFreezeROF = 18;
+const int cOnHitEffectFreezeDefault = 100;
+const int cOnHitEffectFreezeStone = 101;
+const int cOnHitEffectFreezeStoneDamage = 103;
+
+//==============================================================================
+// Trigger ModifyType Constants.
+//==============================================================================
+const int cModifyTypeSpeed = 0;
+const int cModifyTypeMaxHP = 1;
+const int cModifyTypeDamage = 2;
+const int cModifyTypeUnitDamage = 4;
+const int cModifyTypeLOS = 5;
+const int cModifyTypeArmor = 6;
+const int cModifyTypeGatherRate = 9;
+const int cModifyTypeROF = 11;
+const int cModifyTypeAutoGatherRate = 12;
+const int cModifyTypeBaseHP = 14;
+const int cModifyTypeBuildingWorkRate = 15;
+const int cModifyTypeBuildRate = 16;
+const int cModifyTypeFarmingGatherRate = 18;
+const int cModifyTypeHealRate = 19;
+const int cModifyTypeAutoGatherAbsolute = 20;
+const int cModifyTypeRepairCost = 21;
+const int cModifyTypeTrainingRate = 22;
+const int cModifyTypeEconomicTrainingRate = 23;
+const int cModifyTypeMilitaryTrainingRate = 24;
+const int cModifyTypeResearchRate = 25;
+const int cModifyTypeNaturalFoodGatherRate = 28;
+const int cModifyTypeTreeGatherRate = 29;
+const int cModifyTypeMineGatherRate = 30;
+const int cModifyTypeAutoBuildRate = 31;
+const int cModifyTypeBaseDamage = 33;
+const int cModifyTypeRechargeTime = 34;
+const int cModifyTypeRangeAbsolute = 35;
+const int cModifyTypeShield = 36;
+const int cModifyTypeFavorGatherRate = 37;
+const int cModifyTypeDropsiteRate = 38;
+const int cModifyTypeDoubleTrainChance = 39;
+const int cModifyTypeGodPowerBlockRadius = 40;
+const int cModifyTypeAuraEmpower = 41;
+const int cModifyTypeMilitaryTrainingCost = 42;
+const int cModifyTypeDamageSpecific = 43;
+const int cModifyTypeArmorSpecific = 44;
+const int cModifyTypeAutoGatherFactor = 46;
+const int cModifyTypeNumProjectiles = 48;
+const int cModifyTypeVisualScale = 49;
+const int cModifyTypeProgFreeze = 50;
+const int cModifyTypeProgFreezeSpeed = 50;
+const int cModifyTypeLOSFactor = 51;
+const int cPlayerTypeHuman = 0;
+const int cPlayerTypeComputer = 1;
+
+//==============================================================================
+// KB action stats: float.
+//==============================================================================
+const int cActionStatROF = 0;
+const int cActionStatMaxRange = 1;
+const int cActionStatDamageArea = 2;
+const int cNumActionStatsFloat = 3;
+
+//==============================================================================
+// KB unit stats: float.
+//==============================================================================
+const int cUnitStatMaxHP = 0;
+const int cUnitStatCurrHP = 1;
+const int cUnitStatHPRatio = 2;
+const int cUnitStatArmorHack = 3;
+const int cUnitStatArmorPierce = 4;
+const int cUnitStatArmorCrush = 5;
+const int cUnitStatBuildPoints = 6;
+const int cUnitStatLOS = 7;
+const int cUnitStatMaxVelocity = 8;
+const int cUnitStatTrainingRateBonus = 9;
+const int cUnitStatBuildingWorkRate = 10;
+const int cUnitStatBuildingWorkRateVilOrAgeUp = 11;
+const int cUnitStatRepairRate = 12;
+const int cUnitStatCurrentVelocity = 13;
+const int cUnitStatBuildRate = 14;
+const int cNumUnitStatFloat = 15;
+
+//==============================================================================
+// KB unit stats: int.
+//==============================================================================
+const int cUnitStatHPRatioPercent = 0;
+const int cUnitStatBuildProgressPercent = 1;
+const int cUnitStatVeterancyRank = 2;
+const int cNumUnitStatInt = 3;
+
+//==============================================================================
+// KB unit stats: bool.
+//==============================================================================
+const int cUnitStatIdleState = 0;
+const int cUnitStatRepairable = 1;
+const int cNumUnitStatBool = 2;
+
+//==============================================================================
+// KB unit stats: string.
+//==============================================================================
+const int cNumUnitStatString = 0;
+
+//==============================================================================
+// KB proto stats: float.
+//==============================================================================
+const int cProtoStatMaxHP = 0;
+const int cProtoStatArmorHack = 1;
+const int cProtoStatArmorPierce = 2;
+const int cProtoStatArmorCrush = 3;
+const int cProtoStatBuildPoints = 4;
+const int cProtoStatTrainPoints = 5;
+const int cProtoStatLOS = 6;
+const int cProtoStatMaxVelocity = 7;
+const int cProtoStatXObstruction = 8;
+const int cProtoStatZObstruction = 9;
+const int cProtoStatObstruction = 10;
+const int cProtoStatBuildRate = 11;
+const int cProtoStatTrainingRate = 12;
+const int cNumProtoStatFloat = 13;
+
+//==============================================================================
+// KB proto stats: int.
+//==============================================================================
+const int cProtoStatPopCost = 0;
+const int cProtoStatPopCapAddition = 1;
+const int cProtoStatBuildLimit = 2;
+const int cNumProtoStatInt = 3;
+
+//==============================================================================
+// KB proto stats: bool.
+//==============================================================================
+const int cNumProtoStatBool = 0;
+
+//==============================================================================
+// KB proto stats: string.
+//==============================================================================
+const int cProtoStatName = 0;
+const int cNumProtoStatString = 1;
+
+//==============================================================================
+// KB stat types.
+//==============================================================================
+
+//==============================================================================
+// KB stat types of Float return type.
+//==============================================================================
+const int cStatTypeResourceCount = 0;
+const int cStatTypeUnspentResourceCount = 1;
+const int cStatTypeTradeProfit = 2;
+const int cStatTypeFreeUnitCost = 3;
+const int cStatTypeFreeResources = 4;
+const int cStatTypeUnitsKilledCost = 9;
+const int cStatTypeBuildingsKilledCost = 10;
+const int cStatTypeUnitsLostCost = 13;
+const int cStatTypeBuildingsLostCost = 14;
+const int cStatTypeCostUnitsTrained = 15;
+const int cStatTypeCostBuildingsBuilt = 16;
+const int cStatTypeMapExplored = 18;
+const int cStatTypeResearchTotalCost = 21;
+const int cStatTypeAverageResource = 30;
+const int cStatTypeTributeAmountSent = 34;
+const int cStatTypeTributeAmountRcvd = 35;
+const int cStatTypeTotalMinedResources = 38;
+
+//==============================================================================
+// KB stat types of Int32 return type.
+//==============================================================================
+const int cStatTypeMilitaryCount = 5;
+const int cStatTypeEnemyUnitsKilled = 6;
+const int cStatTypeEnemyUnitsConverted = 7;
+const int cStatTypeEnemyBuildingsKilled = 8;
+const int cStatTypeUnitsLost = 11;
+const int cStatTypeBuildingsLost = 12;
+const int cStatTypeTechTime = 17;
+const int cStatTypeResearchCountComplete = 20;
+const int cStatTypeUnitCount = 22;
+const int cStatTypeGodPowerTime = 23;
+const int cStatTypeScore = 24;
+const int cStatTypeScoreDisplay = 25;
+const int cStatTypeEconomicUnitHigh = 26;
+const int cStatTypeFavoriteSoldier = 27;
+const int cStatTypeFavoriteSoldierCount = 28;
+const int cStatTypeFreeUnitCount = 37;
+const int cStatTypeVillagersLost = 39;
+const int cStatTypeHerdablesLost = 40;
+const int cStatTypeTotalTechCost = 41;
+const int cStatTypeRelicHigh = 42;
+const int cStatTypeEconomicUnitHighNoFishingShip = 43;
+const int cStatTypeFishingShipHigh = 44;
+const int cStatTypeMilitaryHigh = 45;
+const int cStatTypeGodPowerCast = 46;
+
+//==============================================================================
+// KB unit status effects.
+//==============================================================================
+const int cStatusEffectFrozen = 0;
+const int cStatusEffectPetrified = 1;
+const int cStatusEffectStunned = 2;
+const int cStatusEffectThrown = 3;
+const int cStatusEffectChaosed = 4;
+const int cStatusEffectCursed = 5;
+
+//==============================================================================
+// KB Tech Effect Types.
+//==============================================================================
+const int cEffectTypeSetName = 0;
+const int cEffectTypeSound = 1;
+const int cEffectTypeTextOutput = 2;
+const int cEffectTypeTextOutputAll = 3;
+const int cEffectTypeSetAge = 4;
+const int cEffectTypeTechStatus = 5;
+const int cEffectTypeData = 6;
+const int cEffectTypeSharedLOS = 7;
+const int cEffectTypeShowWorldView = 8;
+const int cEffectTypeModifyProtoUnit = 9;
+const int cEffectTypeTransformUnit = 10;
+const int cEffectTypeResourceExchange = 11;
+const int cEffectTypeSetOnBuildingDeathTech = 12;
+const int cEffectTypeConsoleCommand = 13;
+const int cEffectTypeCreatePower = 14;
+const int cEffectTypeTextOutputTechName = 15;
+const int cEffectTypeRandomTech = 16;
+const int cEffectTypeTextEffectOutput = 17;
+const int cEffectTypeResourceInventoryExchange = 18;
+const int cEffectTypeAddTrickleByResource = 19;
+const int cEffectTypeResourceExchange2 = 20;
+const int cEffectTypeReplaceUnit = 21;
+const int cEffectTypeForbidTech = 22;
+const int cEffectTypeSetOnTechResearchedTech = 23;
+const int cEffectTypeUIAlert = 24;
+const int cEffectTypeCreateUnit = 25;
+
+//==============================================================================
+// KB Tech Effect Target Types.
+//==============================================================================
+const int cEffectTargetTypeProtoUnit = 1;
+const int cEffectTargetTypePlayer = 2;
+const int cEffectTargetTypeCombinedType = 3;
+const int cEffectTargetTypeTech = 4;
+const int cEffectTargetTypeGeneral = 8;
+const int cEffectTargetTypeApplyToAll = 16;
+const int cEffectTargetTypeReactivated = 32;
+const int cEffectTargetTypeAllProtoActions = 64;
+const int cEffectTargetTypeTechsWithFlag = 128;
+const int cEffectTargetTypeIgnoreAgeUpgrades = 512;
+const int cEffectTargetTypeUseLocation = 1024;
+const int cEffectTargetTypeTechsWithType = 2048;
+const int cEffectTargetTypeIgnoreNature = 4096;
+
+//==============================================================================
+// KB Tech Flags.
+//==============================================================================
+const int cTechFlagAgeUpgrade = 4;
+const int cTechFlagCountsTowardEconomicScore = 19;
+const int cTechFlagCountsTowardMilitaryScore = 20;
+const int cTechFlagAgeTech = 34;
+const int cTechFlagMythTech = 35;
