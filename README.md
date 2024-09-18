@@ -11,4 +11,4 @@ Right here: https://jehathor.github.io/AoM-Retold/RetoldFunctions.html
 
 This page is useful? Consider to support my work:
 -----------------------------------------------
-https://buymeacoffee.com/jehathor
+⇨ https://buymeacoffee.com/jehathor
