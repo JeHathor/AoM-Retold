@@ -1,1 +1,53 @@
+<trigger version="2">
+  <conditions>
 
+    <condition name="Always">
+      <expression>true</expression>
+    </condition>
+
+    <condition name="Timer: Randomize">
+      <param name="Param1" dispname="Seconds Min" vartype="long">0</param>
+      <param name="Param2" dispname="Seconds Max" vartype="long">0</param>
+	<command>trQuestVarSetFromRand("TimerRM", %Param1%, %Param2%, true);</command>
+      <expression>(xsGetTime() - (cActivationTime / 1000)) &gt;= trQuestVarGet("TimerRM")</expression>
+    </condition>
+
+    <condition name="Player: Compare Population">
+      <param name="PlayerID1" dispname="Player A" vartype="player">1</param>
+      <param name="Op" dispname="Operator" vartype="operator">==</param>
+      <param name="PlayerID2" dispname="Player B" vartype="player">2</param>
+      <param name="Value" dispname="Modifier B" vartype="long">0</param>
+      <expression>kbPlayerGetPop(%PlayerID1%) %Op% (kbPlayerGetPop(%PlayerID2%) + %Value%)</expression>
+    </condition>
+
+  </conditions>
+  <effects>
+
+    <effect name="Trigger: Activate">
+      <param name="EventID" dispname="Trigger" vartype="event">-1</param>
+      <command>trEventFire(%EventID%);</command>
+    </effect>
+
+    <effect name="Army: Spawn By Difficulty Level">
+      <param name="SrcArmy" dispname="Army" vartype="group">default</param>
+      <param name="ProtoName" dispname="ProtoName" vartype="protounit">Villager</param>
+      <param name="Location" dispname="" vartype="area">0,0,0</param>
+      <param name="Count0" dispname="Standard" vartype="long">0</param>
+      <param name="Count1" dispname="Moderate" vartype="long">0</param>
+      <param name="Count2" dispname="Hard" vartype="long">0</param>
+      <param name="Count3" dispname="Titan" vartype="long">0</param>
+      <param name="Count4" dispname="Extreme" vartype="long">0</param>
+      <param name="Count5" dispname="Legendary" vartype="long">0</param>
+      <param name="Heading" dispname="Heading (0-359)" vartype="long">0</param>
+      <param name="Clear" dispname="Clear Existing Units:" vartype="bool">true</param>
+      <param name="SkipBirth" dispname="Skip Birth Anim:" vartype="bool">false</param>
+      <command>if(trGetWorldDifficulty()==0){trArmyDispatch("%SrcArmy%", "%ProtoName%", %Count0%, %Location%, %Heading%, %Clear%, %SkipBirth%);}</command>
+      <command>if(trGetWorldDifficulty()==1){trArmyDispatch("%SrcArmy%", "%ProtoName%", %Count1%, %Location%, %Heading%, %Clear%, %SkipBirth%);}</command>
+      <command>if(trGetWorldDifficulty()==2){trArmyDispatch("%SrcArmy%", "%ProtoName%", %Count2%, %Location%, %Heading%, %Clear%, %SkipBirth%);}</command>
+      <command>if(trGetWorldDifficulty()==3){trArmyDispatch("%SrcArmy%", "%ProtoName%", %Count3%, %Location%, %Heading%, %Clear%, %SkipBirth%);}</command>
+      <command>if(trGetWorldDifficulty()==4){trArmyDispatch("%SrcArmy%", "%ProtoName%", %Count4%, %Location%, %Heading%, %Clear%, %SkipBirth%);}</command>
+      <command>if(trGetWorldDifficulty()==5){trArmyDispatch("%SrcArmy%", "%ProtoName%", %Count5%, %Location%, %Heading%, %Clear%, %SkipBirth%);}</command>
+    </effect>
+
+  </effects>
+</trigger>
