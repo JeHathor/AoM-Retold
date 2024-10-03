@@ -23,6 +23,7 @@ int getPlayerEconPop(int pID=cMyID)	//Allows to check for other players too.
 //==============================================================================
 // getUnitByIndex
 // Will return a unit matching the parameters
+// A more flexibel version of getUnit()
 //==============================================================================
 int getUnitByIndex(int index = -1, int unitTypeID = -1, int playerRelationOrID = cMyID, int state = cUnitStateAlive,
             int visibleState = cUnitQueryVisibleStateAllValid, int[] excludeTypes = default)
@@ -186,13 +187,8 @@ rule updatePlayerToAttack
 
    if(cNumberPlayers <= 3)	//instant love?
    {
-	if(cMyID == 2)
-	{
-	    aiSetMostHatedPlayerID(1);
-	   }else{
-	    aiSetMostHatedPlayerID(2);
-	}
-		return;
+	aiSetMostHatedPlayerID(cMyID == 2 ? 1:2);
+	return;
    }
    //We no longer need to determine a random start index,
    //since we calculate the opponents accurately.
@@ -223,6 +219,8 @@ rule updatePlayerToAttack
 		int indexTC = kbUnitCount(cUnitTypeAbstractSettlement, indexPlayer, cUnitStateAlive);
 		int indexEco = getPlayerEconPop(indexPlayer);
 		int indexMil = kbUnitCount(cUnitTypeMilitaryUnit, indexPlayer, cUnitStateAlive);
+		indexMil = indexMil + kbUnitCount(cUnitTypeLogicalTypeMythUnitNotTitan, indexPlayer, cUnitStateAlive);
+		indexMil = indexMil + 10*kbUnitCount(cUnitTypeAbstractTitan, indexPlayer, cUnitStateAlive);
 		//Potential outweights current military size.
 		int indexPower = 20*indexTC + 3*indexEco + 1*indexMil;
 		if(kbUnitCount(cUnitTypeWonder, indexPlayer, cUnitStateABQ) > 0)
