@@ -18,6 +18,8 @@ map ("TODO", "game", "uiFindType(\"AbstractScout\")", true)
 map ("TODO", "game", "uiFindType(\"AbstractSettlement\")", true)
 map ("TODO", "game", "uiFindType(\"AbstractArmory\")", true)
 map ("TODO", "game", "uiFindType(\"AbstractMarket\")", true)
+map ("TODO", "game", "uiFindType(\"Hero\")", true)
+map ("TODO", "game", "uiFindType(\"Dropsite\")", true)
 
 //***************************
 // Debug
