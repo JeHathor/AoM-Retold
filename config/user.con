@@ -1,1 +1,26 @@
+//***************************
+// Select All Idle
+//***************************
+map ("TODO", "game", "uiFindAllOfTypeIdle(\"MilitaryUnit\")", true)
+map ("TODO", "game", "uiFindAllOfTypeIdle(\"AbstractVillager\")", true)
 
+//***************************
+// Select All
+//***************************
+map ("TODO", "game", "uiFindAllOfType(\"MilitaryUnit\")", true)
+map ("TODO", "game", "uiFindAllOfType(\"MilitaryBuilding\")", true)
+map ("TODO", "game", "uiFindAllOfType(\"Herdable\")", true)
+
+//***************************
+// Find Next
+//***************************
+map ("TODO", "game", "uiFindType(\"AbstractScout\")", true)
+map ("TODO", "game", "uiFindType(\"AbstractSettlement\")", true)
+map ("TODO", "game", "uiFindType(\"AbstractArmory\")", true)
+map ("TODO", "game", "uiFindType(\"AbstractMarket\")", true)
+
+//***************************
+// Debug
+//***************************
+map ("TODO", "game", "AIDebugInfoToggle", true)
+map ("TODO", "game", "toggleXSDebugger", true)
