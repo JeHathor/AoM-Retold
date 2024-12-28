@@ -64,7 +64,7 @@ int getWeakestUnitByLocation(int unitTypeID = -1, int playerRelationOrID = cMyID
    {
       for (int i=0; i < numberFound; i++)
       {
-	   int pivotHP = kbUnitGetStatFloat(kbUnitQueryGetResult(unitQueryID, i), cUnitStatCurrHP);
+	   int pivotHP = kbUnitGetStatInt(kbUnitQueryGetResult(unitQueryID, i), cUnitStatCurrHP);
 	   if(pivotHP < minHP)
 	   {
 		weakestID = kbUnitQueryGetResult(unitQueryID, i);
@@ -92,13 +92,13 @@ void microRangedUnit(int myUnitID=-1)		//Type: KitingScript
 {
    if(myUnitID < 0) {return;}
    if(kbUnitGetPlayerID(myUnitID) != cMyID) {return;}
-   float myAttackRange = unitRangeToTerrainTiles(kbUnitGetActionMaximumRange(myUnitID,"RangedAttack"));
+   float myAttackRange = unitRangeToTerrainTiles(kbProtoUnitGetActionMaximumRange(cMyID, myUnitID,"RangedAttack"));
    float microRangeThreshold = myAttackRange*0.50;
    vector myUnitLoc = kbUnitGetPosition(myUnitID);
    int mhpUnitID = getClosestUnitByLocation(cUnitTypeMilitaryUnit, cPlayerRelationEnemy, cUnitStateAlive, myUnitLoc, microRangeThreshold, cUnitQueryVisibleStateVisible);
    if(mhpUnitID < 0) {return;}
    if(kbUnitGetPlayerID(myUnitID) == 0) {return;}
-   float safeDistance = max(myAttackRange*0.75,unitRangeToTerrainTiles(kbUnitGetActionMaximumRange(mhpUnitID,"RangedAttack")+1));
+   float safeDistance = max(myAttackRange*0.75,unitRangeToTerrainTiles(kbProtoUnitGetActionMaximumRange(cMyID, mhpUnitID,"RangedAttack")+1));
    float mhpUnitDistance = kbUnitGetDistanceToUnit(myUnitID,mhpUnitID);
    float retreatDistance = safeDistance - mhpUnitDistance;
 
