@@ -180,9 +180,7 @@ rule updatePlayerToAttack
 	return;
    }
 
-	xsDisableRule("mostHatedEnemy");	//Don't let this overwrite anything we do here.
-
-   //Gaia is index 0, but counts as player. This means
+   //Nature is index 0, but counts as player. This means
    //if there are 4 players in the game then cNumberPlayers is set to 5.
 
    if(cNumberPlayers <= 3)	//instant love?
@@ -250,5 +248,6 @@ rule updatePlayerToAttack
 	actualPlayerID = getRandomEnemyID();	//Fail safe.
    }
    //Default us off.
+   gOverrideTargetPlayerID = actualPlayerID;	//@ military_attack: 'mostHatedEnemy'
    aiSetMostHatedPlayerID(actualPlayerID);
 }
