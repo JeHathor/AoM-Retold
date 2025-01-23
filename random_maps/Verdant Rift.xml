@@ -1,0 +1,9 @@
+﻿<?xml version = "1.0" encoding = "UTF-8"?>
+<mapinfo 
+    displayName = "Verdant Rift" 
+    detailsText = "A canyon of rugged cliffs and sparse greenery, where scattered plants thrive in the shelter of the desert. ~ by JeHathor" 
+    loadDetailsText = "A canyon of rugged cliffs and sparse greenery, where scattered plants thrive in the shelter of the desert. ~ by JeHathor"
+    imagepath = "resources\maps\map_picker\valley_of_kings.png"
+    loadBackground="resources\maps\previews\valley_of_kings.png"
+    landmap="">
+</mapinfo>
