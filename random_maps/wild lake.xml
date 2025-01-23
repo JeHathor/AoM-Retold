@@ -1,0 +1,8 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<mapinfo 
+    displayName = "Wild Lake" 
+    detailsText = "A lake surrounded by rocks and stones. ~ by JeHathor" 
+    loadDetailsText = "A lake surrounded by rocks and stones. ~ by JeHathor" 
+    imagepath = "resources\maps\map_picker\oasis.png" 
+    loadBackground="resources\maps\previews\kerlaugar.png" watermap=""> 
+</mapinfo>

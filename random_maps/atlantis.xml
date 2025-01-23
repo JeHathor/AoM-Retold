@@ -1,0 +1,8 @@
+﻿<?xml version = "1.0" encoding = "UTF-8"?>
+<mapinfo 
+    displayName = "Atlantis" 
+    detailsText = "A legendary island in the Atlantic Ocean. ~ by JeHathor" 
+    loadDetailsText = "A legendary island in the Atlantic Ocean. ~ by JeHathor" 
+    imagepath = "resources\maps\map_picker\islands.png" 
+    loadBackground="resources\maps\previews\islands.png" watermap="">
+</mapinfo>

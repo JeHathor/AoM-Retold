@@ -1,0 +1,8 @@
+﻿<?xml version = "1.0" encoding = "UTF-8"?>
+<mapinfo 
+    displayName = "Spartan Pass" 
+    detailsText = "Push with an unlimited stream of resources through a narrow mountain pass! ~ by JeHathor" 
+    loadDetailsText = "Push with an unlimited stream of resources through a narrow mountain pass! ~ by JeHathor" 
+    imagepath = "game\ui_myth\resources\greek\static_color\technologies\sarissa_icon.png" 
+    loadBackground="resources\maps\previews\jotunheim.png" landmap=""> 
+</mapinfo>

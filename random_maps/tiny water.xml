@@ -1,0 +1,10 @@
+﻿<?xml version = "1.0" encoding = "UTF-8"?>
+<mapinfo 
+    displayName = "Tiny Water"
+    details = "STR_MAP_TINY_DESC" 
+    loadDetails="STR_MAP_TINY_DESC_LOAD"
+    imagepath = "resources\maps\map_picker\tiny.png" 
+    cannotReplace = "" 
+    loadBackground="resources\maps\previews\tiny.png"
+    watermap="">
+</mapinfo>
