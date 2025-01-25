@@ -1,8 +1,8 @@
 ﻿<?xml version = "1.0" encoding = "UTF-8"?>
 <mapinfo 
     displayName = "Temperate Mainland" 
-    details = "A typical map without any water, shaped by it's mild seasons. ~ by JeHathor" 
-    loadDetails="A typical map without any water, shaped by it's mild seasons. ~ by JeHathor"
+    detailsText = "A typical map without any water, shaped by it's mild seasons. ~ by JeHathor" 
+    loadDetailsText = "A typical map without any water, shaped by it's mild seasons. ~ by JeHathor"
     imagepath = "resources\maps\map_picker\alfheim.png" 
     loadBackground="resources\maps\previews\alfheim.png"
     landmap="">
