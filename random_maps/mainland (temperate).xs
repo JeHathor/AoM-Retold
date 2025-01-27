@@ -23,7 +23,7 @@ void generate()
    rmInitializeMix(baseMixID);
 
    // Player placement.
-   rmSetTeamSpacingModifier(0.125 + 0.025 * cNumberPlayers);
+   rmSetTeamSpacingModifier(0.26 + 0.04 * cNumberPlayers);
    if(gameIs1v1() == true)
    {
       rmPlacePlayersOnSquare(0.3, 0.3, 0.0, rmXFractionToMeters(0.5));
