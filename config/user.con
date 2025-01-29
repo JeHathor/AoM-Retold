@@ -9,8 +9,8 @@ map ("TODO", "game", "uiFindAllOfTypeIdle(\"AbstractVillager\")", true)
 //***************************
 map ("TODO", "game", "uiFindAllOfType(\"MilitaryUnit\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"MilitaryBuilding\")", true)
-map ("TODO", "game", "uiFindAllOfType(\"Herdable\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"AbstractSettlement\")", true)
+map ("TODO", "game", "uiFindAllOfType(\"Herdable\")", true)
 
 //***************************
 // Find Next
