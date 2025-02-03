@@ -173,6 +173,7 @@ rule updatePlayerToAttack
    //Run this until we get a result.
    if(gIsPocket == false && gIsFlank == false)
    {
+	kbLookAtAllUnitsOnMap();
 	playerIsTeamPocket(cMyID);
    }
 
