@@ -174,7 +174,6 @@ rule updatePlayerToAttack
    if(gIsPocket == false && gIsFlank == false)
    {
 	playerIsTeamPocket(cMyID);
-	xsEnableRule("monitorTargetPlayer");
    }
 
    if (checkStrategyFlag(cStrategyFlagAutomaticTargetPlayerPicking) == false)
@@ -252,6 +251,11 @@ rule updatePlayerToAttack
    //Default us off.
    gOverrideTargetPlayerID = actualPlayerID;	//@ military_attack: 'mostHatedEnemy'
    aiSetMostHatedPlayerID(actualPlayerID);
+
+   if(gLastTargetPlayer < 0)
+   {
+	xsEnableRule("monitorTargetPlayer");
+   }
 }
 
 //==============================================================================
