@@ -174,6 +174,7 @@ rule updatePlayerToAttack
    if(gIsPocket == false && gIsFlank == false)
    {
 	playerIsTeamPocket(cMyID);
+	xsEnableRule("monitorTargetPlayer");
    }
 
    if (checkStrategyFlag(cStrategyFlagAutomaticTargetPlayerPicking) == false)
@@ -258,7 +259,7 @@ rule updatePlayerToAttack
 //==============================================================================
 rule monitorTargetPlayer
    minInterval 5
-   active
+   inactive
 {
    int currentTargetPlayer = aiGetMostHatedPlayerID();
    if(currentTargetPlayer != gLastTargetPlayer)
