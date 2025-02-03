@@ -259,7 +259,6 @@ rule updatePlayerToAttack
 rule monitorTargetPlayer
    minInterval 5
    active
-   runImmediately
 {
    int currentTargetPlayer = aiGetMostHatedPlayerID();
    if(currentTargetPlayer != gLastTargetPlayer)
