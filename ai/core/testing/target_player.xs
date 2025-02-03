@@ -1,10 +1,11 @@
 //==============================================================================
 // target_player.xs	by JeHathor
 //==============================================================================
-extern bool gIsPocket = false;  //pockets target the strongest enemy
-extern bool gIsFlank = false;	//flanks target the closest enemy
-extern int gPlayerTeamSize = 1;	//Good to know, safe it...
+extern bool gIsPocket = false;		//pockets target the strongest enemy
+extern bool gIsFlank = false;		//flanks target the closest enemy
+extern int gPlayerTeamSize = 1;		//good to know, safe it!
 extern const int myUnitStateAliveOrBuilding = 3;	//Use ABQ instead.
+int gLastTargetPlayer = -1;		//monitor who we attack...
 //==============================================================================
 // getPlayerEconPop
 // Returns the unit count of villagers, fishing boats, trade carts.
@@ -250,4 +251,32 @@ rule updatePlayerToAttack
    //Default us off.
    gOverrideTargetPlayerID = actualPlayerID;	//@ military_attack: 'mostHatedEnemy'
    aiSetMostHatedPlayerID(actualPlayerID);
+}
+
+//==============================================================================
+// RULE: monitorTargetPlayer.
+//==============================================================================
+rule monitorTargetPlayer
+   minInterval 5
+   active
+   runImmediately
+{
+   int currentTargetPlayer = aiGetMostHatedPlayerID();
+   if(currentTargetPlayer != gLastTargetPlayer)
+   {
+	//DEBUG
+	aiChat(cMyID, "I will attack "+kbPlayerGetName(currentTargetPlayer)+".");
+
+	if(gPlayerTeamSize > 1)		//Should I inform my Team?
+	{
+	   for (int pID=1; pID<cNumberPlayers; pID++)
+	   {
+		if(kbPlayerIsAlly(pID) && kbPlayerIsHuman(pID))
+		{
+			aiChat(pID, "I will attack "+kbPlayerGetName(currentTargetPlayer)+".");
+		}
+	   }
+	}
+	gLastTargetPlayer = currentTargetPlayer;	//update.
+   }
 }
