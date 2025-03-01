@@ -3,6 +3,7 @@
 //***************************
 map ("TODO", "game", "uiFindAllOfTypeIdle(\"MilitaryUnit\")", true)
 map ("TODO", "game", "uiFindAllOfTypeIdle(\"AbstractVillager\")", true)
+map ("TODO", "game", "uiFindAllOfTypeIdle(\"AbstractFishingShip\")", true)
 
 //***************************
 // Select All
@@ -17,6 +18,8 @@ map ("TODO", "game", "uiFindAllOfType(\"Dropsite\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"AbstractArcher\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"AbstractCavalry\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"MythUnit\")", true)
+map ("TODO", "game", "uiFindAllOfType(\"AbstractDock\")", true)
+map ("TODO", "game", "uiFindAllOfType(\"NavalUnit\")", true)
 
 //***************************
 // Find Next
