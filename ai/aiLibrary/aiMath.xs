@@ -17,35 +17,69 @@ extern const vector mDegrees315 = vector(0.707107, 0.0, -0.707107);
 extern const vector mDegrees360 = vector(1.0, 0.0, 0.0);
 
 //=============================================================================
-//   xsVectorSet (Legacy)
+//   MathVectorSet
 //=============================================================================
-vector xsVectorSet(float x=-1, float y=-1, float z=-1)
+// Set the 3 components into a vector, returns the new vector.
+vector MathVectorSet(float x=-1, float y=-1, float z=-1)
 {
     return(vector(x, y, z));
 }
 
 //=============================================================================
-//   xsVectorGetX (Legacy)
+//   MathVectorGetX
 //=============================================================================
-float xsVectorGetX(vector v)
+// Returns the x component of the given vector.
+float MathVectorGetX(vector v=cInvalidVector)
 {
     return(v.x);
 }
 
 //=============================================================================
-//   xsVectorGetY (Legacy)
+//   MathVectorGetY
 //=============================================================================
-float xsVectorGetY(vector v)
+// Returns the Y component of the given vector.
+float MathVectorGetY(vector v=cInvalidVector)
 {
     return(v.y);
 }
 
 //=============================================================================
-//   xsVectorGetZ (Legacy)
+//   MathVectorGetZ
 //=============================================================================
-float xsVectorGetZ(vector v)
+// Returns the Z component of the given vector.
+float MathVectorGetZ(vector v=cInvalidVector)
 {
     return(v.z);
+}
+
+//=============================================================================
+//   MathVectorSetX
+//=============================================================================
+// Set the x component of the given vector, returns the new vector.
+vector MathVectorSetX(vector v=cInvalidVector, float x=-1)
+{
+    v.x = x;
+    return(v);
+}
+
+//=============================================================================
+//   MathVectorSetY
+//=============================================================================
+// Set the y component of the given vector, returns the new vector.
+vector MathVectorSetY(vector v=cInvalidVector, float y=-1)
+{
+    v.y = y;
+    return(v);
+}
+
+//=============================================================================
+//   MathVectorSetZ
+//=============================================================================
+// Set the z component of the given vector, returns the new vector.
+vector MathVectorSetZ(vector v=cInvalidVector, float z=-1)
+{
+    v.z = z;
+    return(v);
 }
 
 //=============================================================================
@@ -331,10 +365,10 @@ vector MathPointAlongPath(vector PathStart=cOriginVector, vector PathEnd=cOrigin
 vector MathPointOnCircle(vector centerPoint=cOriginVector, float radius=30, float angle=360)
 {
 	angle = MathDegreeToRadians(angle);
-	float x = xsVectorGetX(centerPoint) + radius * MathCosinus(angle);
-	float y = xsVectorGetY(centerPoint);	//height
-	float z = xsVectorGetZ(centerPoint) + radius * MathSinus(angle);
-	return(xsVectorSet(x,y,z));
+	float x = MathVectorGetX(centerPoint) + radius * MathCosinus(angle);
+	float y = MathVectorGetY(centerPoint);	//height
+	float z = MathVectorGetZ(centerPoint) + radius * MathSinus(angle);
+	return(MathVectorSet(x,y,z));
 }
 
 //=============================================================================
@@ -344,10 +378,10 @@ vector MathRandomPointOnCircle(vector centerPoint=cOriginVector, float minRadius
 {
 	int radius = aiRandInt(maxRadius-minRadius)+minRadius;
 	int angle = MathDegreeToRadians(aiRandInt(angle));
-	float x = xsVectorGetX(centerPoint) + radius * MathCosinus(angle);
-	float y = xsVectorGetY(centerPoint);	//height
-	float z = xsVectorGetZ(centerPoint) + radius * MathSinus(angle);
-	return(xsVectorSet(x,y,z));
+	float x = MathVectorGetX(centerPoint) + radius * MathCosinus(angle);
+	float y = MathVectorGetY(centerPoint);	//height
+	float z = MathVectorGetZ(centerPoint) + radius * MathSinus(angle);
+	return(MathVectorSet(x,y,z));
 }
 
 //=============================================================================
@@ -358,7 +392,7 @@ vector MathDirectionalVectorSetAngle(vector DV=cOriginVector, float angle=360)
 	int vectorLength = xsVectorLength(DV);
 	float vx = vectorLength * MathCosinus(MathDegreeToRadians(angle));
 	float vz = vectorLength * MathSinus(MathDegreeToRadians(angle));
-	return(xsVectorSet(vx,xsVectorGetY(DV),vz));
+	return(MathVectorSet(vx,MathVectorGetY(DV),vz));
 }
 
 //=============================================================================
@@ -366,8 +400,8 @@ vector MathDirectionalVectorSetAngle(vector DV=cOriginVector, float angle=360)
 //=============================================================================
 float MathDirectionalVectorGetAngle(vector DV=cOriginVector)
 {
-	float vx = xsVectorGetX(DV);
-	float vz = xsVectorGetZ(DV);
+	float vx = MathVectorGetX(DV);
+	float vz = MathVectorGetZ(DV);
 	float angle = MathRadiansToDegree(MathArcTangensII(vx,vz));
 	return(angle);
 }
