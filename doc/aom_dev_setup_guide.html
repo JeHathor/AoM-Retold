@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AoM: Retold − Developer Setup Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+      padding-top: 0.5rem;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    h1 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+    h4.header {
+      background-color: #4D7A97;
+      padding: 0.6rem 2rem;
+      color: #fff;
+      margin: 0;
+      width: 100vw;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    code, pre {
+      background-color: #eaeaea;
+      padding: 0.5rem;
+      display: block;
+      white-space: pre-wrap;
+      margin-bottom: 1rem;
+    }
+    strong {
+      color: #000;
+    }
+    section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    a {
+      color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h4 class="header">AoM: Retold − Developer Setup Guide</h4>
+  <h1>#xs-dev-setup</h1>
+  <section id="xs-dev-setup">
+    <p>Using the following setup will massively improve your development speed when working with XS, so we strongly recommend using it. All recommended software is free.</p>
+
+    <h2>Part 1: IDE/Editor</h2>
+    <p><strong>Visual Studio Code</strong><br>
+    Free to download at <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+
+    <p><strong>Editor Plugin: XS Code Extension</strong><br>
+    The extension file can be unpacked from <code>..\Steam\steamapps\common\Age of Mythology Retold\vscodeextensionretail.7z</code><br>
+    If you cannot unpack .7z, download 7-zip at <a href="https://www.7-zip.org/">https://www.7-zip.org/</a><br>
+    In Visual Studio Code, click on the "Extensions" (sidebar) and then on the 3 dots and choose "Install from VSXI..."</p>
+
+    <h2>Part 2: Documentation</h2>
+    <p>Find the documentation in <code>..\Steam\steamapps\common\Age of Mythology Retold\doxygen_retail.7z</code>, unzip it, and open <em>index.html</em> in the browser of your choice.</p>
+
+    <p>Further setup instructions can be found in the respective categories in <a href="#rm-dev-setup">#rm-dev-setup</a>, <a href="#rm-dev-setup">#tr-dev-setup</a>, and <a href="#ai-dev-setup">#ai-dev-setup</a>.</p>
+  </section>
+
+  <h1>#rm-dev-setup</h1>
+  <section id="rm-dev-setup">
+    <h2>Part 1: General Setup</h2>
+    <p>Check <a href="#xs-dev-setup">#xs-dev-setup</a> for the general setup.</p>
+
+    <h2>Part 2: Game Setup</h2>
+    <p>Go to the config folder:<br>
+    <code>..\Users\&lt;your username&gt;\Games\Age of Mythology Retold\&lt;your steam ID&gt;\config</code><br>
+    Create <em>user.cfg</em> and <em>user.con</em> with correct file extensions.</p>
+
+    <p>Add these options to <em>user.cfg</em>:</p>
+    <pre>noIntroCinematics
+disableAssetPreloading
+debugRandomMaps
+generateRMConstants</pre>
+
+    <p>Add these keybinds to <em>user.con</em> (replace <em>somekey</em>):</p>
+    <pre>map("somekey", "game", "leaveGame()")
+map("somekey", "game", "restartCurrentGame()")
+map("somekey", "game", "restartCurrentGameWithSeed(-1)")
+map("somekey", "root", "gadgetToggle(\"XSDebugger\")")
+map("somekey", "world", "cameraLimit()")
+map("somekey", "world", "viewEntireWorld()")
+map("somekey", "world", "toggleRMVisualizer()")</pre>
+  </section>
+
+  <h1>#tr-dev-setup</h1>
+  <section id="tr-dev-setup">
+    <h2>Part 1: General Setup</h2>
+    <p>Check <a href="#xs-dev-setup">#xs-dev-setup</a> for the general setup.</p>
+
+    <h2>Part 2: Game Setup</h2>
+    <p>Same config folder setup. Add to <em>user.cfg</em>:</p>
+    <pre>noIntroCinematics
+disableAssetPreloading
+debugTriggers
+enableTriggerEcho
+generateTRConstants</pre>
+
+    <p>Useful keybinds in <em>user.con</em>:</p>
+    <pre>map("somekey", "game", "leaveGame()")
+map("somekey", "game", "restartCurrentGame()")
+map("somekey", "root", "gadgetToggle(\"XSDebugger\")")</pre>
+  </section>
+
+  <h1>#ai-dev-setup</h1>
+  <section id="ai-dev-setup">
+    <h2>Part 1: General Setup</h2>
+    <p>Check <a href="#xs-dev-setup">#xs-dev-setup</a> for the general setup.</p>
+
+    <h2>Part 2: Config Setup</h2>
+    <p>Same config folder setup. Add to <em>user.cfg</em>:</p>
+    <pre>noIntroCinematics
+disableAssetPreloading
+AIDebug
+generateAIConstants
+runAsFastAsPossible 20</pre>
+
+    <h2>Part 3: Hotkey Setup</h2>
+    <pre>map("somekey", "root", "gadgetToggle(\"XSDebugger\")")
+map("somekey", "aidebug", "AIDebugInfoToggle")</pre>
+
+    <p>All AI-related configs usable in <em>user.cfg</em>:</p>
+    <pre>AIvsAI
+aidebug
+aidebugScript
+aibreakAtStart
+airecompilescripts
+aiHideWarningEchoes
+aiHideEngineInfoEchoes
+aiOutputPlanDestructionAndCreation
+aiOutputResourceSelection
+aioutputUnitAssignment
+aiOutputFindBestUnit
+aiOutputPlanAssignment
+aiChatDelay
+aiDontUpdate</pre>
+
+    <p>These can be toggled in-game via the AI Debug Misc menu:</p>
+    <pre>aiGraphicalBaseDebug
+aiGraphicalPlanDebug
+aiGraphicalPlanDebugAll
+aiShowBPValueText
+aiShowAreaDangerRatings</pre>
+  </section>
+
+  <h1>#index</h1>
+  <section id="index">
+    <p>Jump to: <a href="#xs-dev-setup">#xs-dev-setup</a>, <a href="#rm-dev-setup">#rm-dev-setup</a>, <a href="#rm-dev-setup">#tr-dev-setup</a>, <a href="#ai-dev-setup">#ai-dev-setup</a>.</p>
+  </section>
+</body>
+</html>
