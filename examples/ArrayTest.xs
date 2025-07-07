@@ -69,6 +69,7 @@ bool swap(int a, int b)
 {
     if(a < 0 || b < 0 || a >= testArray.size() || b >= testArray.size())
         return(false);
+
     int temp = testArray[a];
     testArray[a] = testArray[b];
     testArray[b] = temp;
