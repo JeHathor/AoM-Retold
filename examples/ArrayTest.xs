@@ -4,7 +4,7 @@
  * @author JeHathor
  * @version (06.07.2025)
  */
-int[] testArray = default;
+static int[] testArray = default;
 
 // Initialise an empty testArray, returns array size
 int initEmpty()
