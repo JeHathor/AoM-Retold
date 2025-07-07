@@ -54,8 +54,16 @@ int append(int value)
     return(testArray.size());
 }
 
+// Returns the value at the given index, or -1 if index is out-of-bounds
+int getValueAtIndex(int index)
+{
+    if (index < 0 || index >= testArray.size())
+        return(-1);
+    return(testArray[index]);
+}
+
 // Removes the element at the given index and returns the new array length
-int removeAtIndex(int index)
+int deleteIndex(int index)
 {
     if (index < 0 || index >= testArray.size())
         return(testArray.size()); // Out of Bounds
