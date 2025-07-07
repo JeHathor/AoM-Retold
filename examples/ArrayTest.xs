@@ -64,6 +64,23 @@ int removeAtIndex(int index)
     return(testArray.size());
 }
 
+// Removes all occurrences of value in testArray, returns new array length
+int removeAllByValue(int value)
+{
+    int i = 0;
+    while (i < testArray.size())
+    {
+        if (testArray[i] == value)
+        {
+            testArray.removeIndex(i);
+            // do not increment i, array has shifted
+        }else{
+            i++;
+        }
+    }
+    return(testArray.size());
+}
+
 // Swap elements at a and b, returns true on success, false on failure (invalid indices)
 bool swap(int a, int b)
 {
@@ -133,7 +150,7 @@ bool isSortedAscending()
 }
 
 // Selection sort, returns true on completion
-int selectionSort()
+bool selectionSort()
 {
     for(int q = 0; q < testArray.size(); q++)
     {
@@ -145,7 +162,7 @@ int selectionSort()
 }
 
 // Bubble sort, returns true on completion
-int bubbleSort()
+bool bubbleSort()
 {
     bool swapped;
     for(int i = 0; i < testArray.size(); i++)
@@ -166,7 +183,7 @@ int bubbleSort()
 }
 
 // Insertion sort, returns true on completion
-int insertionSort()
+bool insertionSort()
 {
     int j = 0;
     for (int i = 1; i < testArray.size(); i++)
