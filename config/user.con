@@ -31,6 +31,11 @@ map ("TODO", "game", "uiFindType(\"Hero\")", true)
 map ("TODO", "game", "uiFindType(\"Dropsite\")", true)
 
 //***************************
+// Unit Command
+//***************************
+map ("TODO", "game", "enterAttackMoveMode()", true)
+
+//***************************
 // Debug
 //***************************
 map ("TODO", "game", "AIDebugInfoToggle", true)
