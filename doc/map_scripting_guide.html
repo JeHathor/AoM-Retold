@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AoMR Random Map Scripting Guide</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2rem; background-color: #f9f9f9; color: #333; }
+    h1, h2, h3 { color: #222; }
+    code { background-color: #eee; padding: 0.2em 0.4em; border-radius: 4px; }
+    pre { background: #f0f0f0; padding: 1em; border-radius: 4px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <section id="top"></section>
+  <h1>AoMR Random Map Scripting Guide</h1>
+
+<section id="script">
+  <h2>#Typical XS-Script Structure (with Examples)</h2>
+  <p>Any map generation starts by running the <code>generate()</code> function. Inside that function, most scripts follow a similar structure, building the map elements from highest priority to lowest:</p>
+  <pre><code>include "lib2/rm_core.xs";<br><br>// Main entry point for random map script.<br>void generate()<br>{<br>   rmSetProgress(0.0);<br>}</code></pre>
+  <ol>
+    <li>
+        <strong>Set map size</strong>: Must be first! Many utility functions depend on size parameters.<br>
+        <pre><code>// Map size init.<br>int axisTiles = getScaledAxisTiles(128);<br>rmSetMapSize(axisTiles);</code></pre>
+    </li>
+    <li>
+        <strong>Initialise terrain</strong>: Define base as land or water.<br>
+        <pre><code>// Define land terrain mix.<br>int baseMixID = rmCustomMixCreate();<br>rmCustomMixSetPaintParams(baseMixID, cNoiseFractalSum, 0.1, 5, 0.5);<br>rmCustomMixAddPaintEntry(baseMixID, cTerrainGreekGrass2, 3.0);<br>rmCustomMixAddPaintEntry(baseMixID, cTerrainGreekGrass1, 4.0);<br>rmCustomMixAddPaintEntry(baseMixID, cTerrainGreekGrassDirt1, 4.0);<br>rmCustomMixAddPaintEntry(baseMixID, cTerrainGreekGrassDirt2, 2.0);<br>rmInitializeMix(baseMixID);
+        <br>// Global elevation.<br>rmAddGlobalHeightNoise(cNoiseFractalSum, 5.0, 0.05, 2, 0.5);</code></pre>
+        <pre><code>// Define water.<br>rmInitializeWater(cWaterGreekSeaAegean);</code></pre>
+    </li>
+    <li>
+        <strong>Place player locations</strong>: Logical placeholders used later for player towns / islands, etc.
+        <pre><code>// Player placement [Circle].<br>rmSetTeamSpacingModifier(0.8);<br>rmPlacePlayersOnCircle(0.375);</code></pre>
+        <pre><code>// Player placement [Square].<br>rmSetTeamSpacingModifier(0.8);<br>rmPlacePlayersOnSquare(0.35, 0.35);</code></pre>
+    </li>
+    <li>
+        <strong>Call <code>postPlayerPlacement()</code></strong>: Triggers internal state setup.
+        <pre><code>// Finalize player placement and do post-init things.<br>postPlayerPlacement();</code></pre>
+    </li>
+    <li>
+        <strong>Set nature civilisation</strong>: Affects visuals (e.g. ruins near relics).
+        <pre><code>// Mother Nature's civ [Random].<br>rmSetNatureCivFromCulture(cCultureGreek);</code></pre>
+        <pre><code>// Mother Nature's civ [Specific].<br>rmSetNatureCiv(cCivZeus);</code></pre>
+    </li>
+    <li>
+        <strong>Configure lighting</strong>: Aesthetic settings for ambient and directional light.
+        <pre><code>// Lighting.<br>rmSetLighting(cLightingSetRmMediterranean01);</code></pre>
+    </li>
+    <li>
+        <strong>Create major land areas</strong>: If initialised to water or impassable terrain.
+        <pre><code>// Single Continent.<br>int continentID = rmAreaCreate("continent");<br>rmAreaSetLoc(continentID, cCenterLoc);<br>rmAreaSetSize(continentID, xsRandFloat(0.43, 0.5));
+        <br>rmAreaSetHeight(continentID, 0.25);<br>rmAreaAddHeightBlend(continentID, cBlendEdge, cFilter5x5Gaussian, 10, 10);
+        <br>rmAreaSetHeightNoise(continentID, cNoiseFractalSum, 5.0, 0.1, 2, 0.5);<br>rmAreaSetHeightNoiseBias(continentID, 1.0);<br>rmAreaSetHeightNoiseEdgeFalloffDist(continentID, 20.0);
+        <br>rmAreaSetMix(continentID, baseMixID);
+        <br>rmAreaSetBlobs(continentID, 1 * cNumberPlayers, 2 * cNumberPlayers);<br>rmAreaSetBlobDistance(continentID, 5.0, 20.0);
+        <br>rmAreaSetEdgeSmoothDistance(continentID, 15);
+        <br>rmAreaAddConstraint(continentID, createSymmetricBoxConstraint(0.075), 0.0, 10.0);
+        <br>rmAreaBuild(continentID);</code></pre>
+    </li>
+    <li>
+        <strong>Create major water areas</strong>: If initialised to land (but optional).
+        <pre><code>// First consolidate player base areas.<br>int playerAreaClassID = rmClassCreate();<br>float playerBaseAreaSize = rmRadiusToAreaFraction(48.5);
+        <br>for(int i = 1; i <= cNumberPlayers; i++)<br>{<br>   int p = vDefaultTeamPlayerOrder[i];
+        <br>   int playerBaseAreaID = rmAreaCreate("player base area " + p);<br>   rmAreaSetLocPlayer(playerBaseAreaID, p);<br>   rmAreaSetSize(playerBaseAreaID, playerBaseAreaSize);
+        <br>   rmAreaSetCoherence(playerBaseAreaID, 0.25);<br>   rmAreaSetEdgeSmoothDistance(playerBaseAreaID, 3);<br>   rmAreaAddToClass(playerBaseAreaID, playerAreaClassID);<br>}
+        <br>// Center Ocean.<br>int seaAreaID = rmAreaCreate("sea");<br>rmAreaSetWaterType(seaAreaID, cWaterGreekSeaAegean);<br>rmAreaSetLoc(seaAreaID, cCenterLoc);<br>rmAreaSetSize(seaAreaID, xsRandFloat(0.15, 0.24));
+        <br>if (gameIs1v1() == false)<br>{<br>   rmAreaSetBlobDistance(seaAreaID, 1.0 * rmGetMapXTiles() / 10.0, 1.0 * rmGetMapZTiles() / 5.0);<br>   rmAreaSetBlobs(seaAreaID, 8, 10);<br>}
+        <br>rmAreaSetCoherence(seaAreaID, 0.25);<br>rmAreaSetEdgeSmoothDistance(seaAreaID, 5);<br>rmAreaSetWaterHeightBlend(seaAreaID, cFilter5x5Gaussian, 25, 10);<br>rmAreaAddConstraint(seaAreaID, rmCreateClassDistanceConstraint(playerAreaClassID, 1.0));
+        <br>rmAreaBuild(seaAreaID);</code></pre>
+    </li>
+    <li>
+        <strong>Call <code>placeKotHObjects()</code></strong>: King of the Hill only; places vault at map centre. Future placements must avoid this zone using constraints.
+        <pre><code>// KotH Island [Water].<br>if (gameIsKotH() == true)<br>{<br>   int islandKotHID = rmAreaCreate("koth island");<br>   rmAreaSetSize(islandKotHID, rmRadiusToAreaFraction(15.0 * sqrt(cNumberPlayers)));<br>   rmAreaSetLoc(islandKotHID, cCenterLoc);
+        <br>   rmAreaSetCoherence(islandKotHID, 0.95);<br>   rmAreaSetEdgeSmoothDistance(islandKotHID, 5);<br>   rmAreaSetHeight(islandKotHID, 0.0);<br>    rmAreaSetHeightNoise(islandKotHID, cNoiseFractalSum, 5.0, 0.05, 2, 0.25);<br>    rmAreaSetHeightNoiseBias(islandKotHID, 1.0); // Only grow upwards.<br>    rmAreaSetHeightNoiseEdgeFalloffDist(islandKotHID, 20.0);<br>   rmAreaAddHeightBlend(islandKotHID, cBlendEdge, cFilter5x5Box, 10.0, 5.0);
+        <br>   rmAreaAddToClass(islandKotHID, vKotHClassID);
+        <br>   rmAreaBuild(islandKotHID);<br>}</code></pre>
+        <pre><code>placeKotHObjects();	//KotH Plenty Vault.</code></pre>
+    </li>
+    <li>
+        <strong>Place player starting objects</strong>: town centre, towers, etc.
+        <pre><code>// Base beautification.<br>float baseBeautificationSize = rmRadiusToAreaFraction(32.5);
+        <br>for(int i = 1; i <= cNumberPlayers; i++)<br>{<br>   int p = vDefaultTeamPlayerOrder[i];
+        <br>   int baseBeautificationAreaID = rmAreaCreate("base area beautification " + p);<br>   rmAreaSetLocPlayer(baseBeautificationAreaID, p);<br>   rmAreaSetSize(baseBeautificationAreaID, baseBeautificationSize);
+        <br>   rmAreaSetTerrainType(baseBeautificationAreaID, cTerrainGreekRoad1);<br>   rmAreaAddTerrainLayer(baseBeautificationAreaID, cTerrainGreekGrassRocks1, 1, 2);<br>   rmAreaAddTerrainLayer(baseBeautificationAreaID, cTerrainGreekRoad3, 0);<br>}<br>rmAreaBuildAll();</code></pre>
+        <pre><code>// Starting settlement.<br>placeStartingTownCenters();
+        <br>// Starting towers.<br>int startingTowerID = rmObjectDefCreate("starting tower");<br>rmObjectDefAddItem(startingTowerID, cUnitTypeSentryTower, 1);<br>addObjectLocsPerPlayer(startingTowerID, true, 4, cStartingTowerMinDist, cStartingTowerMaxDist, cStartingTowerAvoidanceMeters);<br>generateLocs("starting tower locs");</code></pre>
+    </li>
+    <li>
+        <strong>Place unclaimed settlements</strong>: Neutral town centres / build spots.
+        <pre><code></code></pre>
+    </li>
+    <li>
+        <strong>Add terrain features</strong>: Cliffs, lakes, and similar topographical elements.
+        <pre><code></code></pre>
+        <pre><code>// Ponds.</code></pre>
+    </li>
+    <li>
+        <strong>Place nearby resources</strong>: Small gold mines, berries, huntables, herdables.
+        <pre><code></code></pre>
+    </li>
+    <li>
+        <strong>Create forest areas</strong>: Core strategic and visual resource zones.
+        <pre><code></code></pre>
+    </li>
+    <li>
+        <strong>Add distant resources</strong>: Larger gold deposits and additional fauna.
+        <pre><code></code></pre>
+    </li>
+    <li>
+        <strong>Place relics</strong>: Scattered based on constraints or randomness.
+        <pre><code></code></pre>
+    </li>
+    <li>
+        <strong>Add decorative objects</strong>: Straggler trees, rocks, birds, grass, etc.
+        <pre><code></code></pre>
+    </li>
+    <li>
+        <strong>Call it done</strong>: Set the status bar to 100%. Makes any user happy - Me too.
+        <pre><code>rmSetProgress(1.0);</code></pre>
+    </li>
+  </ol>
+</section>
+
+<section id="concepts">
+  <h2>#Core Concepts</h2>
+
+  <h3>Areas</h3>
+  <p>Areas define geometric zones used for placing terrain, objects, or triggers. Defined with properties such as shape, size, and placement rules.</p>
+  <pre><code>//Example Area.<br>int areaID = rmAreaCreate("center");<br>rmAreaSetSize(areaID, 0.3);<br>vector areaLoc = xsVectorCreate(rmXFractionToMeters(0.5), 0.0, rmZFractionToMeters(0.5));<br>rmAreaSetLoc(areaID, areaLoc);
+  <br>//There are two ways of restricting an area to another area:<br>int childAreaID = rmAreaCreate("only within center", areaID);<br>rmAreaSetParent(childAreaID, areaID);</code></pre>
+
+  <h3>Blobs</h3>
+  <p>Painting an area compares to painting a circle. With blobs, instead of one, many of the same circles will form a cluster of blobs, leading to a complexer shape.<br>(Useful for islands, forests, water bodies, or cliffs)</p>
+  <pre><code>//Example Blobs.<br>rmAreaSetBlobs(areaID, 4, 5);<br>rmAreaSetBlobDistance(areaID, 10, 20);</code></pre>
+
+  <h3>Constraints</h3>
+  <p>Constraints restrict placement of objects based on conditions like proximity, area class, or player distance. They ensure logical and fair object placement.</p>
+  <pre><code>//Example Constraints.</code></pre>
+
+  <h3>ObjectDefs</h3>
+  <p>Object definitions specify what and how many entities (e.g. gold mines, settlements) are placed. Essentially they make up everything in a world that isn’t terrain.</p>
+  <pre><code>//Example ObjectDef.</code></pre>
+
+  <h3>Classes</h3>
+  <p>Classes allow grouping of objects and areas for collective reference or exclusion.</p>
+  <pre><code>//Example Class.</code></pre>
+
+  <h3>Mixes</h3>
+  <p>Mixes define terrain textures and their blending ratios within an area.</p>
+  <pre><code>//Example Mix.</code></pre>
+
+  <h3>Paths</h3>
+  <p>Paths create linear routes or roads between areas, optionally used for trade routes or visual structure.</p>
+  <pre><code>//Example Path.</code></pre>
+
+  <h3>AreaDefs</h3>
+  <p>Area definitions tie together terrain, object definitions, and mixes for a given area. They finalise what happens in that zone.</p>
+  <pre><code>//Example AreaDef.</code></pre>
+</section>
+
+  <br><hr>
+
+<section id="index">
+  <h2>#References</h2>
+  <p><a href="https://jehathor.github.io/AoM-Retold/RetoldFunctions.html">RetoldFunctions</a>, <a href="https://jehathor.github.io/AoM-Retold/constant-values.html">RetoldConstants</a> | <a href="https://jehathor.github.io/AoM-Retold/dev-setup-guide.html#rm-dev-setup">DevSetupGuide</a></p>
+</section>
+
+</body>
+</html>
