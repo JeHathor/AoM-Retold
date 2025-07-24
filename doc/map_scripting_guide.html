@@ -98,7 +98,11 @@
     </li>
     <li>
         <strong>Place unclaimed settlements</strong>: Neutral town centres / build spots.
-        <pre><code>TODO</code></pre>
+        <pre><code>// Neutral settlements.<br>int firstSettlementID = rmObjectDefCreate("first settlement");<br>rmObjectDefAddItem(firstSettlementID, cUnitTypeSettlement, 1);<br>rmObjectDefAddConstraint(firstSettlementID, vDefaultSettlementAvoidEdge);<br>rmObjectDefAddConstraint(firstSettlementID, vDefaultAvoidTowerLOS);<br>rmObjectDefAddConstraint(firstSettlementID, vDefaultAvoidCorner40);<br>rmObjectDefAddConstraint(firstSettlementID, vDefaultSettlementAvoidSiegeShipRange);
+        <br>int secondSettlementID = rmObjectDefCreate("second settlement");<br>rmObjectDefAddItem(secondSettlementID, cUnitTypeSettlement, 1);<br>rmObjectDefAddConstraint(secondSettlementID, vDefaultSettlementAvoidEdge);<br>rmObjectDefAddConstraint(secondSettlementID, vDefaultAvoidTowerLOS);<br>rmObjectDefAddConstraint(secondSettlementID, vDefaultAvoidCorner40);<br>rmObjectDefAddConstraint(secondSettlementID, vDefaultAvoidKotH);<br>rmObjectDefAddConstraint(secondSettlementID, vDefaultSettlementAvoidSiegeShipRange);
+        <br>if(gameIs1v1() == true)<br>{<br>   addSimObjectLocsPerPlayerPair(firstSettlementID, false, 1, 60.0, 80.0, cSettlementDist1v1, cBiasBackward);<br>   addSimObjectLocsPerPlayerPair(secondSettlementID, false, 1, 80.0, 120.0, cSettlementDist1v1, cBiasAggressive);<br>}<br>else<br>{<br>   addObjectLocsPerPlayer(firstSettlementID, false, 1, 60.0, 80.0, cCloseSettlementDist, cBiasBackward | cBiasAllyInside);<br>   addObjectLocsPerPlayer(secondSettlementID, false, 1, 70.0, 90.0, cFarSettlementDist, cBiasAggressive | getRandomAllyBias());<br>}
+        <br>// Other map sizes settlements.<br>if (cMapSizeCurrent > cMapSizeStandard)<br>{<br>   int bonusSettlementID = rmObjectDefCreate("bonus settlement");<br>   rmObjectDefAddItem(bonusSettlementID, cUnitTypeSettlement, 1);<br>   rmObjectDefAddConstraint(bonusSettlementID, vDefaultSettlementAvoidEdge);<br>   rmObjectDefAddConstraint(bonusSettlementID, vDefaultAvoidTowerLOS);<br>   rmObjectDefAddConstraint(bonusSettlementID, vDefaultAvoidCorner40);<br>   rmObjectDefAddConstraint(bonusSettlementID, vDefaultAvoidKotH);<br>   rmObjectDefAddConstraint(bonusSettlementID, vDefaultSettlementAvoidSiegeShipRange);<br>   addObjectLocsPerPlayer(bonusSettlementID, false, 1 * getMapAreaSizeFactor(), 90.0, -1.0, 100.0);<br>}
+        <br>generateLocs("settlement locs");</code></pre>
     </li>
     <li>
         <strong>Add terrain features</strong>: Cliffs, lakes, and similar topographical elements.
@@ -128,7 +132,7 @@
     <li>
         <strong>Add decorative objects</strong>: Straggler trees, rocks, birds, grass, etc.
         <pre><code>TODO</code></pre>
-        <pre><code>// Seaweed.<br>int seaweedID = rmObjectDefCreate("seaweed");<br>rmObjectDefAddItem(seaweedID, cUnitTypeSeaweed, 1);<br>rmObjectDefAddConstraint(seaweedID, rmCreatePassabilityDistanceConstraint(cPassabilityLand, true, 2.0));<br>rmObjectDefAddConstraint(seaweedID, rmCreatePassabilityMaxDistanceConstraint(cPassabilityLand, true, 6.0));<br>rmObjectDefPlaceAnywhere(seaweedID, 0, 100.0 * sqrt(cNumberPlayers) * getMapAreaSizeFactor());</code></pre>
+        <pre><code>// Seaweed.<br>int seaweedID = rmObjectDefCreate("seaweed");<br>rmObjectDefAddItem(seaweedID, cUnitTypeSeaweed, 1);<br>rmObjectDefAddConstraint(seaweedID, rmCreatePassabilityDistanceConstraint(cPassabilityLand, true, 2.0));<br>rmObjectDefAddConstraint(seaweedID, rmCreatePassabilityMaxDistanceConstraint(cPassabilityLand, true, 6.0));<br>rmObjectDefAddConstraint(seaweedID, rmCreateMinWaterDepthConstraint(2.25));<br>rmObjectDefPlaceAnywhere(seaweedID, 0, 100.0 * sqrt(cNumberPlayers) * getMapAreaSizeFactor());</code></pre>
         <pre><code>// Birbs.<br>int birdID = rmObjectDefCreate("bird");<br>rmObjectDefAddItem(birdID, cUnitTypeHawk, 1);<br>rmObjectDefPlaceAnywhere(birdID, 0, 2 * cNumberPlayers * getMapAreaSizeFactor());</code></pre>
     </li>
     <li>
@@ -178,7 +182,7 @@
   <pre><code>//Example ObjectDef [Rain].<br>int rainEffectID = rmObjectDefCreate("rainVFX");<br>rmObjectDefAddItem(rainEffectID, cUnitTypeVFXWeatherRain, 1);<br>rmObjectDefPlaceAtLoc(rainEffectID, 0, cCenterLoc);</code></pre>
 
   <h3>AreaDefs</h3>
-  <p>Area definitions tie together terrain, object definitions, and mixes for a given area. They finalise what happens in that zone.</p>
+  <p>Area definitions act as reusable templates for building multiple areas with shared properties (commonly used for forest patches).</p>
   <pre><code>//Example AreaDef.<br>TODO</code></pre>
 </section>
 
