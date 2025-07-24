@@ -5,16 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AoMR Random Map Scripting Guide</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2rem; background-color: #f9f9f9; color: #333; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f9f9f9; color: #333; }
     h1, h2, h3 { color: #222; }
+    h1 {
+      background-color: #4D7A97;
+      color: #fff;
+      padding: 1.5rem;
+      margin: 0;
+      width: 100%;
+    }
     code { background-color: #eee; padding: 0.2em 0.4em; border-radius: 4px; }
     pre { background: #f0f0f0; padding: 1em; border-radius: 4px; overflow-x: auto; }
+    main { padding: 2rem; }
   </style>
 </head>
 <body>
   <section id="top"></section>
   <h1>AoMR Random Map Scripting Guide</h1>
-
+  <hr>
+<main>
 <section id="script">
   <h2>#Typical XS-Script Structure (with Examples)</h2>
   <p>Any map generation starts by running the <code>generate()</code> function. Inside that function, most scripts follow a similar structure, building the map elements from highest priority to lowest:</p>
@@ -89,32 +98,38 @@
     </li>
     <li>
         <strong>Place unclaimed settlements</strong>: Neutral town centres / build spots.
-        <pre><code></code></pre>
+        <pre><code>TODO</code></pre>
     </li>
     <li>
         <strong>Add terrain features</strong>: Cliffs, lakes, and similar topographical elements.
-        <pre><code></code></pre>
-        <pre><code>// Ponds.</code></pre>
+        <pre><code>TODO</code></pre>
+        <pre><code>// Ponds.<br>TODO</code></pre>
     </li>
     <li>
         <strong>Place nearby resources</strong>: Small gold mines, berries, huntables, herdables.
-        <pre><code></code></pre>
+        <pre><code>TODO</code></pre>
     </li>
     <li>
         <strong>Create forest areas</strong>: Core strategic and visual resource zones.
-        <pre><code></code></pre>
+        <pre><code>TODO</code></pre>
     </li>
     <li>
         <strong>Add distant resources</strong>: Larger gold deposits and additional fauna.
-        <pre><code></code></pre>
+        <pre><code>TODO</code></pre>
     </li>
     <li>
         <strong>Place relics</strong>: Scattered based on constraints or randomness.
-        <pre><code></code></pre>
+        <pre><code>// Relics.<br>float avoidRelicMeters = 80.0;
+        <br>int relicID = objectDefCreateTracked("relic");<br>rmObjectDefAddItem(relicID, cUnitTypeRelic, 1);
+        <br>rmObjectDefAddItem(relicID, cUnitTypeColumns, xsRandInt(2, 3), 4.0);<br>rmObjectDefAddItem(relicID, cUnitTypeColumnsBroken, xsRandInt(2, 3), 4.0);
+        <br>rmObjectDefAddConstraint(relicID, vDefaultAvoidEdge);<br>rmObjectDefAddConstraint(relicID, vDefaultRelicAvoidAll);<br>rmObjectDefAddConstraint(relicID, vDefaultRelicAvoidImpassableLand);<br>rmObjectDefAddConstraint(relicID, vDefaultAvoidTowerLOS);<br>rmObjectDefAddConstraint(relicID, vDefaultAvoidSettlementRange);<br>addObjectDefPlayerLocConstraint(relicID, 70.0);<br>addObjectLocsPerPlayer(relicID, false, 2 * getMapAreaSizeFactor(), 70.0, -1.0, avoidRelicMeters);
+        <br>generateLocs("relic locs");</code></pre>
     </li>
     <li>
         <strong>Add decorative objects</strong>: Straggler trees, rocks, birds, grass, etc.
-        <pre><code></code></pre>
+        <pre><code>TODO</code></pre>
+        <pre><code>// Seaweed.<br>int seaweedID = rmObjectDefCreate("seaweed");<br>rmObjectDefAddItem(seaweedID, cUnitTypeSeaweed, 1);<br>rmObjectDefAddConstraint(seaweedID, rmCreatePassabilityDistanceConstraint(cPassabilityLand, true, 2.0));<br>rmObjectDefAddConstraint(seaweedID, rmCreatePassabilityMaxDistanceConstraint(cPassabilityLand, true, 6.0));<br>rmObjectDefPlaceAnywhere(seaweedID, 0, 100.0 * sqrt(cNumberPlayers) * getMapAreaSizeFactor());</code></pre>
+        <pre><code>// Birbs.<br>int birdID = rmObjectDefCreate("bird");<br>rmObjectDefAddItem(birdID, cUnitTypeHawk, 1);<br>rmObjectDefPlaceAnywhere(birdID, 0, 2 * cNumberPlayers * getMapAreaSizeFactor());</code></pre>
     </li>
     <li>
         <strong>Call it done</strong>: Set the status bar to 100%. Makes any user happy - Me too.
@@ -122,50 +137,58 @@
     </li>
   </ol>
 </section>
-
+  <br><hr>
 <section id="concepts">
   <h2>#Core Concepts</h2>
 
   <h3>Areas</h3>
   <p>Areas define geometric zones used for placing terrain, objects, or triggers. Defined with properties such as shape, size, and placement rules.</p>
-  <pre><code>//Example Area.<br>int areaID = rmAreaCreate("center");<br>rmAreaSetSize(areaID, 0.3);<br>vector areaLoc = xsVectorCreate(rmXFractionToMeters(0.5), 0.0, rmZFractionToMeters(0.5));<br>rmAreaSetLoc(areaID, areaLoc);
-  <br>//There are two ways of restricting an area to another area:<br>int childAreaID = rmAreaCreate("only within center", areaID);<br>rmAreaSetParent(childAreaID, areaID);</code></pre>
+  <pre><code>//Example Area.<br>int areaID = rmAreaCreate("center");<br>rmAreaSetSize(areaID, 0.3);<br>vector areaLoc = xsVectorCreate(rmXFractionToMeters(0.5), 0.0, rmZFractionToMeters(0.5));<br>rmAreaSetLoc(areaID, areaLoc);</code></pre>
+  <p>There are two ways of restricting an area to another area:</p>
+  <pre><code>//Adding to Parent.<br>int childAreaID = rmAreaCreate("only within center", areaID);<br>rmAreaSetParent(childAreaID, areaID);</code></pre>
+  <p>Since areas can overlap, the order in which you paint them will highly affect the outcome.</p>
 
   <h3>Blobs</h3>
-  <p>Painting an area compares to painting a circle. With blobs, instead of one, many of the same circles will form a cluster of blobs, leading to a complexer shape.<br>(Useful for islands, forests, water bodies, or cliffs)</p>
+  <p>Painting an area as a single blob compares to painting a filled circle. With multiple blobs, instead of one, many of the same circles will form a cluster of blobs, leading to a complex shape.<br>(Useful for islands, forests, water bodies, or cliffs)</p>
   <pre><code>//Example Blobs.<br>rmAreaSetBlobs(areaID, 4, 5);<br>rmAreaSetBlobDistance(areaID, 10, 20);</code></pre>
+  <p>Individual blobs can be shaped via coherence, with a value of <code>1.0</code> representing a perfect circle (or square). Need something wild? Try negative coherence.</p>
+  <pre><code>//Example Coherence.<br>rmAreaSetCoherence(areaID, 1.0);<br>rmAreaSetCoherenceSquare(areaID, true);</code></pre>
 
   <h3>Constraints</h3>
-  <p>Constraints restrict placement of objects based on conditions like proximity, area class, or player distance. They ensure logical and fair object placement.</p>
-  <pre><code>//Example Constraints.</code></pre>
-
-  <h3>ObjectDefs</h3>
-  <p>Object definitions specify what and how many entities (e.g. gold mines, settlements) are placed. Essentially they make up everything in a world that isn’t terrain.</p>
-  <pre><code>//Example ObjectDef.</code></pre>
+  <p>Constraints restrict placement of objects and areas based on relative conditions - like proximity to terrain, class, or player. They ensure logical and fair object placement.</p>
+  <pre><code>//Example Constraints.<br>int nearEdgeConstraint = rmCreateAreaEdgeMaxDistanceConstraint(areaID, 15, "stay close to edge of area");<br>int mountainConstraint = rmCreateMaxHeightConstraint(4.0, "avoid higher altitude");<br>int valleyConstraint = rmCreateMinHeightConstraint(-2.0, "avoid lower altitude");<br>int avoidTerrainType = rmCreateTerrainTypeDistanceConstraint(cTerrainGreekRoadBurnt2, 10, "avoid burnt road 2");</code></pre>
 
   <h3>Classes</h3>
   <p>Classes allow grouping of objects and areas for collective reference or exclusion.</p>
-  <pre><code>//Example Class.</code></pre>
+  <pre><code>//Example Class.<br>int areaClassID = rmClassCreate();<br>rmAreaAddToClass(areaID, areaClassID);
+  <br>rmCreateClassDistanceConstraint(areaClassID, 15, "avoid class area");</code></pre>
 
   <h3>Mixes</h3>
   <p>Mixes define terrain textures and their blending ratios within an area.</p>
-  <pre><code>//Example Mix.</code></pre>
+  <pre><code>//Example Mix [Sand].<br>int sandMixID = rmCustomMixCreate();<br>rmCustomMixSetPaintParams(sandMixID, cNoiseFractalSum, 0.1, 5, 0.5);<br>rmCustomMixAddPaintEntry(sandMixID, cTerrainEgyptDirt1, 1.0);<br>rmCustomMixAddPaintEntry(sandMixID, cTerrainEgyptSand1, 1.0);<br>rmCustomMixAddPaintEntry(sandMixID, cTerrainEgyptSand2, 1.0);<br>rmCustomMixAddPaintEntry(sandMixID, cTerrainEgyptSand3, 1.0);</code></pre>
+  <pre><code>//Example Mix [Snow].<br>int snowMixID = rmCustomMixCreate();<br>rmCustomMixSetPaintParams(snowMixID, cNoiseFractalSum, 0.1, 5, 0.5);<br>rmCustomMixAddPaintEntry(snowMixID, cTerrainNorseSnow2, 3.0);<br>rmCustomMixAddPaintEntry(snowMixID, cTerrainNorseSnow1, 3.0);<br>rmCustomMixAddPaintEntry(snowMixID, cTerrainNorseSnowGrass1, 2.0);<br>rmCustomMixAddPaintEntry(snowMixID, cTerrainNorseSnowGrass2, 2.0);</code></pre>
 
   <h3>Paths</h3>
   <p>Paths create linear routes or roads between areas, optionally used for trade routes or visual structure.</p>
-  <pre><code>//Example Path.</code></pre>
+  <pre><code>//Example Path.<br>int pathID = rmPathDefCreate("road");<br>TODO</code></pre>
+
+  <h3>ObjectDefs</h3>
+  <p>Object definitions specify what and how many entities (e.g. gold mines, settlements) are placed. Essentially they make up everything in a world that isn’t terrain.</p>
+  <pre><code>//Example ObjectDef [Snow].<br>int snowEffectID = rmObjectDefCreate("snowVFX");<br>rmObjectDefAddItem(snowEffectID, cUnitTypeVFXWeatherSnow, 1);<br>rmObjectDefPlaceAtLoc(snowEffectID, 0, cCenterLoc);</code></pre>
+  <pre><code>//Example ObjectDef [Rain].<br>int rainEffectID = rmObjectDefCreate("rainVFX");<br>rmObjectDefAddItem(rainEffectID, cUnitTypeVFXWeatherRain, 1);<br>rmObjectDefPlaceAtLoc(rainEffectID, 0, cCenterLoc);</code></pre>
 
   <h3>AreaDefs</h3>
   <p>Area definitions tie together terrain, object definitions, and mixes for a given area. They finalise what happens in that zone.</p>
-  <pre><code>//Example AreaDef.</code></pre>
+  <pre><code>//Example AreaDef.<br>TODO</code></pre>
 </section>
 
   <br><hr>
 
 <section id="index">
   <h2>#References</h2>
-  <p><a href="https://jehathor.github.io/AoM-Retold/RetoldFunctions.html">RetoldFunctions</a>, <a href="https://jehathor.github.io/AoM-Retold/constant-values.html">RetoldConstants</a> | <a href="https://jehathor.github.io/AoM-Retold/dev-setup-guide.html#rm-dev-setup">DevSetupGuide</a></p>
+  <p>➪ <a href="https://jehathor.github.io/AoM-Retold/RetoldFunctions.html">RetoldFunctions</a>, <a href="https://jehathor.github.io/AoM-Retold/constant-values.html">RetoldConstants</a> | <a href="https://jehathor.github.io/AoM-Retold/dev-setup-guide.html#rm-dev-setup">DevSetupGuide</a></p>
 </section>
 
+</main>
 </body>
 </html>
