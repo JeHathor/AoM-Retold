@@ -24,6 +24,7 @@
   <h1>AoMR Random Map Scripting Guide</h1>
   <hr>
 <main>
+
 <section id="script">
   <h2>#Typical XS-Script Structure (with Examples)</h2>
   <p>Any map generation starts by running the <code>generate()</code> function. Inside that function, most scripts follow a similar structure, building the map elements from highest priority to lowest:</p>
@@ -141,7 +142,35 @@
     </li>
   </ol>
 </section>
+
   <br><hr>
+
+<section id="biomes">
+  <h2>#Biomes</h2>
+
+  <p>Working with biomes: Biomes can help you at randomizing the appearence of your map.</p>
+  <h4>Library Setup</h4>
+  <pre><code>include "lib2/rm_biomes.xs";</code></pre>
+  <pre><code>cBiome = getRandomBiome();	//Select a biome.</code></pre>
+
+  <h4>Map Basics</h4>
+  <pre><code>// Set lighting from biome.<br>   rmSetLighting( cBiome.getRandomLighting() );</code></pre>
+  <pre><code>// If we force a specific civ for that biome do that, otherwise randomize.<br>   if(cBiome.getCivID() == cInvalidID)<br>   {<br>      rmSetNatureCivFromCulture( cBiome.getCultureID() );<br>   }<br>   else<br>   {<br>      rmSetNatureCiv( cBiome.getCivID() );<br>   }</code></pre>
+  <h4>Area Types</h4>
+  <pre><code>// Get mix from biome.<br>   int defaultMixID = cBiome.getDefaultMix();</code></pre>
+  <pre><code>// Get water from biome.<br>   int defaultWaterID = cBiome.getDefaultWater();</code></pre>
+  <pre><code>// Get cliff from biome.<br>   int cliffTypeID1 = cBiome.getRandomCliff(cCliffInsidePassable);<br>   int cliffTypeID2 = cBiome.getRandomCliff(cCliffInsideImpassable);</code></pre>
+  <pre><code>// Get random forest from biome.<br>   int forestTypeID = cBiome.getRandomForest();</code></pre>
+  <h4>Objects</h4>
+  <pre><code>// Get random tree from biome.<br>   int treeTypeID = cBiome.getRandomTree();</code></pre>
+  <pre><code>// Get random fish from biome.<br>   int fishTypeID = cBiome.getRandomFish();</code></pre>
+  <pre><code>// Get all the plant embellishment.<br>   int[] plantEmbellishments = cBiome.getPlantEmbellishments();<br>   int numPlantEmbellishments = plantEmbellishments.size();<br><br>   for(int i = 0; i < numPlantEmbellishments; i++)<br>   {<br>      int embellishmentTypeID = plantEmbellishments[i];<br>   }</code></pre>
+  <pre><code>// Get all the rock embellishment.<br>   int[] rockEmbellishments = cBiome.getRockEmbellishments();<br>   int numRockEmbellishments = rockEmbellishments.size();<br><br>   for(int i = 0; i < numRockEmbellishments; i++)<br>   {<br>      int embellishmentTypeID = rockEmbellishments[i];<br>   }</code></pre>
+  <pre><code>// Get random bird from biome.<br>   int birdTypeID = cBiome.getRandomBird();</code></pre>
+</section>
+
+  <br><hr>
+
 <section id="concepts">
   <h2>#Core Concepts</h2>
 
