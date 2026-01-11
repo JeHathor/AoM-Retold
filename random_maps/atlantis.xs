@@ -121,6 +121,12 @@ void generate()
    // Finalize player placement and do post-init things.
    postPlayerPlacement();
 
+   // Player resources.
+   for(int i = 1; i <= cNumberPlayers; i++)
+   {
+      rmAddPlayerResource(i, cResourceWood, 100.0);
+   }
+
    //---------------------------------------------
    // player water ring
    //---------------------------------------------
