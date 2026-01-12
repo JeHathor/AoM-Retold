@@ -65,6 +65,10 @@ void createTriggers()
       {
          rmTriggerAddScriptLine("trForbidProtounit(" + i + ", \"EconomicGuild\");");
       }
+      else if(cultureID == cCultureChinese)
+      {
+         rmTriggerAddScriptLine("trForbidProtounit(" + i + ", \"Silo\");");
+      }
 
       // Generic stuff.
       rmTriggerAddScriptLine("trForbidProtounit(" + i + ", \"Farm\");");
@@ -158,6 +162,21 @@ void createTriggers()
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeAtlas, " + i + ", " + cMythicAgeDelta + ", cXSRelativityAbsolute);");
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeHelios, " + i + ", " + cMythicAgeDelta + ", cXSRelativityAbsolute);");
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeHekate, " + i + ", " + cMythicAgeDelta + ", cXSRelativityAbsolute);");
+      }
+      else if(cultureID == cCultureChinese)
+      {
+         // Age ups research faster.
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechClassicalAgeXuannu, " + i + ", " + cClassicalAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechClassicalAgeChiyou, " + i + ", " + cClassicalAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechClassicalAgeHoutu, " + i + ", " + cClassicalAgeDelta + ", cXSRelativityAbsolute);");
+
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeGoumang, " + i + ", " + cHeroicAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeRushou, " + i + ", " + cHeroicAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeNuba, " + i + ", " + cHeroicAgeDelta + ", cXSRelativityAbsolute);");
+
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeZhurong, " + i + ", " + cMythicAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeGonggong, " + i + ", " + cMythicAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeHuangdi, " + i + ", " + cMythicAgeDelta + ", cXSRelativityAbsolute);");
       }
    }
 
