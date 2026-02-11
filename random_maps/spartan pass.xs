@@ -45,6 +45,8 @@ void createTriggers()
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeArtemis, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeHephaestus, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeHera, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
+
+         // DLC Greek
       }
       else if(cultureID == cCultureEgyptian)
       {
@@ -76,7 +78,7 @@ void createTriggers()
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeHel, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeTyr, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
 
-         // DLC 1
+         // DLC Norse
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechClassicalAgeUllr, " + i + ", " + classicalAgeDelta + ", cXSRelativityAbsolute);");
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeAegir, " + i + ", " + heroicAgeDelta + ", cXSRelativityAbsolute);");
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeVidar, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
@@ -96,6 +98,22 @@ void createTriggers()
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeHelios, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeHekate, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
       }
+      else if(cultureID == cCultureChinese)
+      {
+         // Age ups research faster.
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechClassicalAgeXuannu, " + i + ", " + classicalAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechClassicalAgeChiyou, " + i + ", " + classicalAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechClassicalAgeHoutu, " + i + ", " + classicalAgeDelta + ", cXSRelativityAbsolute);");
+
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeGoumang, " + i + ", " + heroicAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeRushou, " + i + ", " + HheroicAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeNuba, " + i + ", " + heroicAgeDelta + ", cXSRelativityAbsolute);");
+
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeZhurong, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeGonggong, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeHuangdi, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
+      }
+	// DLC Japanese
    }
 
    // We're done.
@@ -190,7 +208,7 @@ void generate()
       rmAreaSetMix(teamIslandID, baseMixID);
       rmAreaSetLocTeam(teamIslandID, i);
 
-      rmAreaSetCliffType(teamIslandID, cTerrainGreekCliff1);
+      rmAreaSetCliffType(teamIslandID, cCliffGreekGrass);
       rmAreaSetCliffSideRadius(teamIslandID, 0, 0);
       rmAreaSetCliffEmbellishmentDensity(teamIslandID, 0.15);
 
@@ -230,7 +248,7 @@ void generate()
       int blendIdx = rmAreaAddHeightBlend(islandKotHID, cBlendAll, cFilter3x3Gaussian, 5, 2);
       rmAreaAddHeightBlendConstraint(islandKotHID, blendIdx, vDefaultAvoidImpassableLand);
 
-      rmAreaSetCliffType(islandKotHID, cTerrainGreekCliff1);
+      rmAreaSetCliffType(islandKotHID, cCliffGreekGrass);
       rmAreaSetCliffSideRadius(islandKotHID, 0, 2);
       rmAreaSetCliffLayerPaint(islandKotHID, cCliffLayerOuterSideClose, false);
       rmAreaSetCliffLayerPaint(islandKotHID, cCliffLayerOuterSideFar, false);
@@ -261,7 +279,7 @@ void generate()
    rmAreaDefAddHeightConstraint(pathAreaDefID, rmCreatePassabilityMaxDistanceConstraint(cPassabilityLand, false, 0.0));
    rmAreaDefAddHeightBlend(pathAreaDefID, cBlendAll, cFilter5x5Gaussian);
    
-   rmAreaDefSetCliffType(pathAreaDefID, cTerrainGreekCliff1);
+   rmAreaDefSetCliffType(pathAreaDefID, cCliffGreekGrass);
    rmAreaDefSetCliffSideRadius(pathAreaDefID, 0, 2);
    rmAreaDefSetCliffLayerEmbellishmentDensity(pathAreaDefID, cCliffLayerInnerSideClose, 0.5);
    rmAreaDefSetCliffLayerEmbellishmentDensity(pathAreaDefID, cCliffLayerInnerSideFar, 0.5);
