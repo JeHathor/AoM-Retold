@@ -106,7 +106,7 @@ void createTriggers()
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechClassicalAgeHoutu, " + i + ", " + classicalAgeDelta + ", cXSRelativityAbsolute);");
 
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeGoumang, " + i + ", " + heroicAgeDelta + ", cXSRelativityAbsolute);");
-         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeRushou, " + i + ", " + HheroicAgeDelta + ", cXSRelativityAbsolute);");
+         rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeRushou, " + i + ", " + heroicAgeDelta + ", cXSRelativityAbsolute);");
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechHeroicAgeNuba, " + i + ", " + heroicAgeDelta + ", cXSRelativityAbsolute);");
 
          rmTriggerAddScriptLine("trTechModifyResearchPoints(cTechMythicAgeZhurong, " + i + ", " + mythicAgeDelta + ", cXSRelativityAbsolute);");
