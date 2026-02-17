@@ -250,7 +250,7 @@ void generate()
    rmSetProgress(0.4);
 
    // Cliffs.
-   int numCliffsPerPlayer = 3 * getMapAreaSizeFactor(); // Could also randomize 3-4 here.
+   int numCliffsPerPlayer = xsRandInt(1, 2) * getMapAreaSizeFactor();	//was 3
 
    int cliffClassID = rmClassDefine();
 
@@ -325,7 +325,7 @@ void generate()
    }
    else
    {
-      rmObjectDefAddItem(farHuntID, cUnitTypeAurochs, xsRandInt(2, 4));
+      rmObjectDefAddItem(farHuntID, cUnitTypeAurochs, xsRandInt(3, 4));
    }
    rmObjectDefAddConstraint(farHuntID, vDefaultAvoidAll);
    rmObjectDefAddConstraint(farHuntID, vDefaultAvoidEdge);
