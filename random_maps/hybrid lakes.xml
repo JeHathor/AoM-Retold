@@ -3,7 +3,7 @@
     displayName = "Hybrid Lakes" 
     detailsText = "A lush grassland with walkable lakes in the middle, teeming with fish. ~ by JeHathor" 
     loadDetailsText ="A lush grassland with walkable lakes in the middle, teeming with fish. ~ by JeHathor"
-    imagepath = "resources\maps\map_picker\aso_grasslands.png" 
+    imagepath = "resources\maps\map_picker\marsh.png" 
     cannotReplace = "" 
     loadBackground="resources\maps\previews\aso_grasslands.png"
     landmap="">
