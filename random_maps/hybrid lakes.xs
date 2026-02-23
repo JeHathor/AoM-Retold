@@ -125,7 +125,7 @@ void generate()
       }
       int lakeFishID = rmObjectDefCreate("lake fish " + i);
       rmObjectDefAddItem(lakeFishID, cUnitTypePerch, 2, cBerryClusterRadius * 2);
-      for(int j = 0; j < numLakes; j++)
+      for(int j = 0; j < numFishSpawns; j++)
       {
          rmObjectDefPlaceNearLoc(lakeFishID, 0, lakeLoc);
       }
