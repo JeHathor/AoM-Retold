@@ -17,7 +17,7 @@ void generate()
    rmSetNatureCivFromCulture(cCultureAtlantean);
 
    // Lighting.
-   rmSetLighting("tna11");
+   rmSetLighting("biome_greek_temperate_day_01_mod");	/*tna11*/
 
    // Define mixes.
    int baseMixID = rmCustomMixCreate();
