@@ -29,7 +29,7 @@ void generate()
    rmSetNatureCivFromCulture(cCultureJapanese);
 
    // Lighting.
-   rmSetLighting(cLightingSetRmYellowRiver01);
+   rmSetLighting(cLightingSetRmArchipelago01);	/*YellowRiver*/
 
    // Default tree type.
    rmSetDefaultTreeType(cUnitTypeTreePineBuddhist);
@@ -45,7 +45,9 @@ void generate()
    // Lakes.
    int lakeClassID = rmClassCreate();
    int lakeGrassClassID = rmClassCreate();
+   int forceInGrassArea = rmCreateClassMaxDistanceConstraint(lakeGrassClassID, 0.0);
    int avoidLakeShort = rmCreateClassDistanceConstraint(lakeClassID, 1.0);
+   int avoidLakeMid = rmCreateClassDistanceConstraint(lakeClassID, 3.0);
    int avoidLake = rmCreateClassDistanceConstraint(lakeClassID, 7.0);
    int avoidLakeGrass = rmCreateClassDistanceConstraint(lakeGrassClassID, 1.0);
    int lakeAvoidSelf = rmCreateClassDistanceConstraint(lakeClassID, 10.0);
@@ -119,12 +121,21 @@ void generate()
       rmAreaSetLoc(lakeID, lakeLoc);
       rmAreaBuild(lakeID);
 
-      int numFishSpawns = 3 + (((cNumberPlayers/2) - 1) * (cNumberPlayers/2)) / 2;
+      int lakeCenterSpawnID = rmObjectDefCreate("center fish " + i);
+      rmObjectDefAddItem(lakeCenterSpawnID, cUnitTypePerch, 1, 0);
+      rmObjectDefPlaceNearLoc(lakeCenterSpawnID, 0, lakeLoc);
+
+      int numFishSpawns = (3 + (((cNumberPlayers/2) - 1) * (cNumberPlayers/2)) / 2) * getMapAreaSizeFactor();
       if (numLakes < 4) {
          numFishSpawns *= 2;
       }
       int lakeFishID = rmObjectDefCreate("lake fish " + i);
-      rmObjectDefAddItem(lakeFishID, cUnitTypePerch, 2, cBerryClusterRadius * 2);
+      int fishAvoidDistance = 20.0 * getMapAreaSizeFactor();
+      if (cNumberPlayers > 4) {
+         fishAvoidDistance += 5;
+      }
+      rmObjectDefAddConstraint(lakeFishID, rmCreateTypeDistanceConstraint(cUnitTypeFishResource, fishAvoidDistance));
+      rmObjectDefAddItem(lakeFishID, cUnitTypePerch, 2, 1,1);
       for(int j = 0; j < numFishSpawns; j++)
       {
          rmObjectDefPlaceNearLoc(lakeFishID, 0, lakeLoc);
@@ -166,7 +177,7 @@ void generate()
    rmObjectDefAddItem(startingTowerID, cUnitTypeSentryTower, 1);
    rmObjectDefAddConstraint(startingTowerID, vDefaultAvoidAll8);
    addObjectLocsPerPlayer(startingTowerID, true, 4, cStartingTowerMinDist, cStartingTowerMaxDist, cStartingTowerAvoidanceMeters);
-   rmObjectDefAddConstraint(startingTowerID, avoidLake);
+   rmObjectDefAddConstraint(startingTowerID, avoidLakeMid);
    generateLocs("starting tower locs");
 
    // Settlements.
@@ -257,7 +268,7 @@ void generate()
 
    // Herdables.
    int startingHerdID = rmObjectDefCreate("starting herd");
-   rmObjectDefAddItem(startingHerdID, cUnitTypeGoat, 2);
+   rmObjectDefAddItem(startingHerdID, cUnitTypeGoat, xsRandInt(2, 3));
    rmObjectDefAddConstraint(startingHerdID, vDefaultAvoidEdge);
    rmObjectDefAddConstraint(startingHerdID, vDefaultHerdAvoidAll);
    rmObjectDefAddConstraint(startingHerdID, avoidLake);
@@ -317,7 +328,7 @@ void generate()
 
    // Far hunt.
    int farHuntID = rmObjectDefCreate("far hunt");
-   rmObjectDefAddItem(farHuntID, cUnitTypeDeer, xsRandInt(6, 8));
+   rmObjectDefAddItem(farHuntID, cUnitTypeDeer, xsRandInt(6, 10));
    rmObjectDefAddConstraint(farHuntID, vDefaultAvoidEdge);
    rmObjectDefAddConstraint(farHuntID, vDefaultFoodAvoidAll);
    rmObjectDefAddConstraint(farHuntID, vDefaultAvoidTowerLOS);
@@ -335,7 +346,7 @@ void generate()
 
    // Bonus hunt.
    int bonusHuntID = rmObjectDefCreate("bonus hunt");
-   rmObjectDefAddItem(bonusHuntID, cUnitTypeSerow, xsRandInt(4, 5));
+   rmObjectDefAddItem(bonusHuntID, cUnitTypeSerow, xsRandInt(4, 6));
    rmObjectDefAddConstraint(bonusHuntID, vDefaultAvoidEdge);
    rmObjectDefAddConstraint(bonusHuntID, vDefaultFoodAvoidAll);
    rmObjectDefAddConstraint(bonusHuntID, vDefaultAvoidTowerLOS);
@@ -396,7 +407,7 @@ void generate()
    float avoidHerdMeters = 50.0;
 
    int closeHerdID = rmObjectDefCreate("close herd");
-   rmObjectDefAddItem(closeHerdID, cUnitTypeGoat, xsRandInt(1, 3));
+   rmObjectDefAddItem(closeHerdID, cUnitTypeGoat, xsRandInt(1, 2));
    rmObjectDefAddConstraint(closeHerdID, vDefaultAvoidEdge);
    rmObjectDefAddConstraint(closeHerdID, vDefaultHerdAvoidAll);
    rmObjectDefAddConstraint(closeHerdID, vDefaultAvoidTowerLOS);
@@ -409,7 +420,7 @@ void generate()
    rmObjectDefAddConstraint(bonusHerdID, vDefaultHerdAvoidAll);
    rmObjectDefAddConstraint(bonusHerdID, vDefaultAvoidTowerLOS);
    rmObjectDefAddConstraint(bonusHerdID, avoidLake);
-   addObjectLocsPerPlayer(bonusHerdID, false, 3 * getMapSizeBonusFactor(), 70.0, -1.0, avoidHerdMeters);
+   addObjectLocsPerPlayer(bonusHerdID, false, 2 * getMapSizeBonusFactor(), 70.0, -1.0, avoidHerdMeters);
 
    generateLocs("herd locs");
 
@@ -537,6 +548,14 @@ void generate()
    rmObjectDefAddConstraint(plantDeadFernID, vDefaultEmbellishmentAvoidAll);
    rmObjectDefAddConstraint(plantDeadFernID, avoidLakeGrass);
    rmObjectDefPlaceAnywhere(plantDeadFernID, 0, 30 * cNumberPlayers * getMapAreaSizeFactor());
+
+   // Grass.
+   int plantDeadGrassID = rmObjectDefCreate("japanese grass");
+   rmObjectDefAddItem(plantDeadGrassID, cUnitTypePlantJapaneseGrass, 1);
+   rmObjectDefAddConstraint(plantDeadGrassID, vDefaultEmbellishmentAvoidAll);
+   rmObjectDefAddConstraint(plantDeadGrassID, avoidLakeShort);
+   rmObjectDefAddConstraint(plantDeadGrassID, forceInGrassArea);
+   rmObjectDefPlaceAnywhere(plantDeadGrassID, 0, 30 * cNumberPlayers * getMapAreaSizeFactor());
 
    // Birbs.
    int birdID = rmObjectDefCreate("bird");
