@@ -16,9 +16,22 @@ map ("TODO", "game", "uiFindAllOfType(\"Herdable\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"AbstractArmory\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"AbstractArcher\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"AbstractCavalry\")", true)
+map ("TODO", "game", "uiFindAllOfType(\"AbstractInfantry\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"MythUnit\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"AbstractDock\")", true)
 map ("TODO", "game", "uiFindAllOfType(\"NavalUnit\")", true)
+
+//***************************
+// Select Two Types
+//***************************
+map ("TODO", "game", "uiFindAllOfTwoTypes(\"AbstractArcher\",\"MythUnitRanged\")", true)
+map ("TODO", "game", "uiFindAllOfTwoTypes(\"AbstractCavalry\",\"MythUnitCavalry\")", true)
+map ("TODO", "game", "uiFindAllOfTwoTypes(\"AbstractSiegeWeapon\",\"MythUnitSiege\")", true)
+
+//***************************
+// Select All On Screen
+//***************************
+map ("TODO", "game", "uiFindAllOfTypeOnScreen(\"Hero\")", true)
 
 //***************************
 // Find Next
